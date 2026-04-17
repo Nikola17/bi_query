@@ -1,4 +1,4 @@
-# Power BI Academy (Phase 1 et Phase 2 terminées)
+# Power BI Academy (Phase 1 & 2 terminées, Phase 3 démarrée)
 
 Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogique fourni.
 
@@ -23,6 +23,7 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Mode révision rapide (ouverture aléatoire d'une leçon).
 - Fiches mémo téléchargeables (Power Query, DAX, modélisation).
 - Bascule **Version simple** / **Version technique** dans les leçons.
+- Phase 3 orientée métiers **Paie / RH / Finance** : cas métiers, mini-évaluation experte et liste de révisions intelligentes.
 - Suivi de progression en `localStorage`.
 - Thème clair/sombre.
 - Plusieurs projets métiers traçables.

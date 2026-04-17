@@ -636,6 +636,75 @@ const phase2FinalLessons = [
 
 lessons.push(...phase2FinalLessons);
 
+const phase3DomainLessons = [
+  {
+    id: 'l33',
+    theme: 'Paie',
+    level: 'Avancé',
+    title: 'L33 — Contrôles paie et anomalies',
+    objective: 'Détecter automatiquement les écarts de paie anormaux.',
+    example: 'Variation brut > 20% sans motif déclaré.',
+    visual: { type: 'Contrôle', before: 'Bulletins non contrôlés', after: 'Table anomalies priorisées' },
+    steps: ['Importer bulletins', 'Créer règles de contrôle', 'Prioriser anomalies'],
+    exercise: 'Construis un tableau anomalies paie mensuelles.',
+    solution: 'Règles d’écart + statut de validation.',
+    simple: 'Tu identifies vite les bulletins à vérifier.',
+    pitfalls: ['Règles trop larges'],
+    summary: ['Fiabilité paie', 'Contrôle automatique', 'Gain de temps'],
+    quiz: { question: 'Un contrôle paie utile est :', options: ['Écart > seuil', 'Changer les couleurs', 'Renommer un onglet'], answer: 0, explain: 'Le contrôle d’écart détecte les anomalies rapidement.' }
+  },
+  {
+    id: 'l34',
+    theme: 'Paie',
+    level: 'Avancé',
+    title: 'L34 — Masse salariale et simulation',
+    objective: 'Simuler l’impact d’une hausse salariale.',
+    example: 'Simulation +2% sur une population ciblée.',
+    visual: { type: 'Simulation', before: 'Vision statique', after: 'Impact coût mensuel/annuel' },
+    steps: ['Créer base masse salariale', 'Appliquer scénario', 'Comparer résultats'],
+    exercise: 'Simule 2 scénarios d’augmentation.',
+    solution: 'Mesures DAX scénario A/B.',
+    simple: 'Tu testes des hypothèses avant décision.',
+    pitfalls: ['Population mal filtrée'],
+    summary: ['Scénarios', 'Impact budgétaire', 'Décision'],
+    quiz: { question: 'La simulation paie sert à :', options: ['Mesurer impact financier', 'Créer des thèmes', 'Supprimer des lignes'], answer: 0, explain: 'Elle aide à anticiper les coûts salariaux.' }
+  },
+  {
+    id: 'l35',
+    theme: 'RH',
+    level: 'Avancé',
+    title: 'L35 — Turnover et causes RH',
+    objective: 'Mesurer et expliquer les départs.',
+    example: 'Turnover élevé sur une BU.',
+    visual: { type: 'Analyse RH', before: 'Taux brut seul', after: 'Taux + causes + plan d’action' },
+    steps: ['Calculer turnover', 'Segmenter par BU', 'Identifier facteurs'],
+    exercise: 'Produis une synthèse turnover trimestrielle.',
+    solution: 'KPI turnover + segmentation + recommandations.',
+    simple: 'Tu passes du chiffre à l’action RH.',
+    pitfalls: ['Pas de segmentation'],
+    summary: ['Comprendre', 'Segmenter', 'Agir'],
+    quiz: { question: 'Pour analyser le turnover, il faut surtout :', options: ['Segmenter les populations', 'Regarder une moyenne globale seule', 'Masquer les départs'], answer: 0, explain: 'La segmentation révèle les vrais leviers RH.' }
+  },
+  {
+    id: 'l36',
+    theme: 'Finance',
+    level: 'Avancé',
+    title: 'L36 — Clôture mensuelle et écarts',
+    objective: 'Comparer réalisé vs budget par centre de coût.',
+    example: 'Écarts significatifs sur charges externes.',
+    visual: { type: 'Clôture', before: 'Table brute de clôture', after: 'Vue écarts priorisés' },
+    steps: ['Préparer budget/réalisé', 'Calculer écarts', 'Classer priorités'],
+    exercise: 'Sors un top 10 écarts à commenter.',
+    solution: 'Variance absolue + variance % + ranking.',
+    simple: 'Tu sais où concentrer l’analyse financière.',
+    pitfalls: ['Périodes non alignées'],
+    summary: ['Variance', 'Priorisation', 'Commentaire'],
+    quiz: { question: 'En clôture, le KPI clé est :', options: ['Écart budget-réalisé', 'Nombre de visuels', 'Thème sombre'], answer: 0, explain: 'L’écart est central pour le pilotage financier.' }
+  }
+];
+
+lessons.push(...phase3DomainLessons);
+
 lessons.forEach((lesson, idx) => {
   if (!lesson.level) {
     if (idx < 6) lesson.level = 'Débutant';
@@ -647,7 +716,7 @@ lessons.forEach((lesson, idx) => {
 const planStatus = [
   { phase: 'Phase 1 — MVP', done: '100%', note: 'Phase 1 terminée et stabilisée.' },
   { phase: 'Phase 2 — Version solide', done: '100%', note: 'Phase 2 finalisée : 32 leçons, lab étendu, datasets, simulateurs, badges, filtres niveau/thème, fiches mémo et projets métiers.' },
-  { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
+  { phase: 'Phase 3 — Avancé / premium', done: '35%', note: 'Démarrage spécialisation Paie/RH/Finance: cas métiers, évaluations et révisions intelligentes.' }
 ];
 
 const datasets = [
@@ -710,6 +779,27 @@ const cheatsheets = [
   }
 ];
 
+const phase3Cases = [
+  { title: 'Cas Paie complet', scope: 'Contrôles paie, simulation masse salariale, restitution direction.' },
+  { title: 'Cas RH complet', scope: 'Turnover, absentéisme, actions de rétention et prévention.' },
+  { title: 'Cas Finance complet', scope: 'Clôture, variance budget/réalisé, projection cash-flow.' }
+];
+
+const evalTracks = {
+  paie: [
+    { q: 'Quel KPI prioriser pour contrôler la paie ?', options: ['Écart brut vs N-1', 'Nombre de couleurs', 'Nb de pages'], a: 0 },
+    { q: 'Une simulation paie sert à ?', options: ['Anticiper les coûts', 'Importer un thème', 'Changer le header'], a: 0 }
+  ],
+  rh: [
+    { q: 'Pour expliquer le turnover, il faut surtout :', options: ['Segmenter les populations', 'Garder une moyenne globale', 'Retirer les filtres'], a: 0 },
+    { q: 'Le suivi absentéisme efficace intègre :', options: ['Tendance temporelle', 'Valeur unique d’un mois', 'Aucun seuil'], a: 0 }
+  ],
+  finance: [
+    { q: 'En pilotage financier, le KPI de base est :', options: ['Écart budget-réalisé', 'Nombre de slicers', 'Nombre de couleurs'], a: 0 },
+    { q: 'Le cash-flow prévisionnel sert à :', options: ['Anticiper les tensions', 'Changer la charte graphique', 'Ajouter des emojis'], a: 0 }
+  ]
+};
+
 const labData = [
   { year: 2023, revenue: 345000, target: 320000 },
   { year: 2024, revenue: 412000, target: 395000 },
@@ -743,9 +833,17 @@ const challengeAnswerEl = document.getElementById('challenge-answer');
 const cheatsheetList = document.getElementById('cheatsheet-list');
 const simpleModeBtn = document.getElementById('simple-mode');
 const techModeBtn = document.getElementById('tech-mode');
+const phase3CasesEl = document.getElementById('phase3-cases');
+const evalTrackEl = document.getElementById('eval-track');
+const evalStartEl = document.getElementById('eval-start');
+const evalQuestionEl = document.getElementById('eval-question');
+const evalOptionsEl = document.getElementById('eval-options');
+const evalFeedbackEl = document.getElementById('eval-feedback');
+const revisionListEl = document.getElementById('revision-list');
 
 let challengeSeconds = 60;
 let challengeInterval = null;
+let currentEval = null;
 
 function getThemes() {
   return [...new Set(lessons.map((lesson) => lesson.theme))];
@@ -927,7 +1025,11 @@ function bindLessonQuizActions() {
       const quizState = JSON.parse(localStorage.getItem('pba-quiz-score') || '{}');
       quizState[lessonId] = isCorrect;
       localStorage.setItem('pba-quiz-score', JSON.stringify(quizState));
+      const quizErrors = JSON.parse(localStorage.getItem('pba-quiz-errors') || '{}');
+      if (!isCorrect) quizErrors[lessonId] = (quizErrors[lessonId] || 0) + 1;
+      localStorage.setItem('pba-quiz-errors', JSON.stringify(quizErrors));
       renderQuizScore();
+      renderRevisionList();
     });
   });
 }
@@ -937,6 +1039,80 @@ function renderQuizScore() {
   const total = lessons.length;
   const good = lessons.filter((lesson) => quizState[lesson.id]).length;
   quizScoreValue.textContent = `${good} / ${total} bonnes réponses`;
+}
+
+function renderPhase3Cases() {
+  phase3CasesEl.innerHTML = phase3Cases
+    .map(
+      (item) => `
+      <article class="card">
+        <h4>${item.title}</h4>
+        <p>${item.scope}</p>
+      </article>
+    `
+    )
+    .join('');
+}
+
+function renderRevisionList() {
+  const errors = JSON.parse(localStorage.getItem('pba-quiz-errors') || '{}');
+  const prioritized = Object.entries(errors)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+
+  if (!prioritized.length) {
+    revisionListEl.innerHTML = '<li>Pas d’erreurs récurrentes pour le moment. Continue les évaluations 👏</li>';
+    return;
+  }
+
+  revisionListEl.innerHTML = prioritized
+    .map(([lessonId, count]) => {
+      const lesson = lessons.find((item) => item.id === lessonId);
+      return `<li><strong>${lesson?.title || lessonId}</strong> — ${count} erreur(s) : à réviser en priorité.</li>`;
+    })
+    .join('');
+}
+
+function renderEvalQuestion() {
+  if (!currentEval) return;
+  const { track, index } = currentEval;
+  const item = evalTracks[track][index];
+  evalQuestionEl.textContent = `Q${index + 1}/${evalTracks[track].length} — ${item.q}`;
+  evalOptionsEl.innerHTML = item.options
+    .map(
+      (opt, idx) => `
+      <label class="quiz-option">
+        <input type="radio" name="eval-option" value="${idx}" />
+        <span>${opt}</span>
+      </label>
+    `
+    )
+    .join('');
+}
+
+function initPhase3Evaluation() {
+  evalStartEl.addEventListener('click', () => {
+    currentEval = { track: evalTrackEl.value, index: 0, score: 0 };
+    evalFeedbackEl.textContent = '';
+    renderEvalQuestion();
+  });
+
+  evalOptionsEl.addEventListener('change', (event) => {
+    if (!currentEval) return;
+    const choice = Number(event.target.value);
+    const item = evalTracks[currentEval.track][currentEval.index];
+    if (choice === item.a) currentEval.score += 1;
+
+    currentEval.index += 1;
+    if (currentEval.index >= evalTracks[currentEval.track].length) {
+      evalQuestionEl.textContent = `Évaluation terminée (${currentEval.track.toUpperCase()}).`;
+      evalOptionsEl.innerHTML = '';
+      evalFeedbackEl.textContent = `Score: ${currentEval.score}/${evalTracks[currentEval.track].length}`;
+      currentEval = null;
+      return;
+    }
+    renderEvalQuestion();
+  });
 }
 
 function startChallenge() {
@@ -1235,8 +1411,10 @@ function initProgressReset() {
   document.getElementById('reset-progress').addEventListener('click', () => {
     localStorage.removeItem(progressKey);
     localStorage.removeItem('pba-quiz-score');
+    localStorage.removeItem('pba-quiz-errors');
     updateProgressUI();
     renderQuizScore();
+    renderRevisionList();
   });
 
   document.getElementById('resume-learning').addEventListener('click', () => {
@@ -1318,14 +1496,17 @@ renderLessons();
 renderLab();
 renderDatasets();
 renderCheatsheets();
+renderPhase3Cases();
 renderProjects();
 updateProgressUI();
 renderQuizScore();
+renderRevisionList();
 initTheme();
 initProgressReset();
 initLessonActions();
 initSimulators();
 initChallenge();
+initPhase3Evaluation();
 
 lessonsTitle.textContent = `Leçons complètes (${lessons.length})`;
 

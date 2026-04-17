@@ -27,6 +27,7 @@
           <a href="#visual-library">Visuels</a>
           <a href="#lab">Lab</a>
           <a href="#cheatsheets">Fiches</a>
+          <a href="#phase3">Phase 3</a>
           <a href="#projects">Projets</a>
         </nav>
         <button id="theme-toggle" class="btn btn-ghost" aria-label="Basculer le thème">🌙</button>
@@ -254,6 +255,44 @@
           </p>
           <div id="cheatsheet-list" class="modules-grid"></div>
         </div>
+      </section>
+
+      <section id="phase3" class="section container">
+        <h2>Phase 3 — Spécialisation Paie / RH / Finance</h2>
+        <p class="muted">
+          Parcours expert orienté métiers paie, ressources humaines et pilotage financier.
+        </p>
+        <div class="section-head top-space">
+          <h3>Cas métiers complets</h3>
+        </div>
+        <div id="phase3-cases" class="modules-grid"></div>
+
+        <div class="section-head top-space">
+          <h3>Évaluation experte</h3>
+        </div>
+        <article class="card">
+          <div class="hero-actions">
+            <select id="eval-track" aria-label="Choisir une spécialisation">
+              <option value="paie">Paie</option>
+              <option value="rh">RH</option>
+              <option value="finance">Finance</option>
+            </select>
+            <button id="eval-start" class="btn btn-ghost">Démarrer l'évaluation</button>
+          </div>
+          <p id="eval-question">Choisis une spécialisation puis démarre.</p>
+          <div id="eval-options" class="lesson-list"></div>
+          <p id="eval-feedback" class="sim-feedback" aria-live="polite"></p>
+        </article>
+
+        <div class="section-head top-space">
+          <h3>Révisions intelligentes</h3>
+        </div>
+        <article class="card">
+          <p class="muted">
+            Les notions où tu fais le plus d’erreurs sont priorisées ici.
+          </p>
+          <ul id="revision-list"></ul>
+        </article>
       </section>
 
       <section id="projects" class="section container">
