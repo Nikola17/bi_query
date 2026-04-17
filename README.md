@@ -5,8 +5,8 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 ## Contenu livré
 
 - Landing page orientée débutant → avancé.
-- Parcours en 9 blocs (mise en route jusqu'aux cas métiers).
-- Format de leçon standard.
+- Parcours en 9 blocs + tags par thème.
+- 10 leçons complètes (objectif, exemple, étapes, exercice, correction, pièges, résumé, mini quiz).
 - Quiz de niveau interactif.
 - Zone Lab avec filtre de données.
 - Suivi de progression en `localStorage`.

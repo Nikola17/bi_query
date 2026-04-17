@@ -27,9 +27,7 @@
           <a href="#cheatsheets">Fiches mémo</a>
           <a href="#projects">Projets</a>
         </nav>
-        <button id="theme-toggle" class="btn btn-ghost" aria-label="Basculer le thème">
-          🌙
-        </button>
+        <button id="theme-toggle" class="btn btn-ghost" aria-label="Basculer le thème">🌙</button>
       </div>
     </header>
 
@@ -76,59 +74,59 @@
         </div>
         <div class="progress-block" aria-live="polite">
           <div class="progress-bar"><span id="progress-fill"></span></div>
-          <p><strong id="progress-value">0%</strong> du parcours MVP terminé.</p>
+          <p><strong id="progress-value">0%</strong> du parcours affiché terminé.</p>
         </div>
       </section>
 
       <section id="parcours" class="section container">
-        <h2>Parcours complet (MVP prêt pour Vercel / GitHub Pages)</h2>
-        <p class="muted">10 leçons fondatrices + quiz + mini projet guidé.</p>
+        <h2>Parcours complet (MVP)</h2>
+        <p class="muted">Deux entrées : par blocs pédagogiques et par thème.</p>
+        <div class="section-head">
+          <h3>Blocs pédagogiques</h3>
+        </div>
         <div class="modules-grid" id="modules-list"></div>
+        <div class="section-head top-space">
+          <h3>Par thème</h3>
+        </div>
+        <div class="chips" id="theme-list"></div>
       </section>
 
       <section id="lessons" class="section section-alt">
         <div class="container">
-          <h2>Format type d'une leçon</h2>
-          <div class="lesson-layout">
-            <article class="card">
-              <h3>Leçon 1 — Importer un CSV proprement</h3>
-              <ol>
-                <li>Objectif : importer et typer les colonnes.</li>
-                <li>Exemple métier : export ventes e-commerce.</li>
-                <li>Démo visuelle : avant/après transformation.</li>
-                <li>Explication simple étape par étape.</li>
-                <li>Exercice : corriger 3 types de données faux.</li>
-                <li>Correction détaillée + erreurs fréquentes.</li>
-                <li>Résumé en 5 points + quiz rapide.</li>
-              </ol>
-              <label class="checkbox-line">
-                <input type="checkbox" data-lesson="lesson-1" />
-                Marquer cette leçon comme terminée
-              </label>
-            </article>
-            <article class="card" id="test-niveau">
-              <h3>Test de niveau rapide</h3>
-              <form id="quiz-form">
-                <fieldset>
-                  <legend>1) En Power BI, quelle structure est recommandée ?</legend>
-                  <label><input type="radio" name="q1" value="a" /> Modèle en étoile</label>
-                  <label><input type="radio" name="q1" value="b" /> Plusieurs tables sans relations</label>
-                </fieldset>
-                <fieldset>
-                  <legend>2) CALCULATE sert surtout à…</legend>
-                  <label><input type="radio" name="q2" value="a" /> Changer le contexte de filtre</label>
-                  <label><input type="radio" name="q2" value="b" /> Importer des données</label>
-                </fieldset>
-                <fieldset>
-                  <legend>3) Merge dans Power Query correspond à…</legend>
-                  <label><input type="radio" name="q3" value="a" /> Joindre des tables</label>
-                  <label><input type="radio" name="q3" value="b" /> Créer un graphique</label>
-                </fieldset>
-                <button class="btn" type="submit">Valider le quiz</button>
-                <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
-              </form>
-            </article>
+          <div class="section-head">
+            <h2>Leçons complètes (10)</h2>
+            <select id="lesson-filter" aria-label="Filtrer les leçons par thème">
+              <option value="all">Tous les thèmes</option>
+            </select>
           </div>
+          <p class="muted">
+            Chaque leçon contient : objectif, exemple métier, explication pas à pas, exercice,
+            correction, pièges, résumé et mini-quiz.
+          </p>
+          <div id="lessons-list" class="lesson-list"></div>
+
+          <article class="card" id="test-niveau">
+            <h3>Test de niveau rapide</h3>
+            <form id="quiz-form">
+              <fieldset>
+                <legend>1) En Power BI, quelle structure est recommandée ?</legend>
+                <label><input type="radio" name="q1" value="a" /> Modèle en étoile</label>
+                <label><input type="radio" name="q1" value="b" /> Plusieurs tables sans relations</label>
+              </fieldset>
+              <fieldset>
+                <legend>2) CALCULATE sert surtout à…</legend>
+                <label><input type="radio" name="q2" value="a" /> Changer le contexte de filtre</label>
+                <label><input type="radio" name="q2" value="b" /> Importer des données</label>
+              </fieldset>
+              <fieldset>
+                <legend>3) Merge dans Power Query correspond à…</legend>
+                <label><input type="radio" name="q3" value="a" /> Joindre des tables</label>
+                <label><input type="radio" name="q3" value="b" /> Créer un graphique</label>
+              </fieldset>
+              <button class="btn" type="submit">Valider le quiz</button>
+              <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
+            </form>
+          </article>
         </div>
       </section>
 
