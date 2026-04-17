@@ -1,5 +1,40 @@
-Region,RegionEmail,Revenue
-Ile-de-France,manager.idf@company.com,125000
-Auvergne-Rhone-Alpes,manager.ara@company.com,89000
-PACA,manager.paca@company.com,56000
-Occitanie,manager.occ@company.com,43000
+Region,RegionEmail,Year,Revenue
+Ile-de-France,manager.ile-de-france@novaretail.com,2023,488852.57
+Ile-de-France,manager.ile-de-france@novaretail.com,2024,555302.81
+Ile-de-France,manager.ile-de-france@novaretail.com,2025,587187.1
+Auvergne-Rhone-Alpes,manager.auvergne-rhone-alpes@novaretail.com,2023,291599.87
+Auvergne-Rhone-Alpes,manager.auvergne-rhone-alpes@novaretail.com,2024,302413.86
+Auvergne-Rhone-Alpes,manager.auvergne-rhone-alpes@novaretail.com,2025,326939.66
+Provence-Alpes-Cote d'Azur,manager.provence-alpes-cote-@novaretail.com,2023,180364.66
+Provence-Alpes-Cote d'Azur,manager.provence-alpes-cote-@novaretail.com,2024,194190.76
+Provence-Alpes-Cote d'Azur,manager.provence-alpes-cote-@novaretail.com,2025,186612.2
+Occitanie,manager.occitanie@novaretail.com,2023,199521.71
+Occitanie,manager.occitanie@novaretail.com,2024,207502.49
+Occitanie,manager.occitanie@novaretail.com,2025,206912.94
+Hauts-de-France,manager.hauts-de-france@novaretail.com,2023,444317.2
+Hauts-de-France,manager.hauts-de-france@novaretail.com,2024,475465.43
+Hauts-de-France,manager.hauts-de-france@novaretail.com,2025,509366.76
+Grand Est,manager.grand-est@novaretail.com,2023,493792.97
+Grand Est,manager.grand-est@novaretail.com,2024,530631.65
+Grand Est,manager.grand-est@novaretail.com,2025,539550.98
+Nouvelle-Aquitaine,manager.nouvelle-aquitaine@novaretail.com,2023,592314.29
+Nouvelle-Aquitaine,manager.nouvelle-aquitaine@novaretail.com,2024,627728.38
+Nouvelle-Aquitaine,manager.nouvelle-aquitaine@novaretail.com,2025,660920.02
+Bretagne,manager.bretagne@novaretail.com,2023,505583.28
+Bretagne,manager.bretagne@novaretail.com,2024,543461.36
+Bretagne,manager.bretagne@novaretail.com,2025,590707.49
+Normandie,manager.normandie@novaretail.com,2023,417437.6
+Normandie,manager.normandie@novaretail.com,2024,466224.02
+Normandie,manager.normandie@novaretail.com,2025,484373.7
+Pays de la Loire,manager.pays-de-la-loire@novaretail.com,2023,231373.01
+Pays de la Loire,manager.pays-de-la-loire@novaretail.com,2024,238366.06
+Pays de la Loire,manager.pays-de-la-loire@novaretail.com,2025,236621.09
+Bourgogne-Franche-Comte,manager.bourgogne-franche-co@novaretail.com,2023,534525.84
+Bourgogne-Franche-Comte,manager.bourgogne-franche-co@novaretail.com,2024,596132.85
+Bourgogne-Franche-Comte,manager.bourgogne-franche-co@novaretail.com,2025,642295.51
+Centre-Val de Loire,manager.centre-val-de-loire@novaretail.com,2023,524359.39
+Centre-Val de Loire,manager.centre-val-de-loire@novaretail.com,2024,575739.5
+Centre-Val de Loire,manager.centre-val-de-loire@novaretail.com,2025,588888.72
+Corse,manager.corse@novaretail.com,2023,421318.8
+Corse,manager.corse@novaretail.com,2024,457176.72
+Corse,manager.corse@novaretail.com,2025,441049.57

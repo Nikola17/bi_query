@@ -1,9 +1,401 @@
 Region,Date,Montant,ClientID
-Ile-de-France,2025-01-05,1250,C001
-Ile-de-France,2025-01-18,3400,C002
-Auvergne-Rhone-Alpes,2025-01-12,890,C003
-Auvergne-Rhone-Alpes,2025-02-05,2100,C004
-Provence-Alpes-Cote dAzur,2025-01-22,560,C005
-Ile-de-France,2025-02-10,7800,C006
-Auvergne-Rhone-Alpes,2025-02-15,1200,C007
-Provence-Alpes-Cote dAzur,2025-02-20,4500,C008
+Pays de la Loire,2024-09-08,8019.9,C055
+Nouvelle-Aquitaine,2023-11-30,3190.44,C068
+Pays de la Loire,2024-09-16,5390.12,C112
+Ile-de-France,2023-01-15,6469.02,C062
+Nouvelle-Aquitaine,2023-12-24,6995.1,C019
+Bretagne,2025-03-18,4778.3,C097
+Ile-de-France,2023-05-09,2201.4,C024
+Nouvelle-Aquitaine,2024-12-19,1399.02,C075
+Centre-Val de Loire,2024-01-05,1063.96,C060
+Pays de la Loire,2024-07-24,6696.21,C173
+Centre-Val de Loire,2023-01-21,1597.8,C178
+Nouvelle-Aquitaine,2024-11-30,955.66,C019
+Corse,2025-02-05,4034.92,C015
+Ile-de-France,2024-04-01,8105.72,C062
+Pays de la Loire,2024-12-29,2920.9,C061
+Occitanie,2024-10-04,6415.92,C070
+Normandie,2024-12-23,8105.72,C166
+Grand Est,2023-10-03,11968.35,C180
+Bourgogne-Franche-Comte,2023-03-12,2325.32,C028
+Centre-Val de Loire,2023-03-07,3442.08,C030
+Nouvelle-Aquitaine,2023-02-07,4674.5,C020
+Bretagne,2024-06-10,4674.5,C014
+Grand Est,2023-07-16,8082.84,C080
+Grand Est,2023-05-02,11160.35,C063
+Hauts-de-France,2024-01-24,7380.52,C109
+Grand Est,2023-05-29,2798.04,C022
+Normandie,2023-03-18,10380.35,C056
+Corse,2024-12-12,1125.58,C009
+Occitanie,2023-01-15,842.12,C182
+Ile-de-France,2024-11-16,265.99,C171
+Auvergne-Rhone-Alpes,2023-06-22,8829.3,C125
+Provence-Alpes-Cote d'Azur,2024-10-12,2026.43,C032
+Hauts-de-France,2023-12-30,2095.35,C156
+Pays de la Loire,2024-02-08,323.76,C168
+Bretagne,2024-06-29,1329.95,C104
+Nouvelle-Aquitaine,2023-02-15,1162.66,C158
+Ile-de-France,2025-03-12,584.18,C077
+Pays de la Loire,2024-04-22,2791.6,C082
+Grand Est,2023-06-05,6378.72,C177
+Grand Est,2023-09-27,4889.88,C136
+Grand Est,2023-11-20,421.06,C153
+Bretagne,2024-11-19,3259.92,C069
+Bourgogne-Franche-Comte,2023-01-11,265.99,C028
+Centre-Val de Loire,2025-03-05,2026.43,C100
+Nouvelle-Aquitaine,2024-07-09,242.82,C010
+Occitanie,2023-05-02,1603.98,C088
+Normandie,2023-06-16,539.29,C059
+Provence-Alpes-Cote d'Azur,2023-05-02,2026.43,C113
+Hauts-de-France,2024-02-03,3259.92,C133
+Hauts-de-France,2024-03-28,2233.28,C025
+Occitanie,2024-06-24,798.9,C065
+Corse,2024-01-27,2251.16,C131
+Occitanie,2024-06-27,1625.37,C076
+Grand Est,2024-09-24,2798.04,C142
+Auvergne-Rhone-Alpes,2024-12-10,6501.48,C078
+Occitanie,2023-08-03,798.9,C049
+Normandie,2024-08-16,10605.1,C170
+Ile-de-France,2024-05-27,8484.08,C044
+Grand Est,2024-05-18,11968.35,C115
+Nouvelle-Aquitaine,2024-08-06,581.33,C007
+Pays de la Loire,2023-06-24,9225.65,C082
+Centre-Val de Loire,2023-10-05,1688.37,C026
+Ile-de-France,2024-11-10,934.9,C150
+Ile-de-France,2024-10-03,242.82,C024
+Corse,2025-01-17,3822.64,C098
+Auvergne-Rhone-Alpes,2023-04-29,4302.6,C125
+Normandie,2023-12-23,2251.16,C018
+Auvergne-Rhone-Alpes,2024-10-21,8928.28,C017
+Auvergne-Rhone-Alpes,2024-10-31,2076.07,C017
+Bretagne,2023-06-26,955.66,C051
+Hauts-de-France,2025-01-21,1721.04,C186
+Hauts-de-France,2025-01-20,798.9,C156
+Hauts-de-France,2024-09-16,9574.68,C156
+Bretagne,2023-08-03,562.79,C035
+Provence-Alpes-Cote d'Azur,2024-09-30,1399.02,C002
+Nouvelle-Aquitaine,2023-12-28,4052.86,C010
+Normandie,2024-06-11,7421.91,C008
+Centre-Val de Loire,2024-08-23,2920.9,C122
+Normandie,2023-06-09,245.47,C196
+Corse,2023-07-24,4787.34,C108
+Corse,2024-08-25,2866.98,C139
+Centre-Val de Loire,2024-07-27,1765.86,C100
+Provence-Alpes-Cote d'Azur,2024-10-23,2121.02,C113
+Pays de la Loire,2025-03-26,2396.7,C061
+Grand Est,2023-11-24,4876.11,C153
+Corse,2023-02-10,8069.84,C147
+Corse,2024-07-11,1078.58,C179
+Ile-de-France,2024-06-27,4312.68,C171
+Pays de la Loire,2025-01-10,2396.7,C074
+Ile-de-France,2023-11-07,5297.58,C024
+Grand Est,2023-05-27,2473.97,C177
+Corse,2023-10-19,8928.28,C131
+Corse,2025-03-27,404.7,C092
+Bretagne,2025-02-27,6469.02,C051
+Provence-Alpes-Cote d'Azur,2024-12-18,4947.94,C162
+Corse,2024-03-05,10547.45,C084
+Grand Est,2023-03-13,8928.28,C142
+Corse,2023-09-07,8019.9,C121
+Occitanie,2023-08-01,8126.85,C076
+Occitanie,2023-11-22,5535.39,C031
+Nouvelle-Aquitaine,2024-03-08,1396.9,C114
+Occitanie,2024-07-25,1765.86,C182
+Grand Est,2023-04-15,8105.72,C022
+Auvergne-Rhone-Alpes,2024-03-26,10103.55,C138
+Grand Est,2024-03-19,5596.08,C180
+Pays de la Loire,2024-08-09,2920.9,C173
+Bourgogne-Franche-Comte,2024-07-26,4787.34,C127
+Ile-de-France,2023-09-20,3442.08,C066
+Normandie,2025-01-09,6062.13,C056
+Nouvelle-Aquitaine,2024-09-28,1597.8,C159
+Bretagne,2023-11-04,2026.43,C097
+Auvergne-Rhone-Alpes,2023-11-24,2804.7,C050
+Ile-de-France,2023-01-02,4242.04,C077
+Bretagne,2024-03-19,5390.12,C029
+Nouvelle-Aquitaine,2023-06-16,3822.64,C004
+Grand Est,2023-04-19,2713.76,C080
+Ile-de-France,2024-11-17,1329.95,C172
+Provence-Alpes-Cote d'Azur,2024-09-18,1263.18,C032
+Corse,2023-05-24,539.29,C092
+Corse,2024-03-21,10103.55,C093
+Hauts-de-France,2023-09-17,1765.86,C165
+Nouvelle-Aquitaine,2023-06-02,9225.65,C007
+Provence-Alpes-Cote d'Azur,2024-07-15,2920.9,C047
+Bourgogne-Franche-Comte,2023-10-04,440.28,C095
+Ile-de-France,2024-03-17,1617.87,C172
+Corse,2025-02-06,981.88,C139
+Centre-Val de Loire,2023-12-07,2095.35,C146
+Ile-de-France,2023-06-20,6363.06,C083
+Hauts-de-France,2024-08-18,1168.36,C148
+Nouvelle-Aquitaine,2025-03-10,1063.48,C114
+Provence-Alpes-Cote d'Azur,2024-09-25,8082.84,C162
+Centre-Val de Loire,2023-11-06,2393.67,C164
+Bretagne,2024-09-17,3822.64,C104
+Occitanie,2024-01-30,678.44,C031
+Occitanie,2024-12-19,1066.4,C046
+Bourgogne-Franche-Comte,2023-02-14,11968.35,C127
+Normandie,2024-01-14,539.29,C170
+Occitanie,2024-08-05,6378.72,C089
+Bretagne,2024-04-11,4674.5,C035
+Grand Est,2024-07-18,5390.12,C063
+Provence-Alpes-Cote d'Azur,2025-03-19,2251.16,C111
+Corse,2024-08-04,10605.1,C084
+Normandie,2025-02-05,2813.95,C018
+Hauts-de-France,2024-12-25,797.97,C192
+Hauts-de-France,2023-02-05,1263.18,C073
+Hauts-de-France,2023-11-20,2232.07,C071
+Bretagne,2024-07-18,8105.72,C104
+Provence-Alpes-Cote d'Azur,2023-12-14,955.66,C167
+Hauts-de-France,2023-01-06,798.9,C165
+Centre-Val de Loire,2023-02-16,2696.45,C178
+Pays de la Loire,2024-02-21,6079.29,C134
+Corse,2025-03-23,562.79,C015
+Centre-Val de Loire,2023-11-26,8829.3,C060
+Pays de la Loire,2024-12-30,8928.28,C016
+Nouvelle-Aquitaine,2023-12-08,245.47,C191
+Ile-de-France,2024-08-24,8069.84,C036
+Normandie,2023-12-07,6469.02,C189
+Bretagne,2023-04-30,4784.04,C014
+Corse,2024-05-28,10103.55,C118
+Bourgogne-Franche-Comte,2023-09-28,4787.34,C183
+Hauts-de-France,2023-08-08,80.94,C144
+Ile-de-France,2023-06-22,4052.86,C128
+Hauts-de-France,2023-09-09,3189.36,C073
+Hauts-de-France,2024-12-24,245.47,C186
+Provence-Alpes-Cote d'Azur,2023-03-30,1356.88,C006
+Hauts-de-France,2024-07-29,1320.84,C071
+Hauts-de-France,2024-05-08,12369.85,C144
+Bretagne,2023-12-01,4041.42,C169
+Centre-Val de Loire,2024-02-24,581.33,C130
+Occitanie,2023-04-09,80.94,C031
+Pays de la Loire,2023-03-09,4042.59,C168
+Hauts-de-France,2024-02-02,1168.36,C116
+Corse,2023-03-17,539.29,C092
+Occitanie,2023-08-08,8304.28,C182
+Hauts-de-France,2023-05-20,10605.1,C037
+Occitanie,2023-05-04,323.76,C081
+Auvergne-Rhone-Alpes,2025-03-25,490.94,C185
+Pays de la Loire,2024-11-08,2696.45,C055
+Corse,2023-09-13,2251.16,C084
+Occitanie,2023-07-15,1597.8,C081
+Pays de la Loire,2025-02-10,8149.8,C082
+Bretagne,2023-08-24,3190.44,C033
+Ile-de-France,2024-02-25,1911.32,C024
+Occitanie,2024-12-20,6378.72,C046
+Corse,2023-07-09,5390.12,C126
+Occitanie,2025-02-17,4218.98,C039
+Provence-Alpes-Cote d'Azur,2023-10-15,323.76,C111
+Bourgogne-Franche-Comte,2023-02-03,955.66,C188
+Ile-de-France,2023-05-11,1684.24,C128
+Centre-Val de Loire,2025-03-16,8019.9,C054
+Occitanie,2024-10-31,426.56,C089
+Occitanie,2024-08-23,955.66,C039
+Provence-Alpes-Cote d'Azur,2023-03-23,8149.8,C047
+Nouvelle-Aquitaine,2024-12-21,1743.99,C004
+Normandie,2024-05-13,2095.35,C008
+Normandie,2024-11-03,4302.6,C170
+Hauts-de-France,2025-03-01,1399.02,C192
+Normandie,2025-02-20,2396.7,C184
+Normandie,2024-01-17,1869.8,C181
+Auvergne-Rhone-Alpes,2024-12-16,4034.92,C042
+Pays de la Loire,2024-03-02,1594.68,C016
+Nouvelle-Aquitaine,2024-11-04,4041.42,C004
+Bretagne,2023-03-28,2695.06,C097
+Bretagne,2024-04-14,7380.52,C035
+Bourgogne-Franche-Comte,2023-08-31,3690.26,C127
+Corse,2023-07-24,3207.96,C121
+Bretagne,2025-01-04,6228.21,C104
+Normandie,2023-07-09,562.79,C008
+Auvergne-Rhone-Alpes,2024-02-22,1329.95,C185
+Nouvelle-Aquitaine,2025-03-30,8019.9,C004
+Centre-Val de Loire,2024-09-05,4052.86,C030
+Auvergne-Rhone-Alpes,2024-05-15,1845.13,C125
+Ile-de-France,2024-09-20,10547.45,C172
+Nouvelle-Aquitaine,2024-06-13,10380.35,C158
+Centre-Val de Loire,2025-02-15,1845.13,C100
+Ile-de-France,2023-05-21,3195.6,C119
+Pays de la Loire,2025-03-13,1168.36,C155
+Centre-Val de Loire,2023-06-01,3392.2,C026
+Corse,2023-01-16,9225.65,C093
+Occitanie,2024-10-11,2251.16,C065
+Corse,2023-04-27,1617.87,C084
+Normandie,2025-01-06,426.56,C166
+Centre-Val de Loire,2023-11-12,3250.74,C122
+Ile-de-France,2024-04-11,1329.95,C119
+Auvergne-Rhone-Alpes,2024-08-31,2798.04,C057
+Bretagne,2024-01-01,2798.04,C033
+Corse,2023-05-21,562.79,C131
+Centre-Val de Loire,2024-09-02,736.41,C178
+Bourgogne-Franche-Comte,2023-10-26,3250.74,C095
+Centre-Val de Loire,2023-09-10,2126.96,C100
+Corse,2024-11-22,1329.95,C084
+Bretagne,2024-07-01,8149.8,C104
+Auvergne-Rhone-Alpes,2024-06-08,1845.13,C078
+Centre-Val de Loire,2024-11-03,8019.9,C164
+Hauts-de-France,2023-09-23,639.84,C037
+Bourgogne-Franche-Comte,2024-09-14,842.12,C183
+Bourgogne-Franche-Comte,2023-06-04,2798.04,C028
+Grand Est,2024-09-21,3994.5,C129
+Occitanie,2024-03-30,4302.6,C049
+Occitanie,2024-09-07,2076.07,C046
+Normandie,2023-11-23,736.41,C008
+Bretagne,2025-01-01,1399.02,C099
+Occitanie,2025-01-31,1594.68,C070
+Centre-Val de Loire,2023-04-17,6519.84,C164
+Corse,2023-05-13,4152.14,C121
+Hauts-de-France,2025-02-28,558.32,C071
+Ile-de-France,2023-03-23,2696.45,C119
+Bretagne,2024-08-11,6995.1,C140
+Bretagne,2025-03-08,1765.86,C005
+Grand Est,2023-09-08,426.56,C087
+Bourgogne-Franche-Comte,2023-03-14,8829.3,C183
+Corse,2023-06-22,853.12,C108
+Hauts-de-France,2023-01-22,7973.4,C144
+Nouvelle-Aquitaine,2025-01-19,1752.54,C075
+Auvergne-Rhone-Alpes,2023-04-27,3195.6,C154
+Bretagne,2024-09-30,4778.3,C190
+Auvergne-Rhone-Alpes,2025-01-08,2017.46,C078
+Ile-de-France,2024-06-01,4302.6,C040
+Pays de la Loire,2023-10-08,4218.98,C155
+Ile-de-France,2023-09-14,2020.71,C052
+Pays de la Loire,2024-08-06,4034.92,C123
+Grand Est,2023-11-29,7063.44,C177
+Grand Est,2023-10-17,8126.85,C064
+Bretagne,2024-09-25,798.9,C033
+Grand Est,2023-07-03,4052.86,C177
+Grand Est,2023-12-31,1911.32,C022
+Pays de la Loire,2024-12-06,1356.88,C173
+Auvergne-Rhone-Alpes,2025-03-02,421.06,C154
+Nouvelle-Aquitaine,2024-05-07,6328.47,C007
+Hauts-de-France,2024-02-07,7063.44,C073
+Occitanie,2023-02-28,4312.68,C049
+Bretagne,2023-03-11,2105.3,C085
+Hauts-de-France,2024-04-07,736.41,C186
+Bourgogne-Franche-Comte,2023-03-28,421.06,C012
+Ile-de-France,2023-12-31,440.28,C119
+Corse,2024-12-15,12369.85,C157
+Centre-Val de Loire,2023-09-04,1399.02,C054
+Provence-Alpes-Cote d'Azur,2024-06-16,3392.2,C032
+Grand Est,2024-03-17,3392.2,C101
+Occitanie,2024-07-09,1116.64,C088
+Bretagne,2025-02-13,3492.25,C005
+Corse,2024-05-11,2325.32,C092
+Ile-de-France,2025-01-24,3739.6,C036
+Occitanie,2023-12-03,8304.28,C049
+Ile-de-France,2024-05-24,3250.74,C172
+Corse,2024-09-25,1320.84,C131
+Normandie,2023-12-20,934.9,C018
+Nouvelle-Aquitaine,2023-07-08,6995.1,C072
+Occitanie,2023-08-18,1594.68,C031
+Normandie,2024-12-23,490.94,C011
+Centre-Val de Loire,2024-02-21,6052.38,C146
+Bretagne,2023-11-22,4218.98,C195
+Normandie,2023-08-20,440.28,C011
+Ile-de-France,2023-08-08,6519.84,C052
+Provence-Alpes-Cote d'Azur,2024-04-25,5596.08,C111
+Ile-de-France,2024-05-24,2105.3,C149
+Grand Est,2023-06-08,3690.26,C063
+Bretagne,2024-10-19,10380.35,C099
+Hauts-de-France,2024-02-12,4302.6,C071
+Occitanie,2023-04-16,8625.36,C094
+Ile-de-France,2023-10-03,2813.95,C083
+Provence-Alpes-Cote d'Azur,2024-04-26,4312.68,C162
+Grand Est,2023-04-12,161.88,C177
+Bretagne,2024-01-20,6519.84,C097
+Hauts-de-France,2025-01-08,2906.65,C109
+Grand Est,2024-09-24,2396.7,C064
+Bretagne,2023-09-25,2232.07,C069
+Auvergne-Rhone-Alpes,2023-06-09,4242.04,C017
+Corse,2023-09-30,2121.02,C067
+Nouvelle-Aquitaine,2023-10-07,426.56,C072
+Corse,2024-08-30,8126.85,C084
+Centre-Val de Loire,2023-03-01,639.84,C130
+Hauts-de-France,2023-07-04,6079.29,C192
+Grand Est,2025-03-23,934.9,C115
+Pays de la Loire,2024-08-16,3994.5,C074
+Corse,2023-12-18,2076.07,C118
+Corse,2024-01-29,2866.98,C009
+Provence-Alpes-Cote d'Azur,2024-06-17,1721.04,C002
+Pays de la Loire,2024-01-25,404.7,C016
+Ile-de-France,2023-05-26,3392.2,C117
+Pays de la Loire,2023-11-08,7973.4,C123
+Auvergne-Rhone-Alpes,2024-01-16,80.94,C057
+Auvergne-Rhone-Alpes,2024-04-19,531.98,C017
+Centre-Val de Loire,2023-12-19,2920.9,C100
+Bourgogne-Franche-Comte,2023-05-19,11968.35,C183
+Provence-Alpes-Cote d'Azur,2024-04-12,2157.16,C041
+Corse,2024-08-06,2920.9,C015
+Provence-Alpes-Cote d'Azur,2023-11-22,1597.8,C002
+Bretagne,2023-03-22,4152.14,C163
+Bretagne,2023-12-31,2866.98,C169
+Provence-Alpes-Cote d'Azur,2023-01-15,3994.5,C047
+Bretagne,2024-12-06,6062.13,C021
+Corse,2024-08-22,3531.72,C084
+Pays de la Loire,2025-02-21,581.33,C061
+Occitanie,2024-05-17,5596.08,C094
+Grand Est,2023-03-12,3259.92,C101
+Auvergne-Rhone-Alpes,2024-10-04,2026.43,C187
+Auvergne-Rhone-Alpes,2024-03-31,6995.1,C050
+Nouvelle-Aquitaine,2024-06-25,2126.96,C191
+Centre-Val de Loire,2025-03-19,3259.92,C100
+Auvergne-Rhone-Alpes,2024-11-28,3739.6,C176
+Ile-de-France,2023-07-25,1329.95,C034
+Auvergne-Rhone-Alpes,2024-02-20,3259.92,C185
+Bretagne,2023-02-22,8625.36,C021
+Bretagne,2023-09-20,1674.96,C195
+Provence-Alpes-Cote d'Azur,2023-06-12,1674.96,C161
+Ile-de-France,2024-11-22,853.12,C040
+Normandie,2024-12-26,404.7,C196
+Grand Est,2023-10-08,1263.18,C022
+Hauts-de-France,2024-05-07,2076.07,C116
+Hauts-de-France,2023-05-18,539.29,C132
+Normandie,2025-02-02,6052.38,C011
+Occitanie,2023-04-12,10781.7,C065
+Auvergne-Rhone-Alpes,2023-11-05,1227.35,C103
+Normandie,2023-11-18,2804.7,C196
+Nouvelle-Aquitaine,2024-12-06,8304.28,C106
+Normandie,2023-10-14,2804.7,C056
+Occitanie,2024-10-05,1168.36,C065
+Ile-de-France,2024-11-10,1320.84,C128
+Centre-Val de Loire,2023-02-16,10605.1,C164
+Hauts-de-France,2024-12-18,2396.7,C073
+Bretagne,2023-07-26,7380.52,C033
+Pays de la Loire,2023-07-03,2109.49,C152
+Ile-de-France,2024-12-19,2232.07,C172
+Nouvelle-Aquitaine,2023-12-06,860.52,C068
+Nouvelle-Aquitaine,2024-03-15,584.18,C068
+Ile-de-France,2023-01-18,3442.08,C048
+Hauts-de-France,2023-09-27,1869.8,C186
+Auvergne-Rhone-Alpes,2024-03-31,1845.13,C138
+Hauts-de-France,2023-07-20,880.56,C165
+Bretagne,2023-09-13,10087.3,C005
+Occitanie,2024-02-10,1063.96,C065
+Auvergne-Rhone-Alpes,2023-05-20,8625.36,C176
+Bretagne,2025-02-27,2109.49,C099
+Nouvelle-Aquitaine,2023-12-11,1116.64,C075
+Hauts-de-France,2023-04-05,558.32,C156
+Bretagne,2024-09-09,9895.88,C014
+Centre-Val de Loire,2024-01-05,3259.92,C178
+Corse,2023-10-03,2017.46,C015
+Ile-de-France,2023-12-20,4947.94,C083
+Centre-Val de Loire,2024-10-12,5317.4,C178
+Nouvelle-Aquitaine,2024-04-10,2105.3,C106
+Bourgogne-Franche-Comte,2024-04-04,1869.8,C012
+Centre-Val de Loire,2023-01-24,639.84,C137
+Provence-Alpes-Cote d'Azur,2025-03-26,7380.52,C111
+Bretagne,2023-05-30,1603.98,C190
+Bourgogne-Franche-Comte,2024-04-06,2473.97,C028
+Ile-de-France,2024-03-10,8105.72,C036
+Pays de la Loire,2024-02-08,3189.36,C168
+Nouvelle-Aquitaine,2024-03-18,3994.5,C191
+Ile-de-France,2024-02-10,1765.86,C077
+Normandie,2023-08-22,562.79,C166
+Grand Est,2023-02-20,1603.98,C110
+Ile-de-France,2023-08-25,8928.28,C083
+Pays de la Loire,2024-02-22,9895.88,C045
+Pays de la Loire,2024-01-03,2026.43,C152
+Occitanie,2024-07-03,426.56,C049
+Auvergne-Rhone-Alpes,2023-01-13,8069.84,C176
+Auvergne-Rhone-Alpes,2024-04-03,213.28,C138
+Nouvelle-Aquitaine,2024-10-21,1743.99,C105

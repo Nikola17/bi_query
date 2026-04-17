@@ -1,9 +1,201 @@
-Country_Input,Normalized_Expected
-FR,FR
-france,FR
-FRA,FR
-fr,FR
-DE,DE
-germany,DE
-DEU,DE
-de,DE
+Source,Country_Input,Normalized_Expected
+Source_D,es,ES
+Source_A, united states,US
+Source_D,united states,US
+Source_C,italy,IT
+Source_A, gb,UK
+Source_C,fr,FR
+Source_D,ES,ES
+Source_E, united kingdom,UK
+Source_A,DEU ,DE
+Source_A,esp,ES
+Source_B,spain,ES
+Source_A, united states,US
+Source_A,UK,UK
+Source_D,FRA,FR
+Source_A,US,US
+Source_C,it,IT
+Source_E,ES,ES
+Source_E,GBR,UK
+Source_A,US,US
+Source_B,it ,IT
+Source_D, italy,IT
+Source_D,GB,UK
+Source_B,gbr,UK
+Source_B, de,DE
+Source_D, FRA,FR
+Source_C,FRA,FR
+Source_E, DEU,DE
+Source_A,GB,UK
+Source_C,de,DE
+Source_B,spain,ES
+Source_D,ITALY,IT
+Source_E,US,US
+Source_C,ITALY,IT
+Source_B, spain,ES
+Source_E,GB,UK
+Source_B,ES,ES
+Source_D,es,ES
+Source_E,IT ,IT
+Source_E,ES,ES
+Source_E,italy,IT
+Source_C,germany,DE
+Source_B, us,US
+Source_B, IT,IT
+Source_B,united kingdom,UK
+Source_C,FR ,FR
+Source_C,deu,DE
+Source_A,gbr,UK
+Source_B, united kingdom,UK
+Source_E, es,ES
+Source_C,it,IT
+Source_B,GBR ,UK
+Source_E,italy,IT
+Source_C,deu,DE
+Source_E,fr ,FR
+Source_D,ESP,ES
+Source_C,ITA,IT
+Source_E,UK,UK
+Source_A, france,FR
+Source_E,esp,ES
+Source_B, united kingdom,UK
+Source_D,deu,DE
+Source_C, us,US
+Source_D,united states ,US
+Source_E,italy ,IT
+Source_D, GBR,UK
+Source_E,gbr,UK
+Source_D,FR ,FR
+Source_A,ITA,IT
+Source_D,GBR,UK
+Source_A, ES,ES
+Source_D,FRA,FR
+Source_A, DEU,DE
+Source_C,USA ,US
+Source_A,ESP ,ES
+Source_D,es ,ES
+Source_D,us,US
+Source_A,us,US
+Source_A, united kingdom,UK
+Source_D,FR,FR
+Source_D,it,IT
+Source_C,GBR,UK
+Source_B,SPAIN,ES
+Source_C,gb ,UK
+Source_E,uk,UK
+Source_A,es,ES
+Source_A,us,US
+Source_D, italy,IT
+Source_B,it,IT
+Source_C,FRANCE,FR
+Source_C, germany,DE
+Source_D,FRA ,FR
+Source_E,GBR,UK
+Source_C,ITA,IT
+Source_C,FRANCE,FR
+Source_C,FRANCE,FR
+Source_E,ESP ,ES
+Source_D,US,US
+Source_D, spain,ES
+Source_A,US ,US
+Source_B,uk,UK
+Source_E,de ,DE
+Source_E,france ,FR
+Source_B, ESP,ES
+Source_C,de,DE
+Source_A,FR,FR
+Source_B, ITA,IT
+Source_E, IT,IT
+Source_C, FRA,FR
+Source_B,fr,FR
+Source_E,ES,ES
+Source_D,ita,IT
+Source_E,IT ,IT
+Source_A,DEU ,DE
+Source_C,ITALY,IT
+Source_A,DEU ,DE
+Source_B,es,ES
+Source_C, DEU,DE
+Source_C, IT,IT
+Source_E,IT,IT
+Source_B, fr,FR
+Source_A,UNITED STATES,US
+Source_B,de,DE
+Source_D,united states ,US
+Source_A,it,IT
+Source_D,de,DE
+Source_D,spain,ES
+Source_C,ITA ,IT
+Source_D,germany ,DE
+Source_B,IT,IT
+Source_D, ITA,IT
+Source_C,USA,US
+Source_E, gb,UK
+Source_E,it ,IT
+Source_C,it,IT
+Source_E,es,ES
+Source_B, spain,ES
+Source_C, DE,DE
+Source_C,DEU ,DE
+Source_D,ES,ES
+Source_B,it ,IT
+Source_D, italy,IT
+Source_D,spain,ES
+Source_C,DE,DE
+Source_D,italy ,IT
+Source_C,fra,FR
+Source_E,ita,IT
+Source_B,spain,ES
+Source_A,ESP ,ES
+Source_B,US,US
+Source_A, gb,UK
+Source_A,france,FR
+Source_E,ES,ES
+Source_D,es ,ES
+Source_C, us,US
+Source_B,de,DE
+Source_C,ESP,ES
+Source_E,ESP ,ES
+Source_C,de,DE
+Source_B,DEU,DE
+Source_D,italy,IT
+Source_A,france,FR
+Source_D, FR,FR
+Source_A,FRA,FR
+Source_B, spain,ES
+Source_C,italy,IT
+Source_A, gb,UK
+Source_E, GBR,UK
+Source_D,ESP,ES
+Source_A,united kingdom,UK
+Source_C,UK,UK
+Source_D,ES ,ES
+Source_D,fra,FR
+Source_C,it ,IT
+Source_D, FRA,FR
+Source_D,UK ,UK
+Source_A,ES ,ES
+Source_E,italy ,IT
+Source_D,UNITED KINGDOM,UK
+Source_E,fr,FR
+Source_B,es ,ES
+Source_C, gb,UK
+Source_C, FR,FR
+Source_E,fra,FR
+Source_B,USA,US
+Source_B,FR,FR
+Source_E,USA,US
+Source_D,italy,IT
+Source_A,esp,ES
+Source_D,UNITED STATES,US
+Source_E,united kingdom ,UK
+Source_B,DE,DE
+Source_C,france,FR
+Source_A,DEU,DE
+Source_E,IT ,IT
+Source_A,spain ,ES
+Source_C,ITA,IT
+Source_B, united kingdom,UK
+Source_A,ES ,ES
+Source_E,ESP,ES
+Source_C,ita,IT

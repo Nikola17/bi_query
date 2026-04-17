@@ -1,5 +1,37 @@
-ProductID,ProductName,CategoryName,Revenue
-P001,Ordinateur Pro,High-Tech,1200
-P002,Imprimante,Bureau,340
-P003,Ecran 27 pouces,High-Tech,2500
-P004,Ecran 27 pouces,Multimedia,2500
+ProductID,ProductName,Category,SubCategory,Revenue
+P001,Ordinateur B,High-Tech,Ordinateurs,9219.57
+P002,Ordinateur C,High-Tech,Ordinateurs,116161.09
+P003,Ordinateur D,High-Tech,Ordinateurs,77990.1
+P004,Ecran E,High-Tech,Ecrans,144342.98
+P005,Ecran F,High-Tech,Ecrans,94434.07
+P006,Ecran G,High-Tech,Ecrans,15718.12
+P007,Tablette H,High-Tech,Tablettes,49879.54
+P008,Tablette I,High-Tech,Tablettes,13740.36
+P009,Tablette J,High-Tech,Tablettes,183591.63
+P010,Smartphone K,High-Tech,Smartphones,82953.42
+P011,Smartphone L,High-Tech,Smartphones,29475.13
+P012,Smartphone M,High-Tech,Smartphones,165192.38
+P013,Imprimante N,Bureau,Imprimantes,68697.44
+P014,Imprimante O,Bureau,Imprimantes,164676.45
+P015,Imprimante P,Bureau,Imprimantes,100057.37
+P016,Meuble Q,Bureau,Meubles,22506.01
+P017,Meuble R,Bureau,Meubles,189705.93
+P018,Meuble S,Bureau,Meubles,68231.91
+P019,Fourniture T,Bureau,Fournitures,172543.89
+P020,Fourniture U,Bureau,Fournitures,15557.1
+P021,Fourniture V,Bureau,Fournitures,119612.93
+P022,Machine W,Bureau,Machines,193439.88
+P023,Machine X,Bureau,Machines,128639.73
+P024,Machine Y,Bureau,Machines,141161.56
+P025,Cable Z,Accessoires,Cables,58309.65
+P026,Cable A,Accessoires,Cables,34700.96
+P027,Cable B,Accessoires,Cables,131287.9
+P028,Souri C,Accessoires,Souris,138980.02
+P029,Souri D,Accessoires,Souris,63334.98
+P030,Souri E,Accessoires,Souris,71473.35
+P031,Clavier F,Accessoires,Claviers,64581.94
+P032,Clavier G,Accessoires,Claviers,20345.77
+P033,Clavier H,Accessoires,Claviers,126026.72
+P034,Casque I,Accessoires,Casques,77410.47
+P035,Casque J,Accessoires,Casques,77591.0
+P036,Casque K,Accessoires,Casques,22082.27

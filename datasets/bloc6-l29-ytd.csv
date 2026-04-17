@@ -1,9 +1,301 @@
 OrderDate,Revenue,Region
-2024-01-15,2500,FR
-2024-02-20,1800,ES
-2024-03-10,3200,DE
-2024-04-05,2100,FR
-2024-05-15,2800,IT
-2025-01-10,2900,FR
-2025-02-15,2400,ES
-2025-03-20,3800,DE
+2024-08-18,9225.65,Hauts-de-France
+2024-08-18,2020.71,Bourgogne-Franche-Comte
+2024-01-05,1063.96,Centre-Val de Loire
+2023-07-27,2201.4,Corse
+2024-01-09,1063.96,Pays de la Loire
+2023-11-23,2473.97,Ile-de-France
+2024-11-23,2126.96,Grand Est
+2023-04-01,9225.65,Corse
+2023-02-17,213.28,Ile-de-France
+2025-01-07,678.44,Hauts-de-France
+2023-06-13,2232.07,Auvergne-Rhone-Alpes
+2024-04-19,531.98,Auvergne-Rhone-Alpes
+2025-02-23,4052.86,Bretagne
+2023-01-15,842.12,Occitanie
+2023-02-13,3822.64,Corse
+2025-01-11,4876.11,Ile-de-France
+2023-04-11,1162.66,Occitanie
+2024-02-14,3189.36,Auvergne-Rhone-Alpes
+2023-03-15,1078.58,Centre-Val de Loire
+2024-09-24,2035.32,Grand Est
+2023-10-22,9574.68,Bretagne
+2024-01-13,1399.02,Nouvelle-Aquitaine
+2023-09-30,1594.68,Hauts-de-France
+2023-11-19,426.56,Ile-de-France
+2024-03-21,7380.52,Occitanie
+2023-11-18,3531.72,Hauts-de-France
+2023-02-19,4152.14,Ile-de-France
+2024-08-31,1227.35,Pays de la Loire
+2024-05-17,2813.95,Ile-de-France
+2025-03-13,1168.36,Pays de la Loire
+2025-01-04,2396.7,Normandie
+2024-03-14,1869.8,Hauts-de-France
+2024-03-03,2393.67,Hauts-de-France
+2025-03-23,2017.46,Auvergne-Rhone-Alpes
+2025-03-01,2109.49,Corse
+2023-10-15,1168.36,Hauts-de-France
+2023-09-13,880.56,Corse
+2024-01-02,2232.07,Centre-Val de Loire
+2024-12-03,4242.04,Provence-Alpes-Cote d'Azur
+2024-05-14,8625.36,Occitanie
+2023-01-09,3531.72,Bretagne
+2025-01-07,440.28,Centre-Val de Loire
+2023-10-05,2920.9,Ile-de-France
+2023-08-04,3492.25,Hauts-de-France
+2025-02-26,161.88,Bourgogne-Franche-Comte
+2024-04-30,1594.68,Hauts-de-France
+2023-08-03,562.79,Bretagne
+2024-07-13,8126.85,Pays de la Loire
+2024-05-17,5596.08,Occitanie
+2024-06-14,2251.16,Auvergne-Rhone-Alpes
+2024-04-15,934.9,Occitanie
+2023-06-20,12369.85,Normandie
+2023-11-13,2804.7,Bretagne
+2023-06-22,4312.68,Centre-Val de Loire
+2023-02-08,421.06,Nouvelle-Aquitaine
+2023-11-17,6228.21,Bretagne
+2024-04-07,4784.04,Ile-de-France
+2025-02-18,1603.98,Occitanie
+2023-09-06,2791.6,Occitanie
+2023-12-21,323.76,Corse
+2024-10-04,6415.92,Occitanie
+2025-01-12,2581.56,Ile-de-France
+2025-03-24,880.56,Occitanie
+2023-11-05,1227.35,Auvergne-Rhone-Alpes
+2025-01-02,3189.36,Normandie
+2023-10-19,6363.06,Auvergne-Rhone-Alpes
+2024-08-17,4253.92,Auvergne-Rhone-Alpes
+2023-10-15,323.76,Provence-Alpes-Cote d'Azur
+2023-08-08,242.82,Ile-de-France
+2023-12-28,4052.86,Nouvelle-Aquitaine
+2025-03-10,1063.48,Nouvelle-Aquitaine
+2023-01-27,4811.94,Corse
+2023-02-22,2251.16,Normandie
+2024-01-25,2393.67,Ile-de-France
+2023-12-22,1320.84,Corse
+2024-09-08,1399.02,Bretagne
+2024-01-21,798.9,Bourgogne-Franche-Comte
+2024-10-21,265.99,Ile-de-France
+2024-06-27,80.94,Corse
+2025-02-17,934.9,Hauts-de-France
+2024-04-08,10087.3,Hauts-de-France
+2024-09-11,5390.12,Ile-de-France
+2024-09-25,1320.84,Corse
+2024-02-13,8069.84,Pays de la Loire
+2025-02-15,8484.08,Grand Est
+2024-10-08,1594.68,Grand Est
+2024-12-19,8484.08,Grand Est
+2024-02-04,1869.8,Centre-Val de Loire
+2023-05-27,8437.96,Bretagne
+2024-08-12,6995.1,Ile-de-France
+2023-12-13,1688.37,Nouvelle-Aquitaine
+2025-01-05,2017.46,Occitanie
+2023-05-12,6052.38,Pays de la Loire
+2023-07-17,2336.72,Occitanie
+2023-03-03,860.52,Occitanie
+2024-08-23,4876.11,Grand Est
+2023-12-08,404.7,Hauts-de-France
+2023-06-07,3994.5,Occitanie
+2024-11-17,7973.4,Grand Est
+2024-05-11,2325.32,Corse
+2024-05-29,2095.35,Corse
+2023-09-10,1869.8,Pays de la Loire
+2024-10-26,10132.15,Corse
+2024-12-21,7063.44,Occitanie
+2024-08-21,7181.01,Pays de la Loire
+2023-03-01,639.84,Centre-Val de Loire
+2023-07-05,4787.34,Hauts-de-France
+2024-01-28,1911.32,Bourgogne-Franche-Comte
+2024-06-17,4787.34,Auvergne-Rhone-Alpes
+2025-02-10,1066.4,Ile-de-France
+2024-03-26,10103.55,Auvergne-Rhone-Alpes
+2023-01-09,80.94,Grand Est
+2025-02-09,490.94,Pays de la Loire
+2023-06-04,242.82,Nouvelle-Aquitaine
+2023-06-17,323.76,Hauts-de-France
+2024-02-09,8928.28,Auvergne-Rhone-Alpes
+2024-01-18,698.45,Corse
+2023-05-01,3739.6,Grand Est
+2024-07-07,2696.45,Corse
+2024-10-21,4034.92,Pays de la Loire
+2023-09-23,1399.02,Occitanie
+2025-03-26,3994.5,Bretagne
+2023-06-20,6363.06,Ile-de-France
+2024-04-09,1845.13,Hauts-de-France
+2023-11-16,3195.6,Centre-Val de Loire
+2024-07-22,2813.95,Bourgogne-Franche-Comte
+2023-04-15,1116.64,Centre-Val de Loire
+2023-04-20,6469.02,Bretagne
+2024-09-13,2232.07,Ile-de-France
+2025-03-20,1063.96,Provence-Alpes-Cote d'Azur
+2024-07-26,11968.35,Ile-de-France
+2023-06-29,4152.14,Corse
+2023-06-01,3392.2,Centre-Val de Loire
+2024-04-02,5596.08,Nouvelle-Aquitaine
+2024-08-03,80.94,Occitanie
+2023-02-20,6052.38,Centre-Val de Loire
+2023-10-22,1911.32,Provence-Alpes-Cote d'Azur
+2024-07-15,1078.58,Bretagne
+2023-04-26,1063.48,Auvergne-Rhone-Alpes
+2023-05-14,5596.08,Pays de la Loire
+2025-02-14,2791.6,Bretagne
+2023-09-07,440.28,Grand Est
+2024-08-22,1116.64,Occitanie
+2023-02-05,1063.96,Pays de la Loire
+2024-05-11,8126.85,Ile-de-France
+2024-05-24,3250.74,Ile-de-France
+2024-05-20,2035.32,Provence-Alpes-Cote d'Azur
+2024-02-09,7421.91,Bourgogne-Franche-Comte
+2024-07-22,4034.92,Provence-Alpes-Cote d'Azur
+2024-06-05,8928.28,Bourgogne-Franche-Comte
+2024-01-25,404.7,Pays de la Loire
+2023-09-20,2233.28,Corse
+2024-08-20,2017.46,Corse
+2025-01-21,161.88,Bretagne
+2024-01-07,2157.16,Bourgogne-Franche-Comte
+2024-07-23,1721.04,Occitanie
+2025-01-31,2396.7,Normandie
+2024-01-22,1396.9,Occitanie
+2023-12-14,404.7,Nouvelle-Aquitaine
+2025-01-20,1263.18,Ile-de-France
+2024-11-09,2798.04,Nouvelle-Aquitaine
+2023-05-14,6519.84,Nouvelle-Aquitaine
+2024-02-05,4052.86,Ile-de-France
+2023-02-14,1399.02,Nouvelle-Aquitaine
+2023-10-23,245.47,Pays de la Loire
+2024-03-09,10103.55,Occitanie
+2024-02-12,1688.37,Hauts-de-France
+2024-04-13,1743.99,Ile-de-France
+2024-02-25,1911.32,Ile-de-France
+2024-05-18,7380.52,Nouvelle-Aquitaine
+2024-06-11,2473.97,Normandie
+2024-09-07,1597.8,Nouvelle-Aquitaine
+2024-09-28,3531.72,Corse
+2023-02-16,9225.65,Provence-Alpes-Cote d'Azur
+2023-01-12,2791.6,Bretagne
+2023-05-10,880.56,Nouvelle-Aquitaine
+2023-05-18,440.28,Ile-de-France
+2024-09-12,1320.84,Auvergne-Rhone-Alpes
+2023-07-29,698.45,Hauts-de-France
+2023-08-16,1845.13,Corse
+2025-01-14,426.56,Ile-de-France
+2023-08-13,678.44,Bretagne
+2023-11-27,7380.52,Hauts-de-France
+2025-02-23,6415.92,Nouvelle-Aquitaine
+2024-07-17,4152.14,Corse
+2024-12-09,3994.5,Hauts-de-France
+2024-02-06,1721.04,Pays de la Loire
+2023-07-11,2696.45,Provence-Alpes-Cote d'Azur
+2023-05-28,11160.35,Occitanie
+2024-10-29,490.94,Auvergne-Rhone-Alpes
+2023-11-08,213.28,Ile-de-France
+2024-08-08,562.79,Occitanie
+2025-03-07,1743.99,Centre-Val de Loire
+2023-12-14,490.94,Hauts-de-France
+2025-03-14,1743.99,Occitanie
+2024-07-03,7973.4,Bretagne
+2023-03-26,531.98,Grand Est
+2024-04-30,4464.14,Normandie
+2024-11-07,6696.21,Hauts-de-France
+2023-02-04,6062.13,Corse
+2023-10-17,7181.01,Pays de la Loire
+2024-01-26,10781.7,Bourgogne-Franche-Comte
+2023-02-17,6378.72,Provence-Alpes-Cote d'Azur
+2023-05-08,3531.72,Corse
+2024-08-31,2798.04,Auvergne-Rhone-Alpes
+2024-06-22,242.82,Ile-de-France
+2023-02-23,10132.15,Centre-Val de Loire
+2025-03-26,2251.16,Corse
+2023-06-21,2126.96,Bourgogne-Franche-Comte
+2023-04-16,4947.94,Corse
+2023-10-09,1674.96,Corse
+2024-09-09,9895.88,Bretagne
+2024-01-27,2251.16,Corse
+2023-01-31,3207.96,Nouvelle-Aquitaine
+2024-02-16,3739.6,Bourgogne-Franche-Comte
+2025-03-03,7380.52,Grand Est
+2024-01-17,421.06,Pays de la Loire
+2024-02-12,4218.98,Corse
+2023-10-08,6062.13,Nouvelle-Aquitaine
+2024-12-12,3442.08,Occitanie
+2024-11-26,2696.45,Auvergne-Rhone-Alpes
+2023-02-24,2095.35,Grand Est
+2023-01-25,1263.18,Bretagne
+2024-09-23,2473.97,Ile-de-France
+2023-09-15,6363.06,Auvergne-Rhone-Alpes
+2024-12-30,8149.8,Provence-Alpes-Cote d'Azur
+2024-05-09,421.06,Provence-Alpes-Cote d'Azur
+2024-05-14,1765.86,Bourgogne-Franche-Comte
+2023-07-09,5390.12,Corse
+2024-03-30,4811.94,Provence-Alpes-Cote d'Azur
+2023-09-29,2791.6,Auvergne-Rhone-Alpes
+2024-06-13,1066.4,Ile-de-France
+2024-01-21,1597.8,Centre-Val de Loire
+2024-03-03,3259.92,Corse
+2024-08-03,9895.88,Ile-de-France
+2024-10-03,242.82,Ile-de-France
+2024-05-07,4464.14,Normandie
+2024-03-15,421.06,Normandie
+2023-07-30,2232.07,Nouvelle-Aquitaine
+2023-05-08,1125.58,Auvergne-Rhone-Alpes
+2024-12-15,440.28,Normandie
+2024-06-10,404.7,Bourgogne-Franche-Comte
+2024-10-14,2793.8,Corse
+2023-07-17,4889.88,Ile-de-France
+2024-12-13,2232.07,Ile-de-France
+2024-05-25,1617.87,Ile-de-France
+2023-09-10,4787.34,Provence-Alpes-Cote d'Azur
+2025-01-20,1168.36,Corse
+2023-01-13,8082.84,Auvergne-Rhone-Alpes
+2023-01-20,842.12,Nouvelle-Aquitaine
+2023-06-20,5535.39,Occitanie
+2024-09-15,1066.4,Centre-Val de Loire
+2023-04-13,2473.97,Provence-Alpes-Cote d'Azur
+2024-10-31,1625.37,Nouvelle-Aquitaine
+2023-11-03,245.47,Grand Est
+2024-02-11,558.32,Centre-Val de Loire
+2024-04-01,1617.87,Auvergne-Rhone-Alpes
+2024-11-22,1329.95,Corse
+2024-03-02,8069.84,Corse
+2024-04-20,558.32,Ile-de-France
+2023-10-03,11968.35,Grand Est
+2023-12-20,10547.45,Nouvelle-Aquitaine
+2024-04-11,1263.18,Occitanie
+2023-06-28,4811.94,Nouvelle-Aquitaine
+2024-09-05,4052.86,Centre-Val de Loire
+2023-11-14,490.94,Nouvelle-Aquitaine
+2023-09-02,2095.35,Occitanie
+2024-09-27,2035.32,Occitanie
+2024-02-21,6052.38,Centre-Val de Loire
+2025-02-11,1396.9,Corse
+2024-12-30,8928.28,Pays de la Loire
+2023-05-16,7973.4,Ile-de-France
+2023-03-12,2325.32,Bourgogne-Franche-Comte
+2023-03-23,1116.64,Centre-Val de Loire
+2023-05-15,8105.72,Provence-Alpes-Cote d'Azur
+2023-01-21,4152.14,Ile-de-France
+2024-11-29,4253.92,Auvergne-Rhone-Alpes
+2023-07-11,1594.68,Auvergne-Rhone-Alpes
+2024-02-29,2713.76,Provence-Alpes-Cote d'Azur
+2024-05-17,1752.54,Centre-Val de Loire
+2024-11-03,1603.98,Normandie
+2024-08-29,539.29,Ile-de-France
+2023-04-24,2336.72,Hauts-de-France
+2023-12-27,4041.42,Nouvelle-Aquitaine
+2023-03-05,6415.92,Auvergne-Rhone-Alpes
+2024-02-10,8304.28,Corse
+2024-03-25,4876.11,Bourgogne-Franche-Comte
+2024-02-27,5390.12,Pays de la Loire
+2023-05-15,7181.01,Grand Est
+2024-03-07,6052.38,Hauts-de-France
+2023-09-17,2251.16,Pays de la Loire
+2024-01-04,1629.96,Grand Est
+2024-04-11,1329.95,Ile-de-France
+2023-08-13,4947.94,Corse
+2025-03-23,955.66,Hauts-de-France
+2023-10-29,4218.98,Corse
+2023-11-15,5596.08,Provence-Alpes-Cote d'Azur
+2024-12-25,2713.76,Auvergne-Rhone-Alpes
+2023-09-11,10781.7,Grand Est
+2025-03-14,7063.44,Nouvelle-Aquitaine

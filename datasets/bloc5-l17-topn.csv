@@ -1,11 +1,101 @@
 CustomerID,CustomerName,Revenue,Region
-C001,Dupont SA,45000,FR
-C002,Martin Corp,32000,ES
-C003,Bernard et Fils,28000,DE
-C004,Petit SARL,15000,FR
-C005,Garcia SAS,12000,IT
-C006,Leroux SA,8500,FR
-C007,Moreau et Cie,5200,ES
-C008,Simon SARL,3800,DE
-C009,Laurent SA,2100,FR
-C010,Roux Corp,900,IT
+C001,Lambert Emmanuel,106919.22,Occitanie
+C002,Thomas Emmanuel,109754.98,Provence-Alpes-Cote d'Azur
+C003,Durand Claire,58968.46,Normandie
+C004,Laurent Emmanuel,85120.43,Nouvelle-Aquitaine
+C005,Robert Camille,68471.67,Bretagne
+C006,Petit David,121877.21,Provence-Alpes-Cote d'Azur
+C007,Bernard Thomas,89494.61,Nouvelle-Aquitaine
+C008,Girard Luc,76922.6,Normandie
+C009,Durand Paul,107126.73,Corse
+C010,Roux Elena,101733.62,Nouvelle-Aquitaine
+C011,Girard Sophie,128828.12,Normandie
+C012,Roux David,70023.2,Bourgogne-Franche-Comte
+C013,Fontaine Camille,59070.19,Corse
+C014,Lambert Thomas,101965.08,Bretagne
+C015,Fontaine Philippe,37956.75,Corse
+C016,Blanc Marie,83747.2,Pays de la Loire
+C017,Richard Francois,82605.54,Auvergne-Rhone-Alpes
+C018,Richard Camille,44537.03,Normandie
+C019,Simon Luc,89361.22,Nouvelle-Aquitaine
+C020,Roux Antoine,75194.81,Nouvelle-Aquitaine
+C021,Robert Emmanuel,127967.74,Bretagne
+C022,Bernard Claire,104815.47,Grand Est
+C023,Blanc Marc,66793.35,Ile-de-France
+C024,Bernard Claire,114800.11,Ile-de-France
+C025,Blanc Luc,91614.39,Hauts-de-France
+C026,Garcia Jean,139497.14,Centre-Val de Loire
+C027,Richard Claire,70764.7,Corse
+C028,Petit Elena,59784.92,Bourgogne-Franche-Comte
+C029,Dubois Lucie,47285.44,Bretagne
+C030,Mercier Marie,57054.92,Centre-Val de Loire
+C031,Moreau Claire,80189.29,Occitanie
+C032,Dubois Camille,90362.89,Provence-Alpes-Cote d'Azur
+C033,Bernard Claire,66596.23,Bretagne
+C034,Durand Marie,75770.03,Ile-de-France
+C035,Dubois Lea,88414.55,Bretagne
+C036,Mercier David,76684.5,Ile-de-France
+C037,Mercier Sophie,116990.32,Hauts-de-France
+C038,Durand Lucie,69830.89,Bourgogne-Franche-Comte
+C039,Roux Julie,78303.77,Occitanie
+C040,Lambert Francois,114224.51,Ile-de-France
+C041,Robert Luc,89133.96,Provence-Alpes-Cote d'Azur
+C042,Leroux David,80644.85,Auvergne-Rhone-Alpes
+C043,Blanc Paul,80285.56,Nouvelle-Aquitaine
+C044,Simon Marc,77895.02,Ile-de-France
+C045,Laurent Lucie,84452.56,Pays de la Loire
+C046,Girard Philippe,132718.81,Occitanie
+C047,Mercier Isabelle,86158.01,Provence-Alpes-Cote d'Azur
+C048,Bernard Veronique,60446.76,Ile-de-France
+C049,Durand Anne,96724.53,Occitanie
+C050,Fontaine Camille,93943.0,Auvergne-Rhone-Alpes
+C051,Leroux Nathalie,75933.75,Bretagne
+C052,Robert Thomas,107368.24,Ile-de-France
+C053,Petit Philippe,81696.88,Provence-Alpes-Cote d'Azur
+C054,Petit Emmanuel,100762.34,Centre-Val de Loire
+C055,Roux Isabelle,73183.72,Pays de la Loire
+C056,Girard Julie,99886.27,Normandie
+C057,Martin Emmanuel,104816.76,Auvergne-Rhone-Alpes
+C058,Dupont Marie,60217.06,Grand Est
+C059,Thomas Lea,54919.94,Normandie
+C060,Bernard Elena,77123.4,Centre-Val de Loire
+C061,Fontaine Michel,81610.39,Pays de la Loire
+C062,Garcia Lucie,111463.99,Ile-de-France
+C063,Martin Emmanuel,74403.55,Grand Est
+C064,Petit Paul,81753.92,Grand Est
+C065,Garcia Thomas,101749.58,Occitanie
+C066,Dubois Emmanuel,82847.98,Ile-de-France
+C067,Dubois Julien,78861.95,Corse
+C068,Petit Lea,86479.93,Nouvelle-Aquitaine
+C069,Moreau Claire,96686.4,Bretagne
+C070,Blanc Michel,100852.85,Occitanie
+C071,Lambert Aurelie,117483.92,Hauts-de-France
+C072,Robert Caroline,66505.85,Nouvelle-Aquitaine
+C073,Petit Sophie,98265.2,Hauts-de-France
+C074,Petit Marie,79729.43,Pays de la Loire
+C075,Lambert Francois,92950.03,Nouvelle-Aquitaine
+C076,Laurent Aurelie,90543.33,Occitanie
+C077,Dubois Antoine,88594.76,Ile-de-France
+C078,Dubois Caroline,95429.44,Auvergne-Rhone-Alpes
+C079,Petit Paul,121456.09,Centre-Val de Loire
+C080,Dubois Paul,65459.65,Grand Est
+C081,Garcia Jean,56847.5,Occitanie
+C082,Leroux Paul,65146.97,Pays de la Loire
+C083,Durand Aurelie,104097.89,Ile-de-France
+C084,Dubois Julie,149521.63,Corse
+C085,Thomas Sarah,96116.87,Bretagne
+C086,Leroux Julien,71687.77,Bourgogne-Franche-Comte
+C087,Simon Luc,60812.69,Grand Est
+C088,Roux Paul,63162.28,Occitanie
+C089,Martin Sophie,88314.48,Occitanie
+C090,Dubois Sarah,71015.78,Bourgogne-Franche-Comte
+C091,Mercier Antoine,102661.03,Bretagne
+C092,Dupont Camille,104687.48,Corse
+C093,Leroux Claire,78988.92,Corse
+C094,Durand Marie,102945.35,Occitanie
+C095,Thomas Camille,86750.21,Bourgogne-Franche-Comte
+C096,Thomas Laurent,57892.23,Pays de la Loire
+C097,Durand Michel,85749.65,Bretagne
+C098,Girard Sarah,57726.09,Corse
+C099,Robert Laurent,98944.61,Bretagne
+C100,Bernard Sarah,64438.69,Centre-Val de Loire

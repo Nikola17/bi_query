@@ -1,4 +1,22 @@
 Page,Message,KPI
 Resume,Ventes OK mais marge en baisse,"CA: 488K, Marge: 68%"
-Causes,Pourquoi la marge baisse-t-elle,Cout moyen +5%
-Actions,Recommandations,"Negocier fournisseurs, ajuster prix"
+Resume,Top 3 produits en croissance,"Prod1: +15%, Prod2: +12%, Prod3: +8%"
+Causes,Pourquoi la marge baisse ?,Cout moyen +5%
+Causes,Categorie la plus impactee,High-Tech: marge -4pts
+Actions,Revoir les tarifs High-Tech,Objectif: +3pts marge
+Actions,Negocier fournisseurs Bureau,Objectif: -8% couts
+Resume,CA mensuel 2024-01,50858.0
+Resume,CA mensuel 2024-02,61110.0
+Resume,CA mensuel 2024-03,65943.0
+Resume,CA mensuel 2024-04,60247.0
+Resume,CA mensuel 2024-05,53704.0
+Resume,CA mensuel 2024-06,45161.0
+Resume,CA mensuel 2024-07,74452.0
+Resume,CA mensuel 2024-08,67840.0
+Resume,CA mensuel 2024-09,40666.0
+Resume,CA mensuel 2024-10,52755.0
+Resume,CA mensuel 2024-11,79812.0
+Resume,CA mensuel 2024-12,60353.0
+Resume,CA mensuel 2025-01,42125.0
+Resume,CA mensuel 2025-02,67056.0
+Resume,CA mensuel 2025-03,43769.0

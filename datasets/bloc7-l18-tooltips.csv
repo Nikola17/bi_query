@@ -1,6 +1,251 @@
-Region,ProductID,Revenue,Category
-Ile-de-France,P001,12500,High-Tech
-Ile-de-France,P002,3400,Bureau
-Auvergne-Rhone-Alpes,P003,8900,High-Tech
-PACA,P001,5600,High-Tech
-PACA,P004,4500,Multimedia
+Region,ProductID,ProductName,Revenue,Category
+Centre-Val de Loire,P023,Machine X,639.84,Bureau
+Nouvelle-Aquitaine,P034,Casque I,584.18,Accessoires
+Provence-Alpes-Cote d'Azur,P009,Tablette J,1688.37,High-Tech
+Centre-Val de Loire,P035,Casque J,798.9,Accessoires
+Provence-Alpes-Cote d'Azur,P003,Ordinateur D,1845.13,High-Tech
+Corse,P013,Imprimante N,7181.01,Bureau
+Grand Est,P035,Casque J,3994.5,Accessoires
+Bretagne,P005,Ecran F,1063.48,High-Tech
+Auvergne-Rhone-Alpes,P036,Casque K,1078.58,Accessoires
+Nouvelle-Aquitaine,P036,Casque K,2157.16,Accessoires
+Auvergne-Rhone-Alpes,P011,Smartphone L,2017.46,High-Tech
+Bretagne,P023,Machine X,1066.4,Bureau
+Bretagne,P010,Smartphone K,10132.15,High-Tech
+Pays de la Loire,P005,Ecran F,3190.44,High-Tech
+Grand Est,P012,Smartphone M,860.52,High-Tech
+Auvergne-Rhone-Alpes,P023,Machine X,853.12,Bureau
+Hauts-de-France,P030,Souri E,842.12,Accessoires
+Ile-de-France,P027,Cable B,3392.2,Accessoires
+Grand Est,P034,Casque I,1752.54,Accessoires
+Nouvelle-Aquitaine,P005,Ecran F,1063.48,High-Tech
+Ile-de-France,P031,Clavier F,7421.91,Accessoires
+Pays de la Loire,P011,Smartphone L,4034.92,High-Tech
+Hauts-de-France,P034,Casque I,2336.72,Accessoires
+Pays de la Loire,P020,Fourniture U,10781.7,Bureau
+Nouvelle-Aquitaine,P018,Meuble S,4778.3,Bureau
+Auvergne-Rhone-Alpes,P034,Casque I,2920.9,Accessoires
+Bretagne,P018,Meuble S,3822.64,Bureau
+Centre-Val de Loire,P018,Meuble S,2866.98,Bureau
+Bourgogne-Franche-Comte,P002,Ordinateur C,3492.25,High-Tech
+Bourgogne-Franche-Comte,P026,Cable A,1869.8,Accessoires
+Grand Est,P028,Souri C,3250.74,Accessoires
+Provence-Alpes-Cote d'Azur,P010,Smartphone K,8105.72,High-Tech
+Provence-Alpes-Cote d'Azur,P031,Clavier F,9895.88,Accessoires
+Nouvelle-Aquitaine,P003,Ordinateur D,5535.39,High-Tech
+Normandie,P006,Ecran G,1116.64,High-Tech
+Nouvelle-Aquitaine,P025,Cable Z,7973.4,Accessoires
+Auvergne-Rhone-Alpes,P014,Imprimante O,490.94,Bureau
+Pays de la Loire,P011,Smartphone L,8069.84,High-Tech
+Centre-Val de Loire,P024,Machine Y,1063.96,Bureau
+Corse,P017,Meuble R,5390.12,Bureau
+Grand Est,P011,Smartphone L,4034.92,High-Tech
+Corse,P023,Machine X,213.28,Bureau
+Hauts-de-France,P010,Smartphone K,2026.43,High-Tech
+Occitanie,P009,Tablette J,1125.58,High-Tech
+Ile-de-France,P006,Ecran G,558.32,High-Tech
+Corse,P019,Fourniture T,4152.14,Bureau
+Ile-de-France,P034,Casque I,1168.36,Accessoires
+Pays de la Loire,P007,Tablette H,80.94,High-Tech
+Grand Est,P003,Ordinateur D,9225.65,High-Tech
+Grand Est,P001,Ordinateur B,3207.96,High-Tech
+Bretagne,P021,Fourniture V,7063.44,Bureau
+Bretagne,P011,Smartphone L,10087.3,High-Tech
+Bretagne,P027,Cable B,678.44,Accessoires
+Provence-Alpes-Cote d'Azur,P035,Casque J,3195.6,Accessoires
+Corse,P020,Fourniture U,10781.7,Bureau
+Corse,P033,Clavier H,2109.49,Accessoires
+Hauts-de-France,P029,Souri D,1761.12,Accessoires
+Centre-Val de Loire,P029,Souri D,2201.4,Accessoires
+Ile-de-France,P027,Cable B,3392.2,Accessoires
+Bretagne,P003,Ordinateur D,3690.26,High-Tech
+Provence-Alpes-Cote d'Azur,P007,Tablette H,242.82,High-Tech
+Ile-de-France,P011,Smartphone L,10087.3,High-Tech
+Corse,P016,Meuble Q,10103.55,Bureau
+Centre-Val de Loire,P007,Tablette H,80.94,High-Tech
+Auvergne-Rhone-Alpes,P013,Imprimante N,4787.34,Bureau
+Provence-Alpes-Cote d'Azur,P025,Cable Z,7973.4,Accessoires
+Bretagne,P003,Ordinateur D,9225.65,High-Tech
+Bretagne,P014,Imprimante O,981.88,Bureau
+Nouvelle-Aquitaine,P002,Ordinateur C,698.45,High-Tech
+Ile-de-France,P017,Meuble R,4042.59,Bureau
+Bretagne,P024,Machine Y,265.99,Bureau
+Provence-Alpes-Cote d'Azur,P012,Smartphone M,4302.6,High-Tech
+Bourgogne-Franche-Comte,P029,Souri D,880.56,Accessoires
+Normandie,P006,Ecran G,2791.6,High-Tech
+Corse,P020,Fourniture U,6469.02,Bureau
+Bretagne,P020,Fourniture U,8625.36,Bureau
+Corse,P007,Tablette H,323.76,High-Tech
+Corse,P026,Cable A,4674.5,Accessoires
+Provence-Alpes-Cote d'Azur,P009,Tablette J,1125.58,High-Tech
+Bretagne,P027,Cable B,3392.2,Accessoires
+Bretagne,P018,Meuble S,4778.3,Bureau
+Hauts-de-France,P012,Smartphone M,3442.08,High-Tech
+Nouvelle-Aquitaine,P036,Casque K,1078.58,Accessoires
+Nouvelle-Aquitaine,P027,Cable B,3392.2,Accessoires
+Nouvelle-Aquitaine,P027,Cable B,1356.88,Accessoires
+Auvergne-Rhone-Alpes,P001,Ordinateur B,6415.92,High-Tech
+Normandie,P003,Ordinateur D,9225.65,High-Tech
+Provence-Alpes-Cote d'Azur,P006,Ecran G,2791.6,High-Tech
+Normandie,P011,Smartphone L,8069.84,High-Tech
+Normandie,P027,Cable B,3392.2,Accessoires
+Normandie,P004,Ecran E,8928.28,High-Tech
+Bretagne,P020,Fourniture U,4312.68,Bureau
+Centre-Val de Loire,P032,Clavier G,2798.04,Accessoires
+Bretagne,P025,Cable Z,3189.36,Accessoires
+Bourgogne-Franche-Comte,P013,Imprimante N,9574.68,Bureau
+Ile-de-France,P005,Ecran F,1063.48,High-Tech
+Hauts-de-France,P009,Tablette J,562.79,High-Tech
+Corse,P009,Tablette J,2251.16,High-Tech
+Ile-de-France,P023,Machine X,1066.4,Bureau
+Pays de la Loire,P016,Meuble Q,8082.84,Bureau
+Corse,P034,Casque I,1168.36,Accessoires
+Auvergne-Rhone-Alpes,P002,Ordinateur C,3492.25,High-Tech
+Bourgogne-Franche-Comte,P009,Tablette J,1688.37,High-Tech
+Occitanie,P007,Tablette H,323.76,High-Tech
+Corse,P027,Cable B,2035.32,Accessoires
+Provence-Alpes-Cote d'Azur,P014,Imprimante O,1227.35,Bureau
+Ile-de-France,P035,Casque J,3195.6,Accessoires
+Nouvelle-Aquitaine,P011,Smartphone L,2017.46,High-Tech
+Grand Est,P029,Souri D,440.28,Accessoires
+Ile-de-France,P005,Ecran F,3190.44,High-Tech
+Corse,P033,Clavier H,8437.96,Accessoires
+Corse,P005,Ecran F,5317.4,High-Tech
+Ile-de-France,P036,Casque K,539.29,Accessoires
+Occitanie,P030,Souri E,1263.18,Accessoires
+Normandie,P011,Smartphone L,2017.46,High-Tech
+Hauts-de-France,P031,Clavier F,12369.85,Accessoires
+Grand Est,P008,Tablette I,6519.84,High-Tech
+Pays de la Loire,P032,Clavier G,5596.08,Accessoires
+Ile-de-France,P032,Clavier G,2798.04,Accessoires
+Hauts-de-France,P008,Tablette I,1629.96,High-Tech
+Occitanie,P004,Ecran E,8928.28,High-Tech
+Grand Est,P003,Ordinateur D,5535.39,High-Tech
+Provence-Alpes-Cote d'Azur,P036,Casque K,2157.16,Accessoires
+Bretagne,P020,Fourniture U,2156.34,Bureau
+Pays de la Loire,P008,Tablette I,8149.8,High-Tech
+Provence-Alpes-Cote d'Azur,P016,Meuble Q,8082.84,Bureau
+Grand Est,P030,Souri E,421.06,Accessoires
+Grand Est,P029,Souri D,2201.4,Accessoires
+Centre-Val de Loire,P028,Souri C,3250.74,Accessoires
+Ile-de-France,P017,Meuble R,2695.06,Bureau
+Centre-Val de Loire,P005,Ecran F,1063.48,High-Tech
+Pays de la Loire,P009,Tablette J,2813.95,High-Tech
+Bretagne,P018,Meuble S,4778.3,Bureau
+Bourgogne-Franche-Comte,P010,Smartphone K,8105.72,High-Tech
+Occitanie,P007,Tablette H,161.88,High-Tech
+Nouvelle-Aquitaine,P005,Ecran F,2126.96,High-Tech
+Bretagne,P027,Cable B,1356.88,Accessoires
+Centre-Val de Loire,P016,Meuble Q,4041.42,Bureau
+Grand Est,P004,Ecran E,11160.35,High-Tech
+Hauts-de-France,P013,Imprimante N,11968.35,Bureau
+Bourgogne-Franche-Comte,P031,Clavier F,7421.91,Accessoires
+Hauts-de-France,P008,Tablette I,1629.96,High-Tech
+Normandie,P014,Imprimante O,490.94,Bureau
+Auvergne-Rhone-Alpes,P012,Smartphone M,2581.56,High-Tech
+Occitanie,P033,Clavier H,4218.98,Accessoires
+Auvergne-Rhone-Alpes,P007,Tablette H,161.88,High-Tech
+Grand Est,P003,Ordinateur D,3690.26,High-Tech
+Centre-Val de Loire,P008,Tablette I,6519.84,High-Tech
+Auvergne-Rhone-Alpes,P007,Tablette H,323.76,High-Tech
+Corse,P020,Fourniture U,4312.68,Bureau
+Centre-Val de Loire,P006,Ecran G,1116.64,High-Tech
+Ile-de-France,P016,Meuble Q,4041.42,Bureau
+Centre-Val de Loire,P017,Meuble R,1347.53,Bureau
+Corse,P009,Tablette J,562.79,High-Tech
+Corse,P022,Machine W,581.33,Bureau
+Pays de la Loire,P013,Imprimante N,7181.01,Bureau
+Grand Est,P035,Casque J,798.9,Accessoires
+Pays de la Loire,P007,Tablette H,404.7,High-Tech
+Auvergne-Rhone-Alpes,P007,Tablette H,323.76,High-Tech
+Nouvelle-Aquitaine,P027,Cable B,678.44,Accessoires
+Corse,P034,Casque I,2336.72,Accessoires
+Centre-Val de Loire,P036,Casque K,1617.87,Accessoires
+Hauts-de-France,P018,Meuble S,955.66,Bureau
+Ile-de-France,P011,Smartphone L,6052.38,High-Tech
+Grand Est,P011,Smartphone L,10087.3,High-Tech
+Corse,P020,Fourniture U,10781.7,Bureau
+Corse,P019,Fourniture T,8304.28,Bureau
+Ile-de-France,P007,Tablette H,323.76,High-Tech
+Nouvelle-Aquitaine,P008,Tablette I,1629.96,High-Tech
+Ile-de-France,P035,Casque J,3195.6,Accessoires
+Ile-de-France,P029,Souri D,440.28,Accessoires
+Bretagne,P031,Clavier F,9895.88,Accessoires
+Nouvelle-Aquitaine,P015,Imprimante P,2121.02,Bureau
+Corse,P007,Tablette H,404.7,High-Tech
+Ile-de-France,P019,Fourniture T,10380.35,Bureau
+Bretagne,P029,Souri D,2201.4,Accessoires
+Provence-Alpes-Cote d'Azur,P036,Casque K,1078.58,Accessoires
+Normandie,P023,Machine X,426.56,Bureau
+Auvergne-Rhone-Alpes,P035,Casque J,3195.6,Accessoires
+Occitanie,P006,Ecran G,1116.64,High-Tech
+Auvergne-Rhone-Alpes,P016,Meuble Q,8082.84,Bureau
+Pays de la Loire,P024,Machine Y,265.99,Bureau
+Provence-Alpes-Cote d'Azur,P014,Imprimante O,736.41,Bureau
+Hauts-de-France,P011,Smartphone L,10087.3,High-Tech
+Pays de la Loire,P022,Machine W,1162.66,Bureau
+Bretagne,P027,Cable B,3392.2,Accessoires
+Bretagne,P035,Casque J,2396.7,Accessoires
+Ile-de-France,P033,Clavier H,8437.96,Accessoires
+Bourgogne-Franche-Comte,P006,Ecran G,558.32,High-Tech
+Hauts-de-France,P013,Imprimante N,11968.35,Bureau
+Provence-Alpes-Cote d'Azur,P023,Machine X,1066.4,Bureau
+Occitanie,P027,Cable B,2035.32,Accessoires
+Auvergne-Rhone-Alpes,P010,Smartphone K,2026.43,High-Tech
+Provence-Alpes-Cote d'Azur,P036,Casque K,1078.58,Accessoires
+Bretagne,P014,Imprimante O,490.94,Bureau
+Occitanie,P019,Fourniture T,10380.35,Bureau
+Grand Est,P012,Smartphone M,860.52,High-Tech
+Hauts-de-France,P030,Souri E,2105.3,Accessoires
+Ile-de-France,P016,Meuble Q,8082.84,Bureau
+Pays de la Loire,P031,Clavier F,9895.88,Accessoires
+Centre-Val de Loire,P032,Clavier G,1399.02,Accessoires
+Auvergne-Rhone-Alpes,P013,Imprimante N,7181.01,Bureau
+Corse,P001,Ordinateur B,3207.96,High-Tech
+Ile-de-France,P007,Tablette H,161.88,High-Tech
+Bourgogne-Franche-Comte,P008,Tablette I,6519.84,High-Tech
+Corse,P005,Ecran F,5317.4,High-Tech
+Auvergne-Rhone-Alpes,P002,Ordinateur C,2095.35,High-Tech
+Provence-Alpes-Cote d'Azur,P005,Ecran F,2126.96,High-Tech
+Normandie,P016,Meuble Q,2020.71,Bureau
+Hauts-de-France,P015,Imprimante P,6363.06,Bureau
+Grand Est,P006,Ecran G,558.32,High-Tech
+Centre-Val de Loire,P003,Ordinateur D,5535.39,High-Tech
+Ile-de-France,P026,Cable A,1869.8,Accessoires
+Auvergne-Rhone-Alpes,P016,Meuble Q,10103.55,Bureau
+Occitanie,P013,Imprimante N,7181.01,Bureau
+Bourgogne-Franche-Comte,P025,Cable Z,3189.36,Accessoires
+Grand Est,P025,Cable Z,6378.72,Accessoires
+Normandie,P035,Casque J,1597.8,Accessoires
+Bretagne,P006,Ecran G,2791.6,High-Tech
+Hauts-de-France,P022,Machine W,581.33,Bureau
+Auvergne-Rhone-Alpes,P031,Clavier F,9895.88,Accessoires
+Auvergne-Rhone-Alpes,P015,Imprimante P,4242.04,Bureau
+Bretagne,P002,Ordinateur C,1396.9,High-Tech
+Centre-Val de Loire,P029,Souri D,1761.12,Accessoires
+Pays de la Loire,P004,Ecran E,6696.21,High-Tech
+Bretagne,P003,Ordinateur D,1845.13,High-Tech
+Ile-de-France,P005,Ecran F,4253.92,High-Tech
+Nouvelle-Aquitaine,P006,Ecran G,1116.64,High-Tech
+Hauts-de-France,P007,Tablette H,161.88,High-Tech
+Hauts-de-France,P001,Ordinateur B,6415.92,High-Tech
+Bretagne,P031,Clavier F,4947.94,Accessoires
+Pays de la Loire,P004,Ecran E,6696.21,High-Tech
+Occitanie,P021,Fourniture V,5297.58,Bureau
+Ile-de-France,P006,Ecran G,1674.96,High-Tech
+Corse,P022,Machine W,2325.32,Bureau
+Bretagne,P011,Smartphone L,4034.92,High-Tech
+Normandie,P036,Casque K,539.29,Accessoires
+Ile-de-France,P020,Fourniture U,6469.02,Bureau
+Corse,P024,Machine Y,797.97,Bureau
+Bretagne,P010,Smartphone K,2026.43,High-Tech
+Bretagne,P025,Cable Z,3189.36,Accessoires
+Grand Est,P026,Cable A,934.9,Accessoires
+Provence-Alpes-Cote d'Azur,P019,Fourniture T,8304.28,Bureau
+Ile-de-France,P013,Imprimante N,7181.01,Bureau
+Ile-de-France,P016,Meuble Q,4041.42,Bureau
+Occitanie,P013,Imprimante N,4787.34,Bureau
+Corse,P004,Ecran E,8928.28,High-Tech
+Corse,P003,Ordinateur D,9225.65,High-Tech
+Bretagne,P022,Machine W,2325.32,Bureau
+Corse,P021,Fourniture V,8829.3,Bureau
