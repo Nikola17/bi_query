@@ -90,10 +90,16 @@
       <section id="lessons" class="section section-alt">
         <div class="container">
           <div class="section-head">
-            <h2>Leçons complètes (12)</h2>
+            <h2 id="lessons-title">Leçons complètes</h2>
             <div class="filters">
               <select id="lesson-filter" aria-label="Filtrer les leçons par thème">
                 <option value="all">Tous les thèmes</option>
+              </select>
+              <select id="level-filter" aria-label="Filtrer les leçons par niveau">
+                <option value="all">Tous les niveaux</option>
+                <option value="Débutant">Débutant</option>
+                <option value="Intermédiaire">Intermédiaire</option>
+                <option value="Avancé">Avancé</option>
               </select>
               <input id="lesson-search" type="search" placeholder="Rechercher une leçon..." />
             </div>
@@ -164,24 +170,44 @@
             <tbody id="lab-rows"></tbody>
           </table>
         </div>
+        <div class="section-head top-space">
+          <h3>Datasets et défis (Phase 2)</h3>
+        </div>
+        <div id="dataset-list" class="modules-grid"></div>
+        <div class="section-head top-space">
+          <h3>Simulateurs interactifs (Phase 2)</h3>
+        </div>
+        <div class="modules-grid">
+          <article class="card">
+            <h4>Simulateur de relations</h4>
+            <p class="muted">Choisis un modèle et observe l'impact sur la qualité de l'analyse.</p>
+            <label for="relation-mode">Type de modèle :</label>
+            <select id="relation-mode">
+              <option value="star">Schéma en étoile (recommandé)</option>
+              <option value="snowflake">Snowflake</option>
+              <option value="flat">Table unique "flat"</option>
+            </select>
+            <p id="relation-feedback" class="sim-feedback" aria-live="polite"></p>
+          </article>
+          <article class="card">
+            <h4>Simulateur contexte DAX</h4>
+            <p class="muted">Teste l'effet d'un filtre sur le KPI [CA].</p>
+            <label for="dax-filter">Filtre :</label>
+            <select id="dax-filter">
+              <option value="all">Tous pays</option>
+              <option value="fr">France</option>
+              <option value="es">Espagne</option>
+              <option value="de">Allemagne</option>
+            </select>
+            <p id="dax-feedback" class="sim-feedback" aria-live="polite"></p>
+          </article>
+        </div>
       </section>
 
       <section id="projects" class="section container">
-        <h2>Mini projet final (MVP)</h2>
-        <article class="card">
-          <h3>Projet — Dashboard ventes NovaRetail</h3>
-          <ol>
-            <li>Nettoyage Power Query (fichiers CSV + Excel).</li>
-            <li>Modélisation (star schema + calendrier).</li>
-            <li>Mesures DAX : CA, marge, N vs N-1.</li>
-            <li>Dashboard final : KPIs, tendances, segments.</li>
-            <li>Interprétation métier et recommandations.</li>
-          </ol>
-          <label class="checkbox-line">
-            <input type="checkbox" data-track="mini-project" />
-            Marquer le mini projet comme terminé
-          </label>
-        </article>
+        <h2>Projets métiers (Phase 2)</h2>
+        <p class="muted">Plusieurs cas pour assembler Power Query, modèle, DAX et storytelling.</p>
+        <div id="projects-list" class="modules-grid"></div>
       </section>
     </main>
 

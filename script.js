@@ -301,10 +301,132 @@ const lessons = [
   }
 ];
 
+const phase2Lessons = [
+  {
+    id: 'l13',
+    theme: 'Power Query',
+    level: 'Intermédiaire',
+    title: 'L13 — Group By avancé avec indicateurs qualité',
+    objective: 'Agréger les données et contrôler les écarts.',
+    example: 'Suivi hebdomadaire des ventes par région.',
+    visual: { type: 'Avant / Après', before: 'Lignes transactionnelles', after: 'Table agrégée avec KPI qualité' },
+    steps: ['Group by région', 'Créer CA moyen', 'Ajouter colonne contrôle'],
+    exercise: 'Construis un résumé hebdo avec anomalie >15%.',
+    solution: 'Agréger + colonne conditionnelle de contrôle.',
+    simple: 'Tu réduis les lignes pour mieux piloter.',
+    pitfalls: ['Agrégation sur mauvaise clé'],
+    summary: ['Agréger utile', 'Contrôle qualité', 'Règles claires'],
+    quiz: { question: 'Group By sert à :', options: ['Agréger', 'Joindre', 'Filtrer date'], answer: 0, explain: 'Group By consolide les données.' }
+  },
+  {
+    id: 'l14',
+    theme: 'Power Query',
+    level: 'Avancé',
+    title: 'L14 — Paramètres et requêtes de référence',
+    objective: 'Rendre les flux de transformation réutilisables.',
+    example: 'Changer le dossier source sans réécrire le flux.',
+    visual: { type: 'Paramétrage', before: 'Chemins codés en dur', after: 'Paramètre SourceFolder' },
+    steps: ['Créer paramètre', 'Utiliser requête référence', 'Tester changement'],
+    exercise: 'Paramètre le dossier et teste 2 environnements.',
+    solution: 'Un paramètre + 2 requêtes de référence.',
+    simple: 'Tu fais un flux flexible et maintenable.',
+    pitfalls: ['Paramètre non appliqué partout'],
+    summary: ['Réutilisable', 'Flexible', 'Propre'],
+    quiz: { question: 'Un paramètre Power Query permet :', options: ['Changer facilement une valeur clé', 'Créer un visuel', 'Activer drill-down'], answer: 0, explain: 'Paramètre = valeur configurable.' }
+  },
+  {
+    id: 'l15',
+    theme: 'Modélisation',
+    level: 'Intermédiaire',
+    title: 'L15 — Cardinalités et sens de filtre',
+    objective: 'Diagnostiquer les erreurs de relation.',
+    example: 'Total incohérent à cause d’un filtre bidirectionnel.',
+    visual: { type: 'Schéma', before: 'Relations ambiguës', after: 'Relations 1-* avec filtre simple' },
+    steps: ['Identifier table fait', 'Corriger cardinalité', 'Tester total'],
+    exercise: 'Corrige un modèle qui double le CA.',
+    solution: 'Filtre simple + clé unique côté dimension.',
+    simple: 'Un mauvais lien peut casser tout le rapport.',
+    pitfalls: ['Bidirectionnel inutile'],
+    summary: ['Cardinalité correcte', 'Filtre contrôlé', 'Totaux fiables'],
+    quiz: { question: 'Le sens de filtre recommandé par défaut est :', options: ['Simple', 'Double', 'Aucun'], answer: 0, explain: 'Simple évite ambiguïtés et lenteurs.' }
+  },
+  {
+    id: 'l16',
+    theme: 'DAX',
+    level: 'Intermédiaire',
+    title: 'L16 — Variables et lisibilité des mesures',
+    objective: 'Structurer une mesure DAX pro.',
+    example: 'Marge % avec logique intermédiaire.',
+    visual: { type: 'Code', before: 'Formule longue illisible', after: 'VAR Revenue / VAR Cost / RETURN' },
+    steps: ['Découper en VAR', 'Nommer explicitement', 'Tester'],
+    exercise: 'Réécris une mesure complexe avec VAR.',
+    solution: 'Variables intermédiaires puis RETURN final.',
+    simple: 'Les VAR te font gagner du temps.',
+    pitfalls: ['Noms vagues'],
+    summary: ['Lisible', 'Maintenable', 'Fiable'],
+    quiz: { question: 'VAR en DAX sert surtout à :', options: ['Rendre la mesure plus lisible', 'Importer des données', 'Créer relation'], answer: 0, explain: 'VAR clarifie et simplifie le débogage.' }
+  },
+  {
+    id: 'l17',
+    theme: 'DAX',
+    level: 'Avancé',
+    title: 'L17 — TOPN et segmentation client',
+    objective: 'Isoler les segments à forte valeur.',
+    example: 'Top 10 clients et part du CA.',
+    visual: { type: 'Segmentation', before: 'Liste complète clients', after: 'Top N avec part relative' },
+    steps: ['Créer mesure CA', 'Créer table virtuelle TOPN', 'Comparer total'],
+    exercise: 'Construis un indicateur part du Top 10.',
+    solution: 'TOPN + CALCULATE + DIVIDE.',
+    simple: 'Tu identifies vite les clients qui pèsent le plus.',
+    pitfalls: ['Contexte de filtre oublié'],
+    summary: ['Prioriser', 'Analyser', 'Décider'],
+    quiz: { question: 'TOPN permet de :', options: ['Garder les N meilleurs éléments', 'Créer des dates', 'Nettoyer nulls'], answer: 0, explain: 'TOPN retourne les N premières lignes selon un tri.' }
+  },
+  {
+    id: 'l18',
+    theme: 'Visualisation',
+    level: 'Intermédiaire',
+    title: 'L18 — Tooltips et drill-through',
+    objective: 'Créer une navigation d’analyse efficace.',
+    example: 'Passer d’une vue région à détail produit.',
+    visual: { type: 'Navigation', before: 'Vue figée', after: 'Tooltip + page drill-through' },
+    steps: ['Créer page détail', 'Activer drill-through', 'Ajouter tooltip'],
+    exercise: 'Active le drill-through sur la région.',
+    solution: 'Champ région en drill-through + tooltip dédié.',
+    simple: 'Tu passes du résumé au détail en un clic.',
+    pitfalls: ['Page détail surchargée'],
+    summary: ['Navigation claire', 'Détail utile', 'Rapide'],
+    quiz: { question: 'Le drill-through sert à :', options: ['Aller vers une page de détail filtrée', 'Exporter CSV', 'Changer thème'], answer: 0, explain: 'Drill-through transmet le contexte du point cliqué.' }
+  }
+];
+
+lessons.push(...phase2Lessons);
+
+lessons.forEach((lesson, idx) => {
+  if (!lesson.level) {
+    if (idx < 6) lesson.level = 'Débutant';
+    else if (idx < 13) lesson.level = 'Intermédiaire';
+    else lesson.level = 'Avancé';
+  }
+});
+
 const planStatus = [
-  { phase: 'Phase 1 — MVP', done: '100%', note: 'Accueil, parcours, 12 leçons, quiz simples interactifs, mini projet, progression et bibliothèque visuelle de base livrés.' },
-  { phase: 'Phase 2 — Version solide', done: '20%', note: 'Base démarrée: filtres, recherche et structure prête pour 30+ leçons.' },
+  { phase: 'Phase 1 — MVP', done: '100%', note: 'Phase 1 terminée et stabilisée.' },
+  { phase: 'Phase 2 — Version solide', done: '55%', note: 'Leçons étendues, filtres thème+niveau, datasets, simulateurs et projets métiers ajoutés.' },
   { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
+];
+
+const datasets = [
+  { id: 'sales', name: 'Dataset ventes multi-pays', level: 'Facile', format: 'CSV', rows: 2500 },
+  { id: 'hr', name: 'Dataset RH (effectifs / turnover)', level: 'Moyen', format: 'CSV', rows: 1200 },
+  { id: 'stock', name: 'Dataset stock & ruptures', level: 'Difficile', format: 'CSV', rows: 3100 }
+];
+
+const projects = [
+  { id: 'p-sales', title: 'Projet ventes', goal: 'Piloter CA, marge et objectifs commerciaux.' },
+  { id: 'p-rh', title: 'Projet RH', goal: 'Suivre effectif, absentéisme et turnover.' },
+  { id: 'p-budget', title: 'Projet budget', goal: 'Comparer réalisé vs budget par centre de coût.' },
+  { id: 'p-stock', title: 'Projet stock', goal: 'Identifier ruptures et surstocks par famille.' }
 ];
 
 const labData = [
@@ -319,6 +441,7 @@ const themeKey = 'pba-theme';
 const modulesList = document.getElementById('modules-list');
 const themeList = document.getElementById('theme-list');
 const lessonFilter = document.getElementById('lesson-filter');
+const levelFilter = document.getElementById('level-filter');
 const lessonSearch = document.getElementById('lesson-search');
 const lessonsList = document.getElementById('lessons-list');
 const planStatusList = document.getElementById('plan-status-list');
@@ -326,6 +449,9 @@ const progressFill = document.getElementById('progress-fill');
 const progressValue = document.getElementById('progress-value');
 const yearFilter = document.getElementById('year-filter');
 const labRows = document.getElementById('lab-rows');
+const lessonsTitle = document.getElementById('lessons-title');
+const datasetList = document.getElementById('dataset-list');
+const projectsList = document.getElementById('projects-list');
 
 function getThemes() {
   return [...new Set(lessons.map((lesson) => lesson.theme))];
@@ -370,12 +496,14 @@ function renderModules() {
 
 function getFilteredLessons() {
   const filter = lessonFilter.value;
+  const level = levelFilter.value;
   const q = lessonSearch.value.trim().toLowerCase();
   return lessons.filter((lesson) => {
     const themeMatch = filter === 'all' || lesson.theme === filter;
+    const levelMatch = level === 'all' || lesson.level === level;
     const text = `${lesson.title} ${lesson.objective} ${lesson.example}`.toLowerCase();
     const searchMatch = !q || text.includes(q);
-    return themeMatch && searchMatch;
+    return themeMatch && levelMatch && searchMatch;
   });
 }
 
@@ -388,7 +516,7 @@ function renderLessons() {
       <details class="card lesson-card">
         <summary>
           <strong>${lesson.title}</strong>
-          <span class="lesson-theme">${lesson.theme}</span>
+          <span class="lesson-theme">${lesson.theme} • ${lesson.level}</span>
         </summary>
         <div class="lesson-content">
           <p><strong>Ce que tu vas savoir faire :</strong> ${lesson.objective}</p>
@@ -549,6 +677,99 @@ function renderLab() {
     .join('');
 }
 
+function csvFromRows(rows) {
+  const headers = Object.keys(rows[0]);
+  const lines = [headers.join(',')];
+  rows.forEach((row) => {
+    lines.push(headers.map((header) => row[header]).join(','));
+  });
+  return lines.join('\n');
+}
+
+function downloadCsv(content, filename) {
+  const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function renderDatasets() {
+  datasetList.innerHTML = datasets
+    .map(
+      (dataset) => `
+      <article class="card">
+        <h4>${dataset.name}</h4>
+        <p class="muted">Niveau: ${dataset.level} • Format: ${dataset.format} • Lignes: ~${dataset.rows}</p>
+        <p>Défi guidé: nettoyer les types, créer les KPI de base et vérifier les écarts.</p>
+        <button class="btn btn-ghost" type="button" data-dataset="${dataset.id}">Télécharger ${dataset.format}</button>
+      </article>
+    `
+    )
+    .join('');
+
+  document.querySelectorAll('[data-dataset]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.dataset;
+      const rows = [
+        { Year: 2024, Region: 'FR', Revenue: 250000, Target: 240000 },
+        { Year: 2024, Region: 'ES', Revenue: 180000, Target: 190000 },
+        { Year: 2025, Region: 'DE', Revenue: 210000, Target: 200000 }
+      ];
+      downloadCsv(csvFromRows(rows), `novaretail_${id}.csv`);
+    });
+  });
+}
+
+function renderProjects() {
+  projectsList.innerHTML = projects
+    .map(
+      (project) => `
+      <article class="card module">
+        <h3>${project.title}</h3>
+        <p>${project.goal}</p>
+        <label class="checkbox-line">
+          <input type="checkbox" data-track="${project.id}" />
+          Projet terminé
+        </label>
+      </article>
+    `
+    )
+    .join('');
+}
+
+function initSimulators() {
+  const relationMode = document.getElementById('relation-mode');
+  const relationFeedback = document.getElementById('relation-feedback');
+  const daxFilter = document.getElementById('dax-filter');
+  const daxFeedback = document.getElementById('dax-feedback');
+
+  const relationMessages = {
+    star: '✅ Excellent choix : modèle robuste et performant pour Power BI.',
+    snowflake: '⚠️ Correct mais plus complexe à maintenir pour un débutant.',
+    flat: '❌ Risque élevé: faible lisibilité et scalabilité limitée.'
+  };
+
+  const daxValues = { all: 640000, fr: 250000, es: 180000, de: 210000 };
+  const daxPct = { all: 100, fr: 39, es: 28, de: 33 };
+
+  const updateRelation = () => {
+    relationFeedback.textContent = relationMessages[relationMode.value];
+  };
+
+  const updateDax = () => {
+    const selected = daxFilter.value;
+    daxFeedback.textContent = `CA simulé: ${daxValues[selected].toLocaleString('fr-FR')} € (${daxPct[selected]}% du total).`;
+  };
+
+  relationMode.addEventListener('change', updateRelation);
+  daxFilter.addEventListener('change', updateDax);
+  updateRelation();
+  updateDax();
+}
+
 function initTheme() {
   const root = document.documentElement;
   const toggle = document.getElementById('theme-toggle');
@@ -592,6 +813,11 @@ function initLessonActions() {
     updateProgressUI();
   });
 
+  levelFilter.addEventListener('change', () => {
+    renderLessons();
+    updateProgressUI();
+  });
+
   lessonSearch.addEventListener('input', () => {
     renderLessons();
     updateProgressUI();
@@ -603,9 +829,14 @@ renderThemes();
 renderPlanStatus();
 renderLessons();
 renderLab();
+renderDatasets();
+renderProjects();
 updateProgressUI();
 initTheme();
 initProgressReset();
 initLessonActions();
+initSimulators();
+
+lessonsTitle.textContent = `Leçons complètes (${lessons.length})`;
 
 yearFilter.addEventListener('change', renderLab);
