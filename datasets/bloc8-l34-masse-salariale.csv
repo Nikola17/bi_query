@@ -1,0 +1,7 @@
+EmployeeID,Name,Department,SalaireBrut,ChargesPatronales,Category
+E001,Dupont Pierre,Ventes,2800,1260,Cadre
+E002,Martin Sophie,Marketing,3200,1440,Cadre
+E003,Bernard Luc,IT,3500,1575,Cadre
+E004,Petit Marie,Ventes,2600,1170,Technicien
+E005,Garcia Elena,RH,2900,1305,Cadre
+E006,Leroux Anne,IT,3100,1395,Cadre

@@ -1,0 +1,11 @@
+CustomerID,CustomerName,Revenue,Region
+C001,Dupont SA,45000,FR
+C002,Martin Corp,32000,ES
+C003,Bernard et Fils,28000,DE
+C004,Petit SARL,15000,FR
+C005,Garcia SAS,12000,IT
+C006,Leroux SA,8500,FR
+C007,Moreau et Cie,5200,ES
+C008,Simon SARL,3800,DE
+C009,Laurent SA,2100,FR
+C010,Roux Corp,900,IT

@@ -1,0 +1,7 @@
+EmployeeID,Name,Month,Brut,Net,Charges
+E001,Dupont Pierre,2025-01,3500,2700,1200
+E002,Martin Sophie,2025-01,4200,3200,1400
+E001,Dupont Pierre,2025-02,3500,2700,1200
+E002,Martin Sophie,2025-02,5100,3850,1700
+E003,Bernard Luc,2025-01,2800,2150,950
+E003,Bernard Luc,2025-02,2800,2150,950

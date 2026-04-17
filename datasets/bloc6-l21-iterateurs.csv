@@ -1,0 +1,6 @@
+OrderLineID,ProductID,Qty,MarginUnit,Revenue
+1,P001,2,120,2400
+2,P002,1,45,340
+3,P003,3,180,5400
+4,P001,1,120,1200
+5,P004,5,60,3000

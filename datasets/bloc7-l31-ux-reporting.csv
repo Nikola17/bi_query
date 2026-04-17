@@ -1,0 +1,6 @@
+Section,KPI,Value,Target
+Resume,CA,488000,470000
+Resume,Marge %,68,70
+Resume,Clients,1250,1300
+Diagnostic,Ecart CA,18000,0
+Diagnostic,Ecart Marge,-2,0

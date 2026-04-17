@@ -1,0 +1,7 @@
+EmployeeID,Name,Department,EntryDate,ExitDate,BU
+E001,Dupont Pierre,Ventes,2022-01-15,,Commercial
+E002,Martin Sophie,Marketing,2023-03-01,2025-01-31,Marketing
+E003,Bernard Luc,IT,2021-06-15,,Tech
+E004,Petit Marie,Ventes,2024-02-01,2025-02-28,Commercial
+E005,Garcia Elena,RH,2023-09-01,,Support
+E006,Leroux Anne,IT,2022-11-01,2025-03-15,Tech
