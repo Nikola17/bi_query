@@ -535,6 +535,107 @@ const phase2AdvancedLessons = [
 
 lessons.push(...phase2AdvancedLessons);
 
+const phase2FinalLessons = [
+  {
+    id: 'l27',
+    theme: 'Power Query',
+    level: 'Avancé',
+    title: 'L27 — Performance Power Query (query folding)',
+    objective: 'Identifier les étapes qui cassent le query folding.',
+    example: 'Source SQL + transformations dans Power Query.',
+    visual: { type: 'Performance', before: 'Rafraîchissement lent', after: 'Étapes foldables prioritaires' },
+    steps: ['Vérifier folding', 'Déplacer transformations', 'Mesurer temps'],
+    exercise: 'Optimise un flux de 5 min vers <2 min.',
+    solution: 'Conserver filtres/colonnes tôt + éviter étapes non foldables trop tôt.',
+    simple: 'Les bonnes étapes au bon endroit accélèrent tout.',
+    pitfalls: ['Appliquer des opérations coûteuses trop tôt'],
+    summary: ['Folding', 'Ordre des étapes', 'Temps réduit'],
+    quiz: { question: 'Le query folding permet surtout de :', options: ['Pousser le traitement côté source', 'Changer le thème', 'Créer des visuels'], answer: 0, explain: 'Le moteur délègue une partie du calcul à la source.' }
+  },
+  {
+    id: 'l28',
+    theme: 'Modélisation',
+    level: 'Avancé',
+    title: 'L28 — RLS (Row-Level Security) simplifiée',
+    objective: 'Limiter l’accès aux données par profil.',
+    example: 'Chaque manager voit uniquement sa région.',
+    visual: { type: 'Sécurité', before: 'Tout le monde voit tout', after: 'Règles RLS par rôle' },
+    steps: ['Créer rôle', 'Écrire filtre', 'Tester en mode role'],
+    exercise: 'Crée une RLS par région.',
+    solution: 'Filtre DimRegion[Region] avec rôle dédié.',
+    simple: 'RLS = chacun voit seulement ses données.',
+    pitfalls: ['RLS non testée avant publication'],
+    summary: ['Sécurité', 'Rôles', 'Validation'],
+    quiz: { question: 'La RLS sert à :', options: ['Restreindre les lignes visibles', 'Accélérer DAX', 'Importer CSV'], answer: 0, explain: 'RLS filtre les données selon l’utilisateur.' }
+  },
+  {
+    id: 'l29',
+    theme: 'DAX',
+    level: 'Avancé',
+    title: 'L29 — YTD, MTD, QTD',
+    objective: 'Construire les KPI cumulés standards.',
+    example: 'Suivi CA cumulé depuis début d’année.',
+    visual: { type: 'Time intelligence', before: 'Valeur mensuelle seule', after: 'YTD/MTD/QTD comparables' },
+    steps: ['Mesure base', 'TOTALYTD', 'Comparaison N-1'],
+    exercise: 'Affiche YTD et variation vs YTD N-1.',
+    solution: 'TOTALYTD + SAMEPERIODLASTYEAR.',
+    simple: 'YTD additionne depuis le début de l’année.',
+    pitfalls: ['Table date incomplète'],
+    summary: ['YTD', 'Comparaison', 'Pilotage'],
+    quiz: { question: 'YTD signifie :', options: ['Year-To-Date', 'Yesterday Trend Data', 'Yearly Table Dimension'], answer: 0, explain: 'YTD calcule le cumul depuis le début d’année.' }
+  },
+  {
+    id: 'l30',
+    theme: 'DAX',
+    level: 'Avancé',
+    title: 'L30 — Ranking dynamique',
+    objective: 'Classer les entités selon le contexte.',
+    example: 'Classement des commerciaux par CA filtré.',
+    visual: { type: 'Classement', before: 'Liste non ordonnée', after: 'Rank dynamique par slicer' },
+    steps: ['Mesure CA', 'RANKX', 'Tester filtres'],
+    exercise: 'Affiche top 5 commerciaux dynamiques.',
+    solution: 'RANKX + filtre de rang <= 5.',
+    simple: 'Le classement doit s’adapter aux filtres.',
+    pitfalls: ['Classement figé sans contexte'],
+    summary: ['RANKX', 'Dynamique', 'Top N'],
+    quiz: { question: 'Fonction DAX de ranking :', options: ['RANKX', 'SWITCH', 'VALUES'], answer: 0, explain: 'RANKX calcule le rang dans un ensemble.' }
+  },
+  {
+    id: 'l31',
+    theme: 'Visualisation',
+    level: 'Avancé',
+    title: 'L31 — UX reporting pro',
+    objective: 'Améliorer lisibilité, navigation et adoption.',
+    example: 'Refonte d’un rapport utilisé en comité hebdo.',
+    visual: { type: 'UX', before: 'Parcours confus', after: 'Navigation claire, pages structurées' },
+    steps: ['Prioriser KPIs', 'Uniformiser design', 'Tester utilisateur'],
+    exercise: 'Réorganise un rapport en 3 pages max.',
+    solution: 'Résumé, diagnostic, action.',
+    simple: 'Un rapport pro est simple à lire en 30 secondes.',
+    pitfalls: ['Surcharge visuelle'],
+    summary: ['Clarté', 'Cohérence', 'Adoption'],
+    quiz: { question: 'Un bon UX reporting favorise :', options: ['Compréhension rapide', 'Complexité maximale', 'Couleurs aléatoires'], answer: 0, explain: 'L’objectif est une lecture rapide et fiable.' }
+  },
+  {
+    id: 'l32',
+    theme: 'Projet',
+    level: 'Avancé',
+    title: 'L32 — Projet marketing complet',
+    objective: 'Analyser ROI campagnes et recommandations budget.',
+    example: 'Campagnes multi-canaux (SEA, social, email).',
+    visual: { type: 'Projet complet', before: 'Données brutes par canal', after: 'Dashboard ROI + plan d’action' },
+    steps: ['Nettoyer sources', 'Modéliser canaux', 'Mesures ROI/CAC', 'Restituer'],
+    exercise: 'Propose 3 arbitrages budgétaires justifiés.',
+    solution: 'Réallocation vers canaux ROI élevés.',
+    simple: 'Tu relies dépenses marketing et résultats business.',
+    pitfalls: ['Attribuer les conversions sans règle claire'],
+    summary: ['ROI', 'Arbitrage', 'Action'],
+    quiz: { question: 'Le KPI principal ici est :', options: ['ROI campagne', 'Nombre de visuels', 'Taille de police'], answer: 0, explain: 'Le ROI guide les arbitrages marketing.' }
+  }
+];
+
+lessons.push(...phase2FinalLessons);
+
 lessons.forEach((lesson, idx) => {
   if (!lesson.level) {
     if (idx < 6) lesson.level = 'Débutant';
@@ -545,14 +646,16 @@ lessons.forEach((lesson, idx) => {
 
 const planStatus = [
   { phase: 'Phase 1 — MVP', done: '100%', note: 'Phase 1 terminée et stabilisée.' },
-  { phase: 'Phase 2 — Version solide', done: '78%', note: 'Leçons étendues à 26, score quiz, filtres thème+niveau, datasets, simulateurs, fiches mémo et projets métiers ajoutés.' },
+  { phase: 'Phase 2 — Version solide', done: '100%', note: 'Phase 2 finalisée : 32 leçons, lab étendu, datasets, simulateurs, badges, filtres niveau/thème, fiches mémo et projets métiers.' },
   { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
 ];
 
 const datasets = [
   { id: 'sales', name: 'Dataset ventes multi-pays', level: 'Facile', format: 'CSV', rows: 2500 },
   { id: 'hr', name: 'Dataset RH (effectifs / turnover)', level: 'Moyen', format: 'CSV', rows: 1200 },
-  { id: 'stock', name: 'Dataset stock & ruptures', level: 'Difficile', format: 'CSV', rows: 3100 }
+  { id: 'stock', name: 'Dataset stock & ruptures', level: 'Difficile', format: 'CSV', rows: 3100 },
+  { id: 'marketing', name: 'Dataset marketing (campagnes)', level: 'Moyen', format: 'CSV', rows: 2800 },
+  { id: 'finance', name: 'Dataset finance (budget vs réel)', level: 'Difficile', format: 'CSV', rows: 3400 }
 ];
 
 const projects = [

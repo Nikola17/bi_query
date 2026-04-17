@@ -1,4 +1,4 @@
-# Power BI Academy (Phase 1 terminée, Phase 2 approfondie)
+# Power BI Academy (Phase 1 et Phase 2 terminées)
 
 Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogique fourni.
 
@@ -7,7 +7,7 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Landing page orientée débutant → avancé.
 - Parcours en 9 blocs + tags par thème.
 - 12 leçons enrichies (objectif, exemple, démo visuelle avant/après, étapes, exercice, correction, version simple, pièges, résumé, mini quiz interactif QCM).
-- Extension Phase 2 : leçons enrichies à 26 avec indication de niveau (Débutant/Intermédiaire/Avancé).
+- Extension Phase 2 finalisée : leçons enrichies à 32 avec indication de niveau (Débutant/Intermédiaire/Avancé).
 - Filtre de leçons par thème + recherche textuelle + ouvrir/fermer toutes les leçons.
 - Filtre de leçons par niveau.
 - Boutons d'aide dans chaque leçon : **Explique-moi simplement** et **Montre-moi la solution**.
