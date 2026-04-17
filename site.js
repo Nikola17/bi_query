@@ -157,11 +157,11 @@ const cheatsheets = [
 ];
 
 const badges = [
-  { id: 'starter', label: '\U0001f680 Starter', rule: 'percent >= 15', hint: 'Atteindre 15% du parcours' },
-  { id: 'pq', label: '\U0001f9f9 Data Cleaner', rule: "byTheme.query >= 4", hint: 'Terminer 4 le\u00e7ons Power Query' },
-  { id: 'model', label: '\U0001f9e9 Model Builder', rule: "byTheme.bi >= 3", hint: 'Terminer 3 le\u00e7ons BI' },
-  { id: 'dax', label: '\U0001f4c8 DAX Analyst', rule: "byTheme.bi >= 6", hint: 'Terminer 6 le\u00e7ons BI' },
-  { id: 'project', label: '\U0001f3c1 Delivery', rule: 'percent >= 80', hint: 'Atteindre 80% du parcours' }
+  { id: 'starter', label: '\u{1F680} Starter', rule: 'percent >= 15', hint: 'Atteindre 15% du parcours' },
+  { id: 'pq', label: '\u{1F9F9} Data Cleaner', rule: "byTheme.query >= 4", hint: 'Terminer 4 le\u00e7ons Power Query' },
+  { id: 'model', label: '\u{1F9E9} Model Builder', rule: "byTheme.bi >= 3", hint: 'Terminer 3 le\u00e7ons BI' },
+  { id: 'dax', label: '\u{1F4C8} DAX Analyst', rule: "byTheme.bi >= 6", hint: 'Terminer 6 le\u00e7ons BI' },
+  { id: 'project', label: '\u{1F3C1} Delivery', rule: 'percent >= 80', hint: 'Atteindre 80% du parcours' }
 ];
 
 const labData = [
@@ -181,7 +181,7 @@ function renderBreadcrumb(parts) {
 
 function renderHeader() {
   const theme = getTheme();
-  const themeIcon = theme === 'dark' ? '\u2600\ufe0f' : '\U0001f319';
+  const themeIcon = theme === 'dark' ? '\u2600\ufe0f' : '\u{1F319}';
   return '<header class="site-header"><div class="container"><div class="nav-wrap">' +
     '<a href="#/home" class="brand">Power BI Academy</a>' +
     '<nav class="main-nav">' +
@@ -285,15 +285,15 @@ function renderHome(app) {
 
     '<section class="section"><h2>Parcours</h2>' +
     '<div class="modules-grid">' +
-    '<a href="#/query" class="card module"><h3>\U0001f527 Power Query</h3><p>8 le\u00e7ons : importer, nettoyer, transformer, optimiser</p></a>' +
-    '<a href="#/bi" class="card module"><h3>\U0001f4ca Power BI</h3><p>28 le\u00e7ons : mod\u00e9liser, DAX, visualiser, cas m\u00e9tiers</p></a>' +
+    '<a href="#/query" class="card module"><h3>\u{1F527} Power Query</h3><p>8 le\u00e7ons : importer, nettoyer, transformer, optimiser</p></a>' +
+    '<a href="#/bi" class="card module"><h3>\u{1F4CA} Power BI</h3><p>28 le\u00e7ons : mod\u00e9liser, DAX, visualiser, cas m\u00e9tiers</p></a>' +
     '</div></section>' +
 
     '<section class="section section-alt"><h2>Outils</h2>' +
     '<div class="status-grid">' +
-    '<a href="#/lab" class="card"><h3>\U0001f52c Lab</h3><p>Simulateur et donn\u00e9es d\'exercice</p></a>' +
-    '<a href="#/cheatsheets" class="card"><h3>\U0001f4cb Fiches m\u00e9mo</h3><p>R\u00e9sum\u00e9s des concepts cl\u00e9s</p></a>' +
-    '<a href="#/progression" class="card"><h3>\U0001f4c8 Progression</h3><p>Suivi et badges</p></a>' +
+    '<a href="#/lab" class="card"><h3>\u{1F52C} Lab</h3><p>Simulateur et donn\u00e9es d\'exercice</p></a>' +
+    '<a href="#/cheatsheets" class="card"><h3>\u{1F4CB} Fiches m\u00e9mo</h3><p>R\u00e9sum\u00e9s des concepts cl\u00e9s</p></a>' +
+    '<a href="#/progression" class="card"><h3>\u{1F4C8} Progression</h3><p>Suivi et badges</p></a>' +
     '</div></section>' +
 
     '</div>' + renderFooter();
@@ -406,7 +406,7 @@ function renderLesson(app, track, moduleId, lessonId) {
     lesson.steps.forEach(function(step) {
       html += '<li><strong>' + step.title + '</strong>' +
         '<p>' + step.detail + '</p>' +
-        (step.tip ? '<div class="tip">\U0001f4a1 Astuce : ' + step.tip + '</div>' : '') +
+        (step.tip ? '<div class="tip">\u{1F4A1} Astuce : ' + step.tip + '</div>' : '') +
         (step.pitfall ? '<div class="pitfall">\u26a0\ufe0f Pi\u00e8ge : ' + step.pitfall + '</div>' : '') +
         '</li>';
     });
@@ -423,7 +423,7 @@ function renderLesson(app, track, moduleId, lessonId) {
         '</ul></details>';
     }
     if (lesson.exercise.dataset) {
-      html += '<p><a href="datasets/' + lesson.exercise.dataset + '" class="btn btn-ghost" download>\U0001f4e5 T\u00e9l\u00e9charger le dataset</a></p>';
+      html += '<p><a href="datasets/' + lesson.exercise.dataset + '" class="btn btn-ghost" download>\u{1F4E5} T\u00e9l\u00e9charger le dataset</a></p>';
     }
     html += '</section>';
   }
@@ -458,7 +458,7 @@ function renderLesson(app, track, moduleId, lessonId) {
   // Download + checkbox
   html += '<section class="lesson-section">' +
     '<div class="lesson-help-actions">' +
-    (lesson.downloadFile ? '<a href="' + lesson.downloadFile + '" class="btn btn-ghost" download>\U0001f4e5 T\u00e9l\u00e9charger les donn\u00e9es</a>' : '') +
+    (lesson.downloadFile ? '<a href="' + lesson.downloadFile + '" class="btn btn-ghost" download>\u{1F4E5} T\u00e9l\u00e9charger les donn\u00e9es</a>' : '') +
     '</div>' +
     '<label class="checkbox-line">' +
     '<input type="checkbox" data-lesson-toggle="' + lesson.id + '"' + (done ? ' checked' : '') + ' />' +
@@ -487,7 +487,7 @@ function renderLab(app) {
   app.innerHTML = renderHeader() +
     '<div class="container">' +
     renderBreadcrumb([{label: 'Accueil', href: '#/home'}, {label: 'Lab'}]) +
-    '<section class="section"><h1>\U0001f52c Lab interactif</h1>' +
+    '<section class="section"><h1>\u{1F52C} Lab interactif</h1>' +
     '<p>Simulateur de KPI et donn\u00e9es d\'exercice.</p>' +
 
     '<h2>Donn\u00e9es d\'exercice</h2>' +
@@ -495,7 +495,7 @@ function renderLab(app) {
     datasets.map(function(ds) {
       return '<div class="card"><h4>' + ds.name + '</h4>' +
         '<p class="muted">Niveau: ' + ds.level + ' \u2022 Format: ' + ds.format + ' \u2022 ~' + ds.rows + ' lignes</p>' +
-        '<a href="datasets/' + ds.id + '.csv" class="btn btn-ghost" download>\U0001f4e5 T\u00e9l\u00e9charger</a></div>';
+        '<a href="datasets/' + ds.id + '.csv" class="btn btn-ghost" download>\u{1F4E5} T\u00e9l\u00e9charger</a></div>';
     }).join('') +
     '</div></section>' +
 
@@ -516,7 +516,7 @@ function renderCheatsheets(app) {
   app.innerHTML = renderHeader() +
     '<div class="container">' +
     renderBreadcrumb([{label: 'Accueil', href: '#/home'}, {label: 'Fiches m\u00e9mo'}]) +
-    '<section class="section"><h1>\U0001f4cb Fiches m\u00e9mo</h1>' +
+    '<section class="section"><h1>\u{1F4CB} Fiches m\u00e9mo</h1>' +
     '<p>R\u00e9sum\u00e9s des concepts cl\u00e9s pour Power Query et Power BI.</p>' +
     '<div class="status-grid">' +
     cheatsheets.map(function(cs) {
@@ -572,26 +572,26 @@ function renderProgression(app) {
   app.innerHTML = renderHeader() +
     '<div class="container">' +
     renderBreadcrumb([{label: 'Accueil', href: '#/home'}, {label: 'Progression'}]) +
-    '<section class="section"><h1>\U0001f4c8 Ma progression</h1>' +
+    '<section class="section"><h1>\u{1F4C8} Ma progression</h1>' +
     renderProgressBar(doneAll, totalAll) +
 
     '<h2>Par parcours</h2>' +
     '<div class="status-grid">' +
-    '<div class="card"><h4>\U0001f527 Power Query</h4><p class="muted">' + doneQueries + '/' + totalQueries + ' le\u00e7ons</p>' +
+    '<div class="card"><h4>\u{1F527} Power Query</h4><p class="muted">' + doneQueries + '/' + totalQueries + ' le\u00e7ons</p>' +
     '<div class="progress-bar"><span style="width:' + (totalQueries ? Math.round((doneQueries / totalQueries) * 100) : 0) + '%"></span></div></div>' +
-    '<div class="card"><h4>\U0001f4ca Power BI</h4><p class="muted">' + doneBI + '/' + totalBI + ' le\u00e7ons</p>' +
+    '<div class="card"><h4>\u{1F4CA} Power BI</h4><p class="muted">' + doneBI + '/' + totalBI + ' le\u00e7ons</p>' +
     '<div class="progress-bar"><span style="width:' + (totalBI ? Math.round((doneBI / totalBI) * 100) : 0) + '%"></span></div></div>' +
     '</div></section>' +
 
-    '<section class="section section-alt"><h2>\U0001f3c6 Badges</h2>' +
+    '<section class="section section-alt"><h2>\u{1F3C6} Badges</h2>' +
     '<div class="chips">' +
     badges.map(function(b) {
       var earned = earnedBadges.some(function(eb) { return eb.id === b.id; });
-      return '<span class="chip ' + (earned ? 'badge-ok' : 'badge-lock') + '">' + b.label + (earned ? ' \u2705' : ' \U0001f512') + ' <small>' + b.hint + '</small></span>';
+      return '<span class="chip ' + (earned ? 'badge-ok' : 'badge-lock') + '">' + b.label + (earned ? ' \u2705' : ' \u{1F512}') + ' <small>' + b.hint + '</small></span>';
     }).join('') +
     '</div></section>' +
 
-    '<section class="section"><h2>\U0001f9ee R\u00e9sultats quiz</h2>' +
+    '<section class="section"><h2>\u{1F9EE} R\u00e9sultats quiz</h2>' +
     '<p>R\u00e9ponses correctes : <strong>' + quizCorrect + '/' + quizTotal + '</strong></p></section>' +
 
     '<section class="section section-alt">' +
