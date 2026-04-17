@@ -15,132 +15,236 @@ const lessons = [
     id: 'l1',
     theme: 'Power Query',
     title: 'L1 — Importer un CSV et typer les colonnes',
-    objective: 'Importer une source brute et corriger les types.',
-    example: 'Fichier de ventes e-commerce exporté depuis un ERP.',
-    steps: ['Charger le CSV', 'Promouvoir les en-têtes', 'Ajuster type Date / Nombre / Texte'],
-    exercise: 'Trouve et corrige 3 colonnes mal typées.',
-    solution: 'DateCommande en date, Montant en décimal, ClientID en texte.',
-    pitfalls: ['Type automatique incorrect', 'Virgule/point décimal', 'Codes clients convertis en nombre'],
-    summary: ['Toujours vérifier les types', 'Préférer des noms explicites', 'Conserver une requête source brute'],
-    quiz: 'Question: quel type pour ClientID ? Réponse: Texte.'
+    objective: 'Importer une source brute et corriger les types sans casser les données.',
+    example: 'Export ERP ventes avec dates en texte et montants mélangés.',
+    visual: {
+      type: 'Avant / Après',
+      before: 'DateCommande="01-02-2025" ; Montant="1 250,50" ; ClientID=00125 (nombre)',
+      after: 'DateCommande=Date ; Montant=Décimal ; ClientID=Texte'
+    },
+    steps: ['Charger le CSV', 'Promouvoir les en-têtes', 'Corriger types', 'Renommer requête'],
+    exercise: 'Corrige les 3 colonnes mal typées puis valide le nombre de lignes.',
+    solution: 'Types fixes + vérification des lignes avant/après (identiques).',
+    simple: 'Toujours regarder les types dès la première minute.',
+    pitfalls: ['Codes clients transformés en nombre', 'Locale décimale incorrecte', 'Type Date non reconnu'],
+    summary: ['Typage = fondation', 'Pas de modèle solide sans types propres', 'Nommer les étapes clairement'],
+    quiz: 'Quel type pour ClientID ? → Texte.'
   },
   {
     id: 'l2',
     theme: 'Power Query',
-    title: 'L2 — Nettoyage : doublons, nulls, erreurs',
-    objective: 'Rendre une table exploitable.',
-    example: 'Base prospects avec emails manquants et doublons.',
-    steps: ['Identifier la clé métier', 'Supprimer doublons', 'Gérer nulls/erreurs'],
-    exercise: 'Nettoie la table et garde 1 ligne par client.',
-    solution: 'Suppression doublons sur ClientID + remplacement null contrôlé.',
-    pitfalls: ['Supprimer sur mauvaise colonne', 'Remplacer null sans logique métier', 'Masquer les erreurs'],
-    summary: ['Nettoyage documenté', 'Toujours tester le résultat', 'Sauvegarder étapes'],
-    quiz: 'Question: première étape ? Réponse: définir la clé.'
+    title: 'L2 — Nettoyer doublons, nulls, erreurs',
+    objective: 'Livrer une table fiable pour l’analyse.',
+    example: 'Base CRM avec emails vides et clients dupliqués.',
+    visual: {
+      type: 'Checklist visuelle',
+      before: '42 120 lignes, 1 250 doublons, 320 erreurs',
+      after: '40 870 lignes uniques, 0 erreur bloquante'
+    },
+    steps: ['Identifier clé métier', 'Supprimer doublons', 'Traiter null/erreurs par règle métier'],
+    exercise: 'Nettoie la table prospects et documente les choix.',
+    solution: 'Déduplication sur ClientID + règle null email=“inconnu@...” uniquement si validé métier.',
+    simple: 'Tu choisis d’abord la clé, ensuite tu nettoies.',
+    pitfalls: ['Doublons supprimés sur mauvaise colonne', 'Valeurs nulles masquées sans justification'],
+    summary: ['Nettoyage tracé', 'Toujours comparer nb lignes', 'Règles métier explicites'],
+    quiz: 'Première décision ? → Définir la clé de déduplication.'
   },
   {
     id: 'l3',
     theme: 'Power Query',
     title: 'L3 — Merge vs Append',
-    objective: 'Choisir la bonne opération de combinaison.',
-    example: 'Ventes + table produits + ventes historiques.',
-    steps: ['Merge ventes-produits', 'Append historiques', 'Contrôler cardinalité'],
-    exercise: 'Assembler les données de 2 années et enrichir par catégorie.',
-    solution: 'Append annuel puis merge sur ProductID.',
-    pitfalls: ['Confondre append et merge', 'Join sur clé non unique', 'Colonnes homonymes non gérées'],
-    summary: ['Append = empiler', 'Merge = joindre', 'Toujours valider les lignes'],
-    quiz: 'Question: pour empiler 2024+2025 ? Réponse: Append.'
+    objective: 'Utiliser la bonne opération de combinaison.',
+    example: 'Ventes 2024 + ventes 2025 + référentiel produits.',
+    visual: {
+      type: 'Schéma rapide',
+      before: 'Ventes_2024 || Ventes_2025 + Produits',
+      after: 'Append(Ventes_2024,Ventes_2025) puis Merge avec Produits'
+    },
+    steps: ['Append des années', 'Merge avec dimensions', 'Contrôle cardinalité'],
+    exercise: 'Produis une table ventes enrichie catégorie/sous-catégorie.',
+    solution: 'Append puis merge sur ProductID unique.',
+    simple: 'Append empile. Merge relie.',
+    pitfalls: ['Join sur clé non unique', 'Colonnes homonymes non renommées'],
+    summary: ['Append=vertical', 'Merge=horizontal', 'Tester toujours le nombre de lignes'],
+    quiz: 'Empiler 2 fichiers mensuels ? → Append.'
   },
   {
     id: 'l4',
-    theme: 'Modélisation',
-    title: 'L4 — Construire un schéma en étoile',
-    objective: 'Passer d’un modèle plat à un modèle robuste.',
-    example: 'Table ventes unique vers faits + dimensions.',
-    steps: ['Créer table de faits', 'Extraire dimensions', 'Relier en 1-*'],
-    exercise: 'Découpe une table unique en modèle en étoile.',
-    solution: 'FactSales + DimDate + DimProduct + DimCustomer.',
-    pitfalls: ['Relations bidirectionnelles inutiles', 'Dimensions non dédupliquées', 'Pas de table calendrier'],
-    summary: ['Modèle d’abord', 'Clés propres', 'Relations lisibles'],
-    quiz: 'Question: une fact table contient quoi ? Réponse: mesures + clés.'
+    theme: 'Power Query',
+    title: 'L4 — Pivot / Unpivot pour restructurer',
+    objective: 'Passer d’un format large à un format analytique.',
+    example: 'Colonnes Jan, Fév, Mar à transformer en lignes.',
+    visual: {
+      type: 'Transformation',
+      before: 'Produit | Jan | Fév | Mar',
+      after: 'Produit | Mois | Montant'
+    },
+    steps: ['Sélectionner colonnes mois', 'Unpivot columns', 'Renommer attribut/valeur'],
+    exercise: 'Convertis un tableau budget mensuel en format long.',
+    solution: 'Unpivot sur colonnes période puis typage date/mois.',
+    simple: 'Les visuels aiment les tableaux “longs”.',
+    pitfalls: ['Unpivot sur mauvaise plage', 'Mois textuels non ordonnés'],
+    summary: ['Format long > format large', 'Facilite DAX', 'Facilite slicers'],
+    quiz: 'Pour transformer Jan/Fév/Mar en lignes ? → Unpivot.'
   },
   {
     id: 'l5',
     theme: 'Modélisation',
-    title: 'L5 — Table calendrier et relations',
-    objective: 'Fiabiliser l’analyse temporelle.',
-    example: 'Comparer CA mensuel N vs N-1.',
-    steps: ['Créer DimDate', 'Marquer comme table de dates', 'Relier à la fact'],
-    exercise: 'Activer un slicing par mois + année.',
-    solution: 'Relation active DimDate[Date] -> FactSales[OrderDate].',
-    pitfalls: ['Date textuelle', 'Multiples relations actives', 'Table de dates incomplète'],
-    summary: ['Sans calendrier = time intelligence limitée', 'Date continue', 'Colonnes année/mois utiles'],
-    quiz: 'Question: pourquoi une table calendrier ? Réponse: analyses temporelles stables.'
+    title: 'L5 — Construire un schéma en étoile',
+    objective: 'Créer un modèle stable et performant.',
+    example: 'Ventes + clients + produits + calendrier.',
+    visual: {
+      type: 'Mini schéma',
+      before: 'Une table géante SalesFlat',
+      after: 'FactSales au centre + DimDate/DimProduct/DimCustomer'
+    },
+    steps: ['Isoler la table de faits', 'Créer dimensions', 'Relier en 1-*'],
+    exercise: 'Découper SalesFlat en 4 tables principales.',
+    solution: 'Fact + 3 dimensions nettoyées et dédupliquées.',
+    simple: 'Le modèle est plus important que le visuel.',
+    pitfalls: ['Many-to-many évitable', 'Relations bidirectionnelles inutiles'],
+    summary: ['Star schema = base', 'Dimensions propres', 'Clés claires'],
+    quiz: 'La fact table contient ? → mesures + clés.'
   },
   {
     id: 'l6',
-    theme: 'DAX',
-    title: 'L6 — Mesures DAX indispensables',
-    objective: 'Écrire des KPI lisibles.',
-    example: 'CA, nombre de clients, panier moyen.',
-    steps: ['Créer [CA] = SUM', 'Créer [Clients] = DISTINCTCOUNT', 'Créer ratio via DIVIDE'],
-    exercise: 'Créer 3 KPI de base pour le dashboard ventes.',
-    solution: '[CA], [Clients], [Panier Moyen] = DIVIDE([CA],[Clients]).',
-    pitfalls: ['Colonne calculée au lieu de mesure', 'Division par zéro', 'Noms de mesures ambigus'],
-    summary: ['Mesure > colonne pour KPI', 'Utiliser DIVIDE', 'Nommage cohérent'],
-    quiz: 'Question: SUM en colonne ou mesure ? Réponse: mesure pour KPI.'
+    theme: 'Modélisation',
+    title: 'L6 — Table calendrier et relation active',
+    objective: 'Activer une vraie analyse temporelle.',
+    example: 'Comparer N vs N-1 et cumul mensuel.',
+    visual: {
+      type: 'Contrôle modèle',
+      before: 'Dates venant de la fact uniquement',
+      after: 'DimDate complète reliée en relation active'
+    },
+    steps: ['Créer DimDate', 'Marquer table de dates', 'Relier à FactSales[OrderDate]'],
+    exercise: 'Ajouter Année, Mois, Trimestre triés correctement.',
+    solution: 'Colonnes calendaires + sort by month number.',
+    simple: 'Pas de calendrier = analyses de temps bancales.',
+    pitfalls: ['Mois triés alphabétiquement', 'Période incomplète'],
+    summary: ['Date continue', 'Relation active', 'Colonnes utiles au slicing'],
+    quiz: 'Pourquoi marquer la table date ? → pour time intelligence fiable.'
   },
   {
     id: 'l7',
     theme: 'DAX',
-    title: 'L7 — CALCULATE et contexte de filtre',
-    objective: 'Modifier correctement le contexte.',
-    example: 'CA France vs CA global.',
-    steps: ['Mesure base [CA]', 'Mesure filtrée avec CALCULATE', 'Comparer résultats'],
-    exercise: 'Créer [CA France] et [% France].',
-    solution: '[CA France] = CALCULATE([CA], DimCountry[Country]="France").',
-    pitfalls: ['Filtre mal ciblé', 'Confondre row context et filter context', 'Dépendances cachées'],
-    summary: ['CALCULATE change le contexte', 'Toujours partir d’une mesure base', 'Tester avec slicers'],
-    quiz: 'Question: rôle principal de CALCULATE ? Réponse: modifier filtre.'
+    title: 'L7 — Mesures DAX de base',
+    objective: 'Créer des KPI robustes et lisibles.',
+    example: 'CA, clients uniques, panier moyen.',
+    visual: {
+      type: 'Formules clés',
+      before: 'Calculs au hasard dans visuels',
+      after: '[CA], [Clients], [Panier Moyen] centralisés'
+    },
+    steps: ['Créer mesures de base', 'Utiliser DIVIDE', 'Nommer proprement'],
+    exercise: 'Créer 3 mesures et les afficher dans cartes KPI.',
+    solution: 'Mesures dans table dédiée _Measures.',
+    simple: 'Une mesure bien nommée = temps gagné partout.',
+    pitfalls: ['Colonnes calculées à la place des mesures', 'DIVIDE oublié'],
+    summary: ['Mesures réutilisables', 'Noms explicites', 'Zéro division protégée'],
+    quiz: 'Pour ratio sécurisé ? → DIVIDE.'
   },
   {
     id: 'l8',
     theme: 'DAX',
-    title: 'L8 — Time intelligence N vs N-1',
-    objective: 'Comparer performance d’une période à la précédente.',
-    example: 'CA de cette année vs année précédente.',
-    steps: ['Mesure [CA]', 'Mesure [CA N-1]', 'Mesure [% Évolution]'],
-    exercise: 'Afficher une carte de variation annuelle.',
-    solution: '[CA N-1] via SAMEPERIODLASTYEAR sur table calendrier.',
-    pitfalls: ['Pas de table dates', 'Formatage incohérent', 'Mois incomplets'],
-    summary: ['Toujours table calendrier', 'Mesures séparées puis ratio', 'Validation avec tableau brut'],
-    quiz: 'Question: fonction clé N-1 ? Réponse: SAMEPERIODLASTYEAR.'
+    title: 'L8 — CALCULATE et contexte de filtre',
+    objective: 'Comprendre pourquoi un KPI change selon les filtres.',
+    example: 'CA France vs CA total.',
+    visual: {
+      type: 'Contexte',
+      before: '[CA] global',
+      after: '[CA France] = CALCULATE([CA], Country="France")'
+    },
+    steps: ['Mesure base', 'Mesure filtrée', 'Mesure de pourcentage'],
+    exercise: 'Créer [% France] et vérifier par segment.',
+    solution: '[% France] = DIVIDE([CA France],[CA]).',
+    simple: 'CALCULATE dit “dans quel filtre on calcule”.',
+    pitfalls: ['Filtre mal appliqué', 'Contexte non compris'],
+    summary: ['Partir d’une base solide', 'Modifier contexte explicitement', 'Tester slicers'],
+    quiz: 'CALCULATE sert à ? → changer le contexte de filtre.'
   },
   {
     id: 'l9',
-    theme: 'Visualisation',
-    title: 'L9 — Construire une page dashboard lisible',
-    objective: 'Créer une page claire orientée décision.',
-    example: 'Page Ventes : KPI, tendance, top produits.',
-    steps: ['Définir objectif de page', 'Choisir 3 à 5 visuels max', 'Appliquer hiérarchie visuelle'],
-    exercise: 'Refaire une page encombrée en page claire.',
-    solution: 'Disposition en grille + titres explicites + couleurs sobres.',
-    pitfalls: ['Trop de visuels', 'Couleurs agressives', 'Titres vagues'],
-    summary: ['Moins mais mieux', 'Un message par visuel', 'Design cohérent'],
-    quiz: 'Question: nombre idéal de visuels ? Réponse: limité et pertinent.'
+    theme: 'DAX',
+    title: 'L9 — Time intelligence N vs N-1',
+    objective: 'Comparer la performance dans le temps.',
+    example: 'Variation de CA annuel.',
+    visual: {
+      type: 'Comparatif',
+      before: 'CA N sans référence',
+      after: 'CA N + CA N-1 + % évolution'
+    },
+    steps: ['Créer [CA N-1]', 'Créer [% Evolution]', 'Valider sur période complète'],
+    exercise: 'Affiche un graphique annuel avec évolution.',
+    solution: 'SAMEPERIODLASTYEAR + DIVIDE.',
+    simple: 'Toujours comparer à une base temporelle.',
+    pitfalls: ['Table date absente', 'Périodes incomplètes'],
+    summary: ['Base calendrier', 'Mesures séparées', 'Vérification croisée'],
+    quiz: 'Fonction N-1 classique ? → SAMEPERIODLASTYEAR.'
   },
   {
     id: 'l10',
+    theme: 'Visualisation',
+    title: 'L10 — Design d’un dashboard lisible',
+    objective: 'Créer une page claire orientée décision.',
+    example: 'Page ventes pour direction commerciale.',
+    visual: {
+      type: 'Avant / Après visuel',
+      before: '12 visuels, couleurs saturées, titres vagues',
+      after: '5 visuels clés, hiérarchie claire, message métier explicite'
+    },
+    steps: ['Définir une question business', 'Limiter visuels', 'Appliquer grille cohérente'],
+    exercise: 'Refondre une page surchargée en page claire.',
+    solution: 'Storyboard simple + KPI prioritaires.',
+    simple: 'Un dashboard doit répondre vite à une question.',
+    pitfalls: ['Trop de couleurs', 'Trop de graphiques', 'Pas de message'],
+    summary: ['Moins mais mieux', 'Un visuel = un message', 'Contraste maîtrisé'],
+    quiz: 'Objectif d’un dashboard ? → Aider la décision.'
+  },
+  {
+    id: 'l11',
+    theme: 'Visualisation',
+    title: 'L11 — Slicers, drill-down, navigation',
+    objective: 'Rendre le rapport réellement interactif.',
+    example: 'Analyse par région > pays > ville.',
+    visual: {
+      type: 'Parcours utilisateur',
+      before: 'Rapport statique',
+      after: 'Filtres + drill-down + boutons de navigation'
+    },
+    steps: ['Configurer slicers', 'Activer drill-down', 'Créer boutons de navigation'],
+    exercise: 'Créer une navigation page Résumé -> Détail Produit.',
+    solution: 'Signets + boutons + hiérarchie sur axe.',
+    simple: 'L’interaction doit rester simple et guidée.',
+    pitfalls: ['Trop de slicers', 'Navigation confuse'],
+    summary: ['Interactivité utile', 'Parcours guidé', 'Slicers limités'],
+    quiz: 'Drill-down sert à ? → descendre dans le niveau de détail.'
+  },
+  {
+    id: 'l12',
     theme: 'Projet',
-    title: 'L10 — Cas métier complet : dashboard ventes',
-    objective: 'Assembler tout le flux data jusqu’au reporting.',
-    example: 'NovaRetail : ventes, produits, clients, objectifs.',
-    steps: ['Power Query', 'Modélisation', 'DAX', 'Design dashboard', 'Restitution métier'],
-    exercise: 'Livrer un dashboard avec 5 insights actionnables.',
-    solution: 'Rapport final + checklist qualité + recommandations.',
-    pitfalls: ['Sauter l’étape modèle', 'Mesures non documentées', 'Pas de conclusion métier'],
-    summary: ['Pipeline complet', 'Qualité > vitesse', 'Insight orienté action'],
-    quiz: 'Question: finalité ? Réponse: aide à la décision.'
+    title: 'L12 — Cas métier complet NovaRetail',
+    objective: 'Assembler Power Query + Modèle + DAX + Dashboard + restitution.',
+    example: 'Comité de direction mensuel.',
+    visual: {
+      type: 'Flux de bout en bout',
+      before: 'Données brutes hétérogènes',
+      after: 'Pipeline propre + dashboard + recommandations'
+    },
+    steps: ['Ingestion', 'Nettoyage', 'Modélisation', 'Mesures', 'Storytelling'],
+    exercise: 'Livrer 5 insights actionnables + plan d’action.',
+    solution: 'Pack final avec rapport, dictionnaire, recommandations.',
+    simple: 'Tu racontes une histoire basée sur des chiffres fiables.',
+    pitfalls: ['Sauter la modélisation', 'Pas de validation métier'],
+    summary: ['Qualité des données', 'Lisibilité des KPI', 'Conclusion orientée action'],
+    quiz: 'Dernière étape ? → recommandation métier claire.'
   }
+];
+
+const planStatus = [
+  { phase: 'Phase 1 — MVP', done: '85%', note: 'Structure, progression, lab, 12 leçons détaillées.' },
+  { phase: 'Phase 2 — Version solide', done: '25%', note: 'Base des leçons enrichie + composant visuel démarré.' },
+  { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
 ];
 
 const labData = [
@@ -155,7 +259,9 @@ const themeKey = 'pba-theme';
 const modulesList = document.getElementById('modules-list');
 const themeList = document.getElementById('theme-list');
 const lessonFilter = document.getElementById('lesson-filter');
+const lessonSearch = document.getElementById('lesson-search');
 const lessonsList = document.getElementById('lessons-list');
+const planStatusList = document.getElementById('plan-status-list');
 const progressFill = document.getElementById('progress-fill');
 const progressValue = document.getElementById('progress-value');
 const yearFilter = document.getElementById('year-filter');
@@ -171,6 +277,20 @@ function renderThemes() {
   lessonFilter.innerHTML += themes.map((theme) => `<option value="${theme}">${theme}</option>`).join('');
 }
 
+function renderPlanStatus() {
+  planStatusList.innerHTML = planStatus
+    .map(
+      (item) => `
+      <article class="card status-card">
+        <h3>${item.phase}</h3>
+        <p><strong>Avancement :</strong> ${item.done}</p>
+        <p class="muted">${item.note}</p>
+      </article>
+    `
+    )
+    .join('');
+}
+
 function renderModules() {
   modulesList.innerHTML = modules
     .map(
@@ -179,7 +299,7 @@ function renderModules() {
         <h3>${mod.title}</h3>
         <p>${mod.desc}</p>
         <label class="checkbox-line">
-          <input type="checkbox" data-lesson="${mod.id}" />
+          <input type="checkbox" data-track="${mod.id}" />
           Bloc terminé
         </label>
       </article>
@@ -188,9 +308,19 @@ function renderModules() {
     .join('');
 }
 
-function renderLessons() {
+function getFilteredLessons() {
   const filter = lessonFilter.value;
-  const data = filter === 'all' ? lessons : lessons.filter((lesson) => lesson.theme === filter);
+  const q = lessonSearch.value.trim().toLowerCase();
+  return lessons.filter((lesson) => {
+    const themeMatch = filter === 'all' || lesson.theme === filter;
+    const text = `${lesson.title} ${lesson.objective} ${lesson.example}`.toLowerCase();
+    const searchMatch = !q || text.includes(q);
+    return themeMatch && searchMatch;
+  });
+}
+
+function renderLessons() {
+  const data = getFilteredLessons();
 
   lessonsList.innerHTML = data
     .map(
@@ -201,19 +331,41 @@ function renderLessons() {
           <span class="lesson-theme">${lesson.theme}</span>
         </summary>
         <div class="lesson-content">
-          <p><strong>Objectif :</strong> ${lesson.objective}</p>
+          <p><strong>Ce que tu vas savoir faire :</strong> ${lesson.objective}</p>
           <p><strong>Exemple métier :</strong> ${lesson.example}</p>
+
+          <div class="visual-block">
+            <h4>Démo visuelle — ${lesson.visual.type}</h4>
+            <div class="visual-grid">
+              <div><span class="visual-label">Avant</span><p>${lesson.visual.before}</p></div>
+              <div><span class="visual-label">Après</span><p>${lesson.visual.after}</p></div>
+            </div>
+          </div>
+
           <p><strong>Explication pas à pas :</strong></p>
           <ol>${lesson.steps.map((step) => `<li>${step}</li>`).join('')}</ol>
-          <p><strong>Exercice :</strong> ${lesson.exercise}</p>
-          <p><strong>Correction :</strong> ${lesson.solution}</p>
+
+          <p><strong>Exercice interactif :</strong> ${lesson.exercise}</p>
+
+          <div class="lesson-help-actions">
+            <button class="btn btn-ghost" type="button" data-action="simple">Explique-moi simplement</button>
+            <button class="btn btn-ghost" type="button" data-action="solution">Montre-moi la solution</button>
+          </div>
+
+          <div class="help-output" hidden>
+            <p class="simple-text"><strong>Version simple :</strong> ${lesson.simple}</p>
+            <p class="solution-text"><strong>Correction commentée :</strong> ${lesson.solution}</p>
+          </div>
+
           <p><strong>Pièges fréquents :</strong></p>
           <ul>${lesson.pitfalls.map((pitfall) => `<li>${pitfall}</li>`).join('')}</ul>
-          <p><strong>Résumé :</strong></p>
+
+          <p><strong>Résumé en 3 points :</strong></p>
           <ul>${lesson.summary.map((item) => `<li>${item}</li>`).join('')}</ul>
+
           <p><strong>Mini quiz :</strong> ${lesson.quiz}</p>
           <label class="checkbox-line">
-            <input type="checkbox" data-lesson="${lesson.id}" />
+            <input type="checkbox" data-track="${lesson.id}" />
             Marquer la leçon comme terminée
           </label>
         </div>
@@ -221,6 +373,30 @@ function renderLessons() {
     `
     )
     .join('');
+
+  bindLessonHelpActions();
+}
+
+function bindLessonHelpActions() {
+  document.querySelectorAll('.lesson-card').forEach((card) => {
+    const simpleBtn = card.querySelector('[data-action="simple"]');
+    const solutionBtn = card.querySelector('[data-action="solution"]');
+    const output = card.querySelector('.help-output');
+    const simpleText = card.querySelector('.simple-text');
+    const solutionText = card.querySelector('.solution-text');
+
+    simpleBtn?.addEventListener('click', () => {
+      output.hidden = false;
+      simpleText.hidden = false;
+      solutionText.hidden = true;
+    });
+
+    solutionBtn?.addEventListener('click', () => {
+      output.hidden = false;
+      simpleText.hidden = true;
+      solutionText.hidden = false;
+    });
+  });
 }
 
 function getProgress() {
@@ -235,11 +411,11 @@ function saveProgress(progress) {
 function updateProgressUI() {
   const progress = getProgress();
   let completed = 0;
-  const checkboxes = document.querySelectorAll('input[type="checkbox"][data-lesson]');
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][data-track]');
   const totalTrackItems = checkboxes.length;
 
   checkboxes.forEach((checkbox) => {
-    const key = checkbox.dataset.lesson;
+    const key = checkbox.dataset.track;
     checkbox.checked = Boolean(progress[key]);
     if (progress[key]) completed += 1;
 
@@ -275,25 +451,6 @@ function renderLab() {
     .join('');
 }
 
-function initQuiz() {
-  const quizForm = document.getElementById('quiz-form');
-  const quizResult = document.getElementById('quiz-result');
-
-  quizForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formData = new FormData(quizForm);
-    const answers = { q1: 'a', q2: 'a', q3: 'a' };
-    const score = Object.entries(answers).reduce(
-      (acc, [question, answer]) => acc + Number(formData.get(question) === answer),
-      0
-    );
-
-    quizResult.textContent = `Score : ${score}/3 — ${
-      score === 3 ? 'Excellent, tu peux avancer.' : 'Continue, tu es en bonne voie.'
-    }`;
-  });
-}
-
 function initTheme() {
   const root = document.documentElement;
   const toggle = document.getElementById('theme-toggle');
@@ -319,17 +476,38 @@ function initProgressReset() {
   });
 }
 
+function initLessonActions() {
+  document.getElementById('expand-lessons').addEventListener('click', () => {
+    document.querySelectorAll('.lesson-card').forEach((card) => {
+      card.open = true;
+    });
+  });
+
+  document.getElementById('collapse-lessons').addEventListener('click', () => {
+    document.querySelectorAll('.lesson-card').forEach((card) => {
+      card.open = false;
+    });
+  });
+
+  lessonFilter.addEventListener('change', () => {
+    renderLessons();
+    updateProgressUI();
+  });
+
+  lessonSearch.addEventListener('input', () => {
+    renderLessons();
+    updateProgressUI();
+  });
+}
+
 renderModules();
 renderThemes();
+renderPlanStatus();
 renderLessons();
 renderLab();
 updateProgressUI();
-initQuiz();
 initTheme();
 initProgressReset();
+initLessonActions();
 
-lessonFilter.addEventListener('change', () => {
-  renderLessons();
-  updateProgressUI();
-});
 yearFilter.addEventListener('change', renderLab);

@@ -22,9 +22,9 @@
         <a class="brand" href="#top">Power BI Academy</a>
         <nav class="main-nav" aria-label="Navigation principale">
           <a href="#parcours">Parcours</a>
+          <a href="#plan-status">Avancement plan</a>
           <a href="#lessons">Leçons</a>
           <a href="#lab">Lab</a>
-          <a href="#cheatsheets">Fiches mémo</a>
           <a href="#projects">Projets</a>
         </nav>
         <button id="theme-toggle" class="btn btn-ghost" aria-label="Basculer le thème">🌙</button>
@@ -43,24 +43,15 @@
             </p>
             <div class="hero-actions">
               <a class="btn" href="#parcours">Commencer de zéro</a>
-              <a class="btn btn-secondary" href="#test-niveau">Faire le test de niveau</a>
+              <a class="btn btn-secondary" href="#lessons">Voir les leçons complètes</a>
             </div>
           </div>
           <article class="card dashboard-preview" aria-label="Aperçu mini dashboard">
             <h2>Mini dashboard (démo)</h2>
             <div class="kpi-grid">
-              <div>
-                <span>CA total</span>
-                <strong>1,24 M€</strong>
-              </div>
-              <div>
-                <span>Marge</span>
-                <strong>34,8 %</strong>
-              </div>
-              <div>
-                <span>Clients actifs</span>
-                <strong>842</strong>
-              </div>
+              <div><span>CA total</span><strong>1,24 M€</strong></div>
+              <div><span>Marge</span><strong>34,8 %</strong></div>
+              <div><span>Clients actifs</span><strong>842</strong></div>
             </div>
             <p class="muted">Exemple interactif : filtre par année dans la section Lab.</p>
           </article>
@@ -78,63 +69,51 @@
         </div>
       </section>
 
+      <section id="plan-status" class="section section-alt">
+        <div class="container">
+          <h2>Où on en est dans le plan</h2>
+          <p class="muted">Mise à jour en continu à chaque itération de construction.</p>
+          <div id="plan-status-list" class="status-grid"></div>
+        </div>
+      </section>
+
       <section id="parcours" class="section container">
-        <h2>Parcours complet (MVP)</h2>
+        <h2>Parcours complet (MVP+)</h2>
         <p class="muted">Deux entrées : par blocs pédagogiques et par thème.</p>
-        <div class="section-head">
-          <h3>Blocs pédagogiques</h3>
-        </div>
+        <div class="section-head"><h3>Blocs pédagogiques</h3></div>
         <div class="modules-grid" id="modules-list"></div>
-        <div class="section-head top-space">
-          <h3>Par thème</h3>
-        </div>
+        <div class="section-head top-space"><h3>Par thème</h3></div>
         <div class="chips" id="theme-list"></div>
       </section>
 
       <section id="lessons" class="section section-alt">
         <div class="container">
           <div class="section-head">
-            <h2>Leçons complètes (10)</h2>
-            <select id="lesson-filter" aria-label="Filtrer les leçons par thème">
-              <option value="all">Tous les thèmes</option>
-            </select>
+            <h2>Leçons complètes (12)</h2>
+            <div class="filters">
+              <select id="lesson-filter" aria-label="Filtrer les leçons par thème">
+                <option value="all">Tous les thèmes</option>
+              </select>
+              <input id="lesson-search" type="search" placeholder="Rechercher une leçon..." />
+            </div>
           </div>
           <p class="muted">
-            Chaque leçon contient : objectif, exemple métier, explication pas à pas, exercice,
-            correction, pièges, résumé et mini-quiz.
+            Chaque leçon contient : objectif, exemple métier, démo visuelle, explication pas à pas,
+            exercice, correction, pièges, résumé, mini quiz + boutons aide/solution.
           </p>
+          <div class="lesson-actions">
+            <button id="expand-lessons" class="btn btn-ghost">Tout ouvrir</button>
+            <button id="collapse-lessons" class="btn btn-ghost">Tout fermer</button>
+          </div>
           <div id="lessons-list" class="lesson-list"></div>
-
-          <article class="card" id="test-niveau">
-            <h3>Test de niveau rapide</h3>
-            <form id="quiz-form">
-              <fieldset>
-                <legend>1) En Power BI, quelle structure est recommandée ?</legend>
-                <label><input type="radio" name="q1" value="a" /> Modèle en étoile</label>
-                <label><input type="radio" name="q1" value="b" /> Plusieurs tables sans relations</label>
-              </fieldset>
-              <fieldset>
-                <legend>2) CALCULATE sert surtout à…</legend>
-                <label><input type="radio" name="q2" value="a" /> Changer le contexte de filtre</label>
-                <label><input type="radio" name="q2" value="b" /> Importer des données</label>
-              </fieldset>
-              <fieldset>
-                <legend>3) Merge dans Power Query correspond à…</legend>
-                <label><input type="radio" name="q3" value="a" /> Joindre des tables</label>
-                <label><input type="radio" name="q3" value="b" /> Créer un graphique</label>
-              </fieldset>
-              <button class="btn" type="submit">Valider le quiz</button>
-              <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
-            </form>
-          </article>
         </div>
       </section>
 
       <section id="lab" class="section container">
         <h2>Zone d'entraînement (Lab)</h2>
         <p>
-          Simulateur simple : filtre les ventes annuelles de l'entreprise fictive
-          <strong>NovaRetail</strong>.
+          Simulateur : filtre les ventes annuelles de l'entreprise fictive <strong>NovaRetail</strong>
+          puis compare le réalisé vs objectif.
         </p>
         <div class="lab-controls">
           <label for="year-filter">Filtrer par année :</label>
@@ -148,50 +127,10 @@
         <div class="table-wrap">
           <table>
             <thead>
-              <tr>
-                <th>Année</th>
-                <th>CA</th>
-                <th>Objectif</th>
-                <th>% atteinte</th>
-              </tr>
+              <tr><th>Année</th><th>CA</th><th>Objectif</th><th>% atteinte</th></tr>
             </thead>
             <tbody id="lab-rows"></tbody>
           </table>
-        </div>
-      </section>
-
-      <section id="cheatsheets" class="section section-alt">
-        <div class="container">
-          <h2>Fiches mémo essentielles</h2>
-          <div class="cards-3">
-            <article class="card">
-              <h3>Power Query</h3>
-              <ul>
-                <li>Types de données</li>
-                <li>Merge / Append</li>
-                <li>Pivot / Unpivot</li>
-                <li>Colonnes conditionnelles</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Modélisation Power BI</h3>
-              <ul>
-                <li>Faits et dimensions</li>
-                <li>Relations et cardinalités</li>
-                <li>Table calendrier</li>
-                <li>Schéma en étoile</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>DAX utile</h3>
-              <ul>
-                <li>SUM, DISTINCTCOUNT, DIVIDE</li>
-                <li>CALCULATE + FILTER</li>
-                <li>Variables</li>
-                <li>Time intelligence de base</li>
-              </ul>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -207,7 +146,7 @@
             <li>Interprétation métier et recommandations.</li>
           </ol>
           <label class="checkbox-line">
-            <input type="checkbox" data-lesson="mini-project" />
+            <input type="checkbox" data-track="mini-project" />
             Marquer le mini projet comme terminé
           </label>
         </article>
