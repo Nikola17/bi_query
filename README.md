@@ -13,8 +13,11 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Boutons d'aide dans chaque leçon : **Explique-moi simplement** et **Montre-moi la solution**.
 - Bibliothèque visuelle de base (avant/après, schéma relationnel, carte mentale DAX).
 - Section **Où on en est dans le plan** pour suivre les phases 1/2/3.
+- Progression par thème avec mini barres visuelles.
+- Bouton **Reprendre où j'en étais** pour rouvrir la prochaine leçon à faire.
 - Zone Lab avec filtre de données + datasets CSV téléchargeables.
 - Simulateur de relations et simulateur de contexte DAX.
+- Système de badges (starter, Power Query, modélisation, DAX, projets).
 - Suivi de progression en `localStorage`.
 - Thème clair/sombre.
 - Plusieurs projets métiers traçables.

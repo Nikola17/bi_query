@@ -62,11 +62,26 @@
       <section id="progression" class="section container">
         <div class="section-head">
           <h2>Ta progression</h2>
-          <button id="reset-progress" class="btn btn-ghost">Réinitialiser</button>
+          <div class="hero-actions">
+            <button id="resume-learning" class="btn btn-ghost">Reprendre où j'en étais</button>
+            <button id="reset-progress" class="btn btn-ghost">Réinitialiser</button>
+          </div>
         </div>
         <div class="progress-block" aria-live="polite">
           <div class="progress-bar"><span id="progress-fill"></span></div>
           <p><strong id="progress-value">0%</strong> du parcours affiché terminé.</p>
+        </div>
+        <div class="section-head top-space">
+          <h3>Progression par thème</h3>
+        </div>
+        <div id="theme-progress" class="status-grid"></div>
+      </section>
+
+      <section id="badges" class="section section-alt">
+        <div class="container">
+          <h2>Badges gagnés</h2>
+          <p class="muted">Débloque des badges selon ta progression et les projets terminés.</p>
+          <div id="badges-list" class="chips"></div>
         </div>
       </section>
 

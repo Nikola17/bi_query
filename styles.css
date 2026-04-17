@@ -55,6 +55,8 @@ h1 { font-size: clamp(1.9rem, 3.5vw, 3rem); margin: .5rem 0 1rem; }
 .progress-block { background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; padding: 1rem; }
 .progress-bar { width: 100%; height: 14px; background: color-mix(in oklab, var(--primary) 25%, var(--surface)); border-radius: 999px; overflow: hidden; }
 #progress-fill { display: block; width: 0%; height: 100%; background: var(--primary); transition: width .35s ease; }
+.progress-bar.mini { height: 10px; }
+.progress-bar.mini span { display: block; height: 100%; background: var(--primary); }
 
 .status-grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .status-card h3 { margin-top: 0; }
@@ -65,6 +67,9 @@ h1 { font-size: clamp(1.9rem, 3.5vw, 3rem); margin: .5rem 0 1rem; }
 
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .chip { padding: .35rem .7rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); font-size: .9rem; }
+.chip small { opacity: .8; }
+.badge-ok { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
+.badge-lock { opacity: .7; }
 
 .filters { display: flex; gap: .5rem; flex-wrap: wrap; }
 .filters select, .filters input { border: 1px solid var(--border); border-radius: .6rem; background: var(--surface); color: var(--text); padding: .55rem .65rem; min-width: 180px; }

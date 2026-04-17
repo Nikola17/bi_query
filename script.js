@@ -429,6 +429,14 @@ const projects = [
   { id: 'p-stock', title: 'Projet stock', goal: 'Identifier ruptures et surstocks par famille.' }
 ];
 
+const badges = [
+  { id: 'starter', label: '🚀 Starter', rule: (ctx) => ctx.percent >= 15, hint: 'Atteindre 15% du parcours' },
+  { id: 'pq', label: '🧹 Data Cleaner', rule: (ctx) => ctx.byTheme['Power Query'] >= 4, hint: 'Terminer 4 leçons Power Query' },
+  { id: 'model', label: '🧩 Model Builder', rule: (ctx) => ctx.byTheme['Modélisation'] >= 2, hint: 'Terminer 2 leçons Modélisation' },
+  { id: 'dax', label: '📈 DAX Analyst', rule: (ctx) => ctx.byTheme.DAX >= 3, hint: 'Terminer 3 leçons DAX' },
+  { id: 'project', label: '🏁 Delivery', rule: (ctx) => ctx.projectsDone >= 2, hint: 'Terminer au moins 2 projets métiers' }
+];
+
 const labData = [
   { year: 2023, revenue: 345000, target: 320000 },
   { year: 2024, revenue: 412000, target: 395000 },
@@ -452,6 +460,8 @@ const labRows = document.getElementById('lab-rows');
 const lessonsTitle = document.getElementById('lessons-title');
 const datasetList = document.getElementById('dataset-list');
 const projectsList = document.getElementById('projects-list');
+const badgesList = document.getElementById('badges-list');
+const themeProgress = document.getElementById('theme-progress');
 
 function getThemes() {
   return [...new Set(lessons.map((lesson) => lesson.theme))];
@@ -656,6 +666,52 @@ function updateProgressUI() {
   const percent = totalTrackItems ? Math.round((completed / totalTrackItems) * 100) : 0;
   progressFill.style.width = `${percent}%`;
   progressValue.textContent = `${percent}%`;
+  renderThemeProgress(progress);
+  renderBadges(progress, percent);
+}
+
+function renderThemeProgress(progress) {
+  const themes = [...new Set(lessons.map((lesson) => lesson.theme))];
+  const byTheme = Object.fromEntries(themes.map((theme) => [theme, 0]));
+  const totals = Object.fromEntries(themes.map((theme) => [theme, lessons.filter((l) => l.theme === theme).length]));
+
+  lessons.forEach((lesson) => {
+    if (progress[lesson.id]) byTheme[lesson.theme] += 1;
+  });
+
+  themeProgress.innerHTML = themes
+    .map((theme) => {
+      const done = byTheme[theme];
+      const total = totals[theme];
+      const percent = total ? Math.round((done / total) * 100) : 0;
+      return `
+        <article class="card">
+          <h4>${theme}</h4>
+          <p class="muted">${done}/${total} leçons</p>
+          <div class="progress-bar mini"><span style="width:${percent}%"></span></div>
+        </article>
+      `;
+    })
+    .join('');
+}
+
+function renderBadges(progress, percent) {
+  const byTheme = lessons.reduce((acc, lesson) => {
+    if (!acc[lesson.theme]) acc[lesson.theme] = 0;
+    if (progress[lesson.id]) acc[lesson.theme] += 1;
+    return acc;
+  }, {});
+
+  const projectsDone = projects.filter((project) => progress[project.id]).length;
+  const context = { percent, byTheme, projectsDone };
+  const earned = badges.filter((badge) => badge.rule(context));
+
+  badgesList.innerHTML = badges
+    .map((badge) => {
+      const unlocked = earned.some((item) => item.id === badge.id);
+      return `<span class="chip ${unlocked ? 'badge-ok' : 'badge-lock'}">${badge.label} ${unlocked ? '✓' : '•'}<small> ${badge.hint}</small></span>`;
+    })
+    .join('');
 }
 
 function renderLab() {
@@ -792,6 +848,21 @@ function initProgressReset() {
   document.getElementById('reset-progress').addEventListener('click', () => {
     localStorage.removeItem(progressKey);
     updateProgressUI();
+  });
+
+  document.getElementById('resume-learning').addEventListener('click', () => {
+    const progress = getProgress();
+    const nextLesson = lessons.find((lesson) => !progress[lesson.id]);
+    if (!nextLesson) {
+      alert('Bravo ! Tu as terminé toutes les leçons disponibles.');
+      return;
+    }
+    const details = document.querySelectorAll('.lesson-card');
+    details.forEach((detail) => {
+      const title = detail.querySelector('summary strong')?.textContent || '';
+      detail.open = title.includes(nextLesson.title);
+    });
+    document.getElementById('lessons').scrollIntoView({ behavior: 'smooth' });
   });
 }
 
