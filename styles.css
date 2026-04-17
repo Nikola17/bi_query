@@ -84,6 +84,14 @@ h1 { font-size: clamp(1.9rem, 3.5vw, 3rem); margin: .5rem 0 1rem; }
 
 .lesson-help-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin: .8rem 0; }
 .help-output { border-left: 3px solid var(--primary); padding-left: .8rem; margin: .6rem 0; }
+.lesson-quiz { border: 1px solid var(--border); border-radius: .8rem; padding: .8rem; margin-top: .9rem; }
+.lesson-quiz legend { padding: 0 .3rem; }
+.quiz-option { display: flex; align-items: center; gap: .5rem; margin: .35rem 0; }
+.quiz-check { margin-top: .6rem; }
+.quiz-feedback { margin: .55rem 0 0; font-weight: 600; }
+.quiz-feedback.ok { color: #137a32; }
+.quiz-feedback.ko { color: #b42318; }
+.quiz-feedback.warning { color: var(--muted); }
 
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: .8rem; background: var(--surface); }
 table { width: 100%; border-collapse: collapse; min-width: 480px; }

@@ -28,7 +28,12 @@ const lessons = [
     simple: 'Toujours regarder les types dès la première minute.',
     pitfalls: ['Codes clients transformés en nombre', 'Locale décimale incorrecte', 'Type Date non reconnu'],
     summary: ['Typage = fondation', 'Pas de modèle solide sans types propres', 'Nommer les étapes clairement'],
-    quiz: 'Quel type pour ClientID ? → Texte.'
+    quiz: {
+      question: 'Quel type faut-il garder pour ClientID ?',
+      options: ['Nombre entier', 'Texte', 'Date'],
+      answer: 1,
+      explain: 'ClientID est un identifiant métier, pas une valeur de calcul.'
+    }
   },
   {
     id: 'l2',
@@ -47,7 +52,12 @@ const lessons = [
     simple: 'Tu choisis d’abord la clé, ensuite tu nettoies.',
     pitfalls: ['Doublons supprimés sur mauvaise colonne', 'Valeurs nulles masquées sans justification'],
     summary: ['Nettoyage tracé', 'Toujours comparer nb lignes', 'Règles métier explicites'],
-    quiz: 'Première décision ? → Définir la clé de déduplication.'
+    quiz: {
+      question: 'Quelle est la première décision avant de supprimer les doublons ?',
+      options: ['Définir la clé de déduplication', 'Changer toutes les valeurs nulles', 'Trier par date'],
+      answer: 0,
+      explain: 'Sans clé métier claire, tu risques de supprimer de mauvaises lignes.'
+    }
   },
   {
     id: 'l3',
@@ -66,7 +76,12 @@ const lessons = [
     simple: 'Append empile. Merge relie.',
     pitfalls: ['Join sur clé non unique', 'Colonnes homonymes non renommées'],
     summary: ['Append=vertical', 'Merge=horizontal', 'Tester toujours le nombre de lignes'],
-    quiz: 'Empiler 2 fichiers mensuels ? → Append.'
+    quiz: {
+      question: 'Pour empiler deux fichiers de ventes mensuelles, tu utilises :',
+      options: ['Merge', 'Append', 'Group by'],
+      answer: 1,
+      explain: 'Append concatène des lignes, alors que Merge ajoute des colonnes.'
+    }
   },
   {
     id: 'l4',
@@ -85,7 +100,12 @@ const lessons = [
     simple: 'Les visuels aiment les tableaux “longs”.',
     pitfalls: ['Unpivot sur mauvaise plage', 'Mois textuels non ordonnés'],
     summary: ['Format long > format large', 'Facilite DAX', 'Facilite slicers'],
-    quiz: 'Pour transformer Jan/Fév/Mar en lignes ? → Unpivot.'
+    quiz: {
+      question: 'Quelle action transforme Jan/Fév/Mar en lignes ?',
+      options: ['Unpivot', 'Split column', 'Merge queries'],
+      answer: 0,
+      explain: 'Unpivot convertit des colonnes de période en lignes analytiques.'
+    }
   },
   {
     id: 'l5',
@@ -104,7 +124,12 @@ const lessons = [
     simple: 'Le modèle est plus important que le visuel.',
     pitfalls: ['Many-to-many évitable', 'Relations bidirectionnelles inutiles'],
     summary: ['Star schema = base', 'Dimensions propres', 'Clés claires'],
-    quiz: 'La fact table contient ? → mesures + clés.'
+    quiz: {
+      question: 'Que contient principalement la table de faits ?',
+      options: ['Descriptions détaillées des produits', 'Mesures + clés de dimensions', 'Uniquement des dates'],
+      answer: 1,
+      explain: 'La fact table stocke les événements mesurables reliés aux dimensions.'
+    }
   },
   {
     id: 'l6',
@@ -123,7 +148,12 @@ const lessons = [
     simple: 'Pas de calendrier = analyses de temps bancales.',
     pitfalls: ['Mois triés alphabétiquement', 'Période incomplète'],
     summary: ['Date continue', 'Relation active', 'Colonnes utiles au slicing'],
-    quiz: 'Pourquoi marquer la table date ? → pour time intelligence fiable.'
+    quiz: {
+      question: 'Pourquoi marquer la table calendrier comme table de dates ?',
+      options: ['Pour colorer les visuels', 'Pour accélérer le refresh', 'Pour fiabiliser la time intelligence'],
+      answer: 2,
+      explain: 'Les fonctions temporelles DAX dépendent d’une vraie table de dates.'
+    }
   },
   {
     id: 'l7',
@@ -142,7 +172,12 @@ const lessons = [
     simple: 'Une mesure bien nommée = temps gagné partout.',
     pitfalls: ['Colonnes calculées à la place des mesures', 'DIVIDE oublié'],
     summary: ['Mesures réutilisables', 'Noms explicites', 'Zéro division protégée'],
-    quiz: 'Pour ratio sécurisé ? → DIVIDE.'
+    quiz: {
+      question: 'Quelle fonction protège un ratio contre la division par zéro ?',
+      options: ['SUMX', 'DIVIDE', 'FILTER'],
+      answer: 1,
+      explain: 'DIVIDE gère proprement les cas où le dénominateur vaut zéro.'
+    }
   },
   {
     id: 'l8',
@@ -161,7 +196,12 @@ const lessons = [
     simple: 'CALCULATE dit “dans quel filtre on calcule”.',
     pitfalls: ['Filtre mal appliqué', 'Contexte non compris'],
     summary: ['Partir d’une base solide', 'Modifier contexte explicitement', 'Tester slicers'],
-    quiz: 'CALCULATE sert à ? → changer le contexte de filtre.'
+    quiz: {
+      question: 'CALCULATE sert principalement à :',
+      options: ['Créer des relations', 'Changer le contexte de filtre', 'Importer des CSV'],
+      answer: 1,
+      explain: 'CALCULATE évalue une mesure dans un contexte de filtre modifié.'
+    }
   },
   {
     id: 'l9',
@@ -180,7 +220,12 @@ const lessons = [
     simple: 'Toujours comparer à une base temporelle.',
     pitfalls: ['Table date absente', 'Périodes incomplètes'],
     summary: ['Base calendrier', 'Mesures séparées', 'Vérification croisée'],
-    quiz: 'Fonction N-1 classique ? → SAMEPERIODLASTYEAR.'
+    quiz: {
+      question: 'Quelle fonction DAX est classique pour comparer N à N-1 ?',
+      options: ['SAMEPERIODLASTYEAR', 'ALLEXCEPT', 'TOPN'],
+      answer: 0,
+      explain: 'SAMEPERIODLASTYEAR retourne la période équivalente de l’année précédente.'
+    }
   },
   {
     id: 'l10',
@@ -199,7 +244,12 @@ const lessons = [
     simple: 'Un dashboard doit répondre vite à une question.',
     pitfalls: ['Trop de couleurs', 'Trop de graphiques', 'Pas de message'],
     summary: ['Moins mais mieux', 'Un visuel = un message', 'Contraste maîtrisé'],
-    quiz: 'Objectif d’un dashboard ? → Aider la décision.'
+    quiz: {
+      question: 'Objectif principal d’un dashboard métier :',
+      options: ['Montrer tous les graphiques possibles', 'Aider la décision', 'Utiliser un maximum de couleurs'],
+      answer: 1,
+      explain: 'Un dashboard doit orienter l’action, pas juste afficher des graphiques.'
+    }
   },
   {
     id: 'l11',
@@ -218,7 +268,12 @@ const lessons = [
     simple: 'L’interaction doit rester simple et guidée.',
     pitfalls: ['Trop de slicers', 'Navigation confuse'],
     summary: ['Interactivité utile', 'Parcours guidé', 'Slicers limités'],
-    quiz: 'Drill-down sert à ? → descendre dans le niveau de détail.'
+    quiz: {
+      question: 'Le drill-down permet de :',
+      options: ['Descendre dans le détail', 'Créer une nouvelle source', 'Changer le thème clair/sombre'],
+      answer: 0,
+      explain: 'Le drill-down passe d’un niveau agrégé à un niveau plus détaillé.'
+    }
   },
   {
     id: 'l12',
@@ -237,13 +292,18 @@ const lessons = [
     simple: 'Tu racontes une histoire basée sur des chiffres fiables.',
     pitfalls: ['Sauter la modélisation', 'Pas de validation métier'],
     summary: ['Qualité des données', 'Lisibilité des KPI', 'Conclusion orientée action'],
-    quiz: 'Dernière étape ? → recommandation métier claire.'
+    quiz: {
+      question: 'La dernière étape d’un cas métier complet est :',
+      options: ['Ajouter des couleurs', 'Recommander une action métier claire', 'Dupliquer la page'],
+      answer: 1,
+      explain: 'La valeur finale est la recommandation concrète basée sur l’analyse.'
+    }
   }
 ];
 
 const planStatus = [
-  { phase: 'Phase 1 — MVP', done: '85%', note: 'Structure, progression, lab, 12 leçons détaillées.' },
-  { phase: 'Phase 2 — Version solide', done: '25%', note: 'Base des leçons enrichie + composant visuel démarré.' },
+  { phase: 'Phase 1 — MVP', done: '100%', note: 'Accueil, parcours, 12 leçons, quiz simples interactifs, mini projet, progression et bibliothèque visuelle de base livrés.' },
+  { phase: 'Phase 2 — Version solide', done: '20%', note: 'Base démarrée: filtres, recherche et structure prête pour 30+ leçons.' },
   { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
 ];
 
@@ -363,7 +423,21 @@ function renderLessons() {
           <p><strong>Résumé en 3 points :</strong></p>
           <ul>${lesson.summary.map((item) => `<li>${item}</li>`).join('')}</ul>
 
-          <p><strong>Mini quiz :</strong> ${lesson.quiz}</p>
+          <fieldset class="lesson-quiz">
+            <legend><strong>Mini quiz :</strong> ${lesson.quiz.question}</legend>
+            ${lesson.quiz.options
+              .map(
+                (option, idx) => `
+              <label class="quiz-option">
+                <input type="radio" name="quiz-${lesson.id}" value="${idx}" />
+                <span>${option}</span>
+              </label>
+            `
+              )
+              .join('')}
+            <button class="btn btn-ghost quiz-check" type="button" data-quiz-check="${lesson.id}">Valider ma réponse</button>
+            <p class="quiz-feedback" id="quiz-feedback-${lesson.id}" aria-live="polite"></p>
+          </fieldset>
           <label class="checkbox-line">
             <input type="checkbox" data-track="${lesson.id}" />
             Marquer la leçon comme terminée
@@ -375,6 +449,7 @@ function renderLessons() {
     .join('');
 
   bindLessonHelpActions();
+  bindLessonQuizActions();
 }
 
 function bindLessonHelpActions() {
@@ -395,6 +470,29 @@ function bindLessonHelpActions() {
       output.hidden = false;
       simpleText.hidden = true;
       solutionText.hidden = false;
+    });
+  });
+}
+
+function bindLessonQuizActions() {
+  document.querySelectorAll('[data-quiz-check]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const lessonId = button.dataset.quizCheck;
+      const lesson = lessons.find((item) => item.id === lessonId);
+      const selected = document.querySelector(`input[name="quiz-${lessonId}"]:checked`);
+      const feedback = document.getElementById(`quiz-feedback-${lessonId}`);
+
+      if (!selected) {
+        feedback.textContent = 'Choisis une réponse avant de valider.';
+        feedback.className = 'quiz-feedback warning';
+        return;
+      }
+
+      const isCorrect = Number(selected.value) === lesson.quiz.answer;
+      feedback.textContent = isCorrect
+        ? `✅ Bonne réponse. ${lesson.quiz.explain}`
+        : `❌ Pas encore. ${lesson.quiz.explain}`;
+      feedback.className = `quiz-feedback ${isCorrect ? 'ok' : 'ko'}`;
     });
   });
 }
