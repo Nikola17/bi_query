@@ -7,7 +7,7 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Landing page orientée débutant → avancé.
 - Parcours en 9 blocs + tags par thème.
 - 12 leçons enrichies (objectif, exemple, démo visuelle avant/après, étapes, exercice, correction, version simple, pièges, résumé, mini quiz interactif QCM).
-- Extension Phase 2 : leçons enrichies à 18 avec indication de niveau (Débutant/Intermédiaire/Avancé).
+- Extension Phase 2 : leçons enrichies à 26 avec indication de niveau (Débutant/Intermédiaire/Avancé).
 - Filtre de leçons par thème + recherche textuelle + ouvrir/fermer toutes les leçons.
 - Filtre de leçons par niveau.
 - Boutons d'aide dans chaque leçon : **Explique-moi simplement** et **Montre-moi la solution**.
@@ -18,6 +18,7 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Zone Lab avec filtre de données + datasets CSV téléchargeables.
 - Simulateur de relations et simulateur de contexte DAX.
 - Système de badges (starter, Power Query, modélisation, DAX, projets).
+- Score quiz global (bonnes réponses cumulées) avec persistance locale.
 - Suivi de progression en `localStorage`.
 - Thème clair/sombre.
 - Plusieurs projets métiers traçables.

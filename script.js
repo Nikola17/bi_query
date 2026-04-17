@@ -402,6 +402,139 @@ const phase2Lessons = [
 
 lessons.push(...phase2Lessons);
 
+const phase2AdvancedLessons = [
+  {
+    id: 'l19',
+    theme: 'Power Query',
+    level: 'Avancé',
+    title: 'L19 — Fonctions M personnalisées',
+    objective: 'Créer une fonction M réutilisable sur plusieurs requêtes.',
+    example: 'Normaliser des codes pays venant de 5 fichiers.',
+    visual: { type: 'Code M', before: 'Étapes répétées', after: 'Fonction fnNormalizeCountry()' },
+    steps: ['Créer requête fonction', 'Passer paramètre', 'Appliquer sur table'],
+    exercise: 'Factorise une logique de nettoyage texte en fonction.',
+    solution: 'Fonction M + invocation sur colonne.',
+    simple: 'Une fonction évite de recopier les mêmes étapes.',
+    pitfalls: ['Paramètres mal typés'],
+    summary: ['Réutilisation', 'Moins d’erreurs', 'Maintenance'],
+    quiz: { question: 'Une fonction M sert surtout à :', options: ['Réutiliser une logique', 'Créer un visuel', 'Générer un thème'], answer: 0, explain: 'Elle encapsule des transformations répétées.' }
+  },
+  {
+    id: 'l20',
+    theme: 'Modélisation',
+    level: 'Avancé',
+    title: 'L20 — Table pont many-to-many',
+    objective: 'Résoudre proprement un many-to-many métier.',
+    example: 'Produits multi-catégories et ventes.',
+    visual: { type: 'Modèle', before: 'Relation ambigüe', after: 'Bridge table explicite' },
+    steps: ['Créer table pont', 'Relier dimensions', 'Tester mesure'],
+    exercise: 'Corrige un M2M qui gonfle les totaux.',
+    solution: 'Bridge + sens de filtre contrôlé.',
+    simple: 'La table pont clarifie qui relie qui.',
+    pitfalls: ['Relations directes ambiguës'],
+    summary: ['M2M maîtrisé', 'Totaux fiables', 'Modèle propre'],
+    quiz: { question: 'Pour gérer un many-to-many proprement, on ajoute :', options: ['Table pont', 'Colonne aléatoire', 'Nouveau thème'], answer: 0, explain: 'La bridge table résout l’ambiguïté de filtre.' }
+  },
+  {
+    id: 'l21',
+    theme: 'DAX',
+    level: 'Avancé',
+    title: 'L21 — SUMX et itérateurs',
+    objective: 'Comprendre les calculs ligne par ligne puis agrégation.',
+    example: 'Calcul de marge pondérée.',
+    visual: { type: 'Itération', before: 'SUM simple', after: 'SUMX(Table, expression)' },
+    steps: ['Définir expression ligne', 'Appliquer SUMX', 'Comparer résultat'],
+    exercise: 'Calcule une marge pondérée avec SUMX.',
+    solution: 'SUMX(FactSales, FactSales[Qty]*FactSales[MarginUnit]).',
+    simple: 'SUMX calcule chaque ligne puis additionne.',
+    pitfalls: ['Confondre SUM et SUMX'],
+    summary: ['Itérateurs utiles', 'Contexte ligne', 'KPI précis'],
+    quiz: { question: 'SUMX effectue :', options: ['Itération ligne par ligne', 'Filtrage visuel', 'Tri automatique'], answer: 0, explain: 'SUMX évalue une expression pour chaque ligne.' }
+  },
+  {
+    id: 'l22',
+    theme: 'DAX',
+    level: 'Avancé',
+    title: 'L22 — ALL / REMOVEFILTERS',
+    objective: 'Construire des ratios robustes au contexte.',
+    example: 'Part CA produit vs total.',
+    visual: { type: 'Contexte', before: 'Ratio instable', after: 'Denominator avec ALL/REMOVEFILTERS' },
+    steps: ['Mesure de base', 'Mesure total sans filtre', 'Ratio final'],
+    exercise: 'Crée [% Part Produit] stable avec slicers.',
+    solution: 'DIVIDE([CA], CALCULATE([CA], REMOVEFILTERS(DimProduct))).',
+    simple: 'Tu enlèves un filtre pour créer une référence stable.',
+    pitfalls: ['Retirer trop de filtres'],
+    summary: ['Ratios fiables', 'Contexte contrôlé', 'Lecture claire'],
+    quiz: { question: 'REMOVEFILTERS sert à :', options: ['Retirer des filtres dans le calcul', 'Supprimer une table', 'Changer la langue'], answer: 0, explain: 'Il modifie le contexte de calcul DAX.' }
+  },
+  {
+    id: 'l23',
+    theme: 'Visualisation',
+    level: 'Avancé',
+    title: 'L23 — KPI avancés et alerts',
+    objective: 'Construire des indicateurs d’alerte lisibles.',
+    example: 'Alerte marge < objectif.',
+    visual: { type: 'Signal', before: 'KPI statique', after: 'KPI + couleur + icône d’alerte' },
+    steps: ['Mesure variance', 'Seuil d’alerte', 'Mise en forme conditionnelle'],
+    exercise: 'Ajoute un code couleur sur KPI marge.',
+    solution: 'Mesure statut + conditional formatting.',
+    simple: 'Un KPI doit dire si ça va bien ou non.',
+    pitfalls: ['Seuils non partagés avec métier'],
+    summary: ['KPI actionnable', 'Seuil clair', 'Décision rapide'],
+    quiz: { question: 'Un KPI alerting efficace doit :', options: ['Avoir un seuil explicite', 'Être très décoratif', 'Ignorer les objectifs'], answer: 0, explain: 'Le seuil rend le KPI décisionnel.' }
+  },
+  {
+    id: 'l24',
+    theme: 'Visualisation',
+    level: 'Intermédiaire',
+    title: 'L24 — Storytelling multi-pages',
+    objective: 'Créer un parcours de lecture logique.',
+    example: 'Résumé direction → détail région → détail produit.',
+    visual: { type: 'Flow', before: 'Pages isolées', after: 'Parcours narratif clair' },
+    steps: ['Définir message', 'Ordre des pages', 'Navigation guidée'],
+    exercise: 'Organise 3 pages avec fil narratif.',
+    solution: 'Page 1 KPI, page 2 causes, page 3 actions.',
+    simple: 'Tu racontes une histoire de décision.',
+    pitfalls: ['Pages sans lien logique'],
+    summary: ['Narratif', 'Navigation', 'Impact'],
+    quiz: { question: 'Le storytelling multi-pages aide à :', options: ['Guider la décision', 'Ajouter des bugs', 'Augmenter les clics inutiles'], answer: 0, explain: 'Il structure la compréhension du décideur.' }
+  },
+  {
+    id: 'l25',
+    theme: 'Projet',
+    level: 'Intermédiaire',
+    title: 'L25 — Projet RH guidé',
+    objective: 'Construire un dashboard RH opérationnel.',
+    example: 'Effectif, turnover, absentéisme.',
+    visual: { type: 'Projet', before: 'Fichiers RH bruts', after: 'Dashboard RH prêt comité' },
+    steps: ['Nettoyer RH', 'Modèle RH', 'Mesures RH', 'Visuels RH'],
+    exercise: 'Livrer 3 recommandations RH basées données.',
+    solution: 'Rapport RH + actions de rétention.',
+    simple: 'Tu relies les chiffres RH aux décisions manager.',
+    pitfalls: ['Indicateurs sans contexte temporel'],
+    summary: ['Projet bout-en-bout', 'RH orienté action', 'Restitution claire'],
+    quiz: { question: 'Un bon dashboard RH doit inclure :', options: ['Turnover + absentéisme', 'Seulement des couleurs', 'Aucune dimension temps'], answer: 0, explain: 'Ces KPI sont centraux pour le pilotage RH.' }
+  },
+  {
+    id: 'l26',
+    theme: 'Projet',
+    level: 'Avancé',
+    title: 'L26 — Projet budget guidé',
+    objective: 'Comparer budget vs réalisé et expliquer les écarts.',
+    example: 'Centres de coûts mensuels.',
+    visual: { type: 'Analyse variance', before: 'Table budget brute', after: 'Dashboard variance et causes' },
+    steps: ['Préparer budget', 'Relier réalisé', 'Mesures d’écart', 'Storytelling'],
+    exercise: 'Présente top 5 écarts et actions.',
+    solution: 'Variance absolue/relative + plan d’action.',
+    simple: 'Tu montres où on dépasse et pourquoi.',
+    pitfalls: ['Périodes non alignées'],
+    summary: ['Variance fiable', 'Priorisation', 'Actions'],
+    quiz: { question: 'Le KPI clé du projet budget est :', options: ['Écart budget-réalisé', 'Nombre de pages', 'Couleur du thème'], answer: 0, explain: 'L’écart est la base du pilotage budgétaire.' }
+  }
+];
+
+lessons.push(...phase2AdvancedLessons);
+
 lessons.forEach((lesson, idx) => {
   if (!lesson.level) {
     if (idx < 6) lesson.level = 'Débutant';
@@ -412,7 +545,7 @@ lessons.forEach((lesson, idx) => {
 
 const planStatus = [
   { phase: 'Phase 1 — MVP', done: '100%', note: 'Phase 1 terminée et stabilisée.' },
-  { phase: 'Phase 2 — Version solide', done: '55%', note: 'Leçons étendues, filtres thème+niveau, datasets, simulateurs et projets métiers ajoutés.' },
+  { phase: 'Phase 2 — Version solide', done: '72%', note: 'Leçons étendues à 26, score quiz, filtres thème+niveau, datasets, simulateurs et projets métiers ajoutés.' },
   { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
 ];
 
@@ -462,6 +595,7 @@ const datasetList = document.getElementById('dataset-list');
 const projectsList = document.getElementById('projects-list');
 const badgesList = document.getElementById('badges-list');
 const themeProgress = document.getElementById('theme-progress');
+const quizScoreValue = document.getElementById('quiz-score-value');
 
 function getThemes() {
   return [...new Set(lessons.map((lesson) => lesson.theme))];
@@ -631,8 +765,19 @@ function bindLessonQuizActions() {
         ? `✅ Bonne réponse. ${lesson.quiz.explain}`
         : `❌ Pas encore. ${lesson.quiz.explain}`;
       feedback.className = `quiz-feedback ${isCorrect ? 'ok' : 'ko'}`;
+      const quizState = JSON.parse(localStorage.getItem('pba-quiz-score') || '{}');
+      quizState[lessonId] = isCorrect;
+      localStorage.setItem('pba-quiz-score', JSON.stringify(quizState));
+      renderQuizScore();
     });
   });
+}
+
+function renderQuizScore() {
+  const quizState = JSON.parse(localStorage.getItem('pba-quiz-score') || '{}');
+  const total = lessons.length;
+  const good = lessons.filter((lesson) => quizState[lesson.id]).length;
+  quizScoreValue.textContent = `${good} / ${total} bonnes réponses`;
 }
 
 function getProgress() {
@@ -847,7 +992,9 @@ function initTheme() {
 function initProgressReset() {
   document.getElementById('reset-progress').addEventListener('click', () => {
     localStorage.removeItem(progressKey);
+    localStorage.removeItem('pba-quiz-score');
     updateProgressUI();
+    renderQuizScore();
   });
 
   document.getElementById('resume-learning').addEventListener('click', () => {
@@ -903,6 +1050,7 @@ renderLab();
 renderDatasets();
 renderProjects();
 updateProgressUI();
+renderQuizScore();
 initTheme();
 initProgressReset();
 initLessonActions();
