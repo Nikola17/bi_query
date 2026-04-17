@@ -545,7 +545,7 @@ lessons.forEach((lesson, idx) => {
 
 const planStatus = [
   { phase: 'Phase 1 — MVP', done: '100%', note: 'Phase 1 terminée et stabilisée.' },
-  { phase: 'Phase 2 — Version solide', done: '72%', note: 'Leçons étendues à 26, score quiz, filtres thème+niveau, datasets, simulateurs et projets métiers ajoutés.' },
+  { phase: 'Phase 2 — Version solide', done: '78%', note: 'Leçons étendues à 26, score quiz, filtres thème+niveau, datasets, simulateurs, fiches mémo et projets métiers ajoutés.' },
   { phase: 'Phase 3 — Avancé / premium', done: '5%', note: 'Préparation: architecture prête pour extension.' }
 ];
 
@@ -568,6 +568,43 @@ const badges = [
   { id: 'model', label: '🧩 Model Builder', rule: (ctx) => ctx.byTheme['Modélisation'] >= 2, hint: 'Terminer 2 leçons Modélisation' },
   { id: 'dax', label: '📈 DAX Analyst', rule: (ctx) => ctx.byTheme.DAX >= 3, hint: 'Terminer 3 leçons DAX' },
   { id: 'project', label: '🏁 Delivery', rule: (ctx) => ctx.projectsDone >= 2, hint: 'Terminer au moins 2 projets métiers' }
+];
+
+const cheatsheets = [
+  {
+    id: 'cs-pq',
+    title: 'Power Query — 20 transformations clés',
+    lines: [
+      '1) Promouvoir en-têtes',
+      '2) Typage explicite',
+      '3) Supprimer doublons',
+      '4) Remplacer valeurs',
+      '5) Merge / Append',
+      '6) Pivot / Unpivot'
+    ]
+  },
+  {
+    id: 'cs-dax',
+    title: 'DAX — 25 fonctions indispensables',
+    lines: [
+      'SUM, COUNT, DISTINCTCOUNT',
+      'DIVIDE, IF, SWITCH',
+      'CALCULATE, FILTER',
+      'ALL, REMOVEFILTERS',
+      'SAMEPERIODLASTYEAR'
+    ]
+  },
+  {
+    id: 'cs-model',
+    title: 'Checklist modèle Power BI',
+    lines: [
+      'Schéma en étoile',
+      'Dimensions dédupliquées',
+      'Relations 1-*',
+      'Table calendrier marquée',
+      'Mesures dans table dédiée'
+    ]
+  }
 ];
 
 const labData = [
@@ -599,6 +636,7 @@ const quizScoreValue = document.getElementById('quiz-score-value');
 const challengeTimerEl = document.getElementById('challenge-timer');
 const challengeFeedbackEl = document.getElementById('challenge-feedback');
 const challengeAnswerEl = document.getElementById('challenge-answer');
+const cheatsheetList = document.getElementById('cheatsheet-list');
 
 let challengeSeconds = 60;
 let challengeInterval = null;
@@ -981,6 +1019,38 @@ function renderDatasets() {
   });
 }
 
+function downloadText(content, filename) {
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function renderCheatsheets() {
+  cheatsheetList.innerHTML = cheatsheets
+    .map(
+      (sheet) => `
+      <article class="card">
+        <h3>${sheet.title}</h3>
+        <ul>${sheet.lines.map((line) => `<li>${line}</li>`).join('')}</ul>
+        <button class="btn btn-ghost" type="button" data-cheatsheet="${sheet.id}">Télécharger la fiche</button>
+      </article>
+    `
+    )
+    .join('');
+
+  document.querySelectorAll('[data-cheatsheet]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const sheet = cheatsheets.find((item) => item.id === button.dataset.cheatsheet);
+      const content = `${sheet.title}\n\n${sheet.lines.join('\n')}\n`;
+      downloadText(content, `${sheet.id}.txt`);
+    });
+  });
+}
+
 function renderProjects() {
   projectsList.innerHTML = projects
     .map(
@@ -1122,6 +1192,7 @@ renderPlanStatus();
 renderLessons();
 renderLab();
 renderDatasets();
+renderCheatsheets();
 renderProjects();
 updateProgressUI();
 renderQuizScore();
