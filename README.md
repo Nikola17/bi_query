@@ -22,6 +22,7 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Score quiz global (bonnes réponses cumulées) avec persistance locale.
 - Mode révision rapide (ouverture aléatoire d'une leçon).
 - Fiches mémo téléchargeables (Power Query, DAX, modélisation).
+- Bascule **Version simple** / **Version technique** dans les leçons.
 - Suivi de progression en `localStorage`.
 - Thème clair/sombre.
 - Plusieurs projets métiers traçables.

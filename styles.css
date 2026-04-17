@@ -45,6 +45,7 @@ h1 { font-size: clamp(1.9rem, 3.5vw, 3rem); margin: .5rem 0 1rem; }
 .btn { background: var(--primary); color: var(--primary-contrast); border: none; border-radius: .7rem; padding: .64rem 1rem; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
 .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
 .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn.is-active { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
 
 .hero-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
 .muted { color: var(--muted); }

@@ -615,6 +615,7 @@ const labData = [
 
 const progressKey = 'pba-progress';
 const themeKey = 'pba-theme';
+const viewModeKey = 'pba-view-mode';
 
 const modulesList = document.getElementById('modules-list');
 const themeList = document.getElementById('theme-list');
@@ -637,6 +638,8 @@ const challengeTimerEl = document.getElementById('challenge-timer');
 const challengeFeedbackEl = document.getElementById('challenge-feedback');
 const challengeAnswerEl = document.getElementById('challenge-answer');
 const cheatsheetList = document.getElementById('cheatsheet-list');
+const simpleModeBtn = document.getElementById('simple-mode');
+const techModeBtn = document.getElementById('tech-mode');
 
 let challengeSeconds = 60;
 let challengeInterval = null;
@@ -697,6 +700,9 @@ function getFilteredLessons() {
 
 function renderLessons() {
   const data = getFilteredLessons();
+  const viewMode = localStorage.getItem(viewModeKey) || 'tech';
+  simpleModeBtn.classList.toggle('is-active', viewMode === 'simple');
+  techModeBtn.classList.toggle('is-active', viewMode === 'tech');
 
   lessonsList.innerHTML = data
     .map(
@@ -710,6 +716,9 @@ function renderLessons() {
           <p><strong>Ce que tu vas savoir faire :</strong> ${lesson.objective}</p>
           <p><strong>Exemple métier :</strong> ${lesson.example}</p>
 
+          ${
+            viewMode === 'tech'
+              ? `
           <div class="visual-block">
             <h4>Démo visuelle — ${lesson.visual.type}</h4>
             <div class="visual-grid">
@@ -722,6 +731,9 @@ function renderLessons() {
           <ol>${lesson.steps.map((step) => `<li>${step}</li>`).join('')}</ol>
 
           <p><strong>Exercice interactif :</strong> ${lesson.exercise}</p>
+          `
+              : `<p><strong>Version simple :</strong> ${lesson.simple}</p>`
+          }
 
           <div class="lesson-help-actions">
             <button class="btn btn-ghost" type="button" data-action="simple">Explique-moi simplement</button>
@@ -1177,6 +1189,16 @@ function initLessonActions() {
   lessonSearch.addEventListener('input', () => {
     renderLessons();
     updateProgressUI();
+  });
+
+  simpleModeBtn.addEventListener('click', () => {
+    localStorage.setItem(viewModeKey, 'simple');
+    renderLessons();
+  });
+
+  techModeBtn.addEventListener('click', () => {
+    localStorage.setItem(viewModeKey, 'tech');
+    renderLessons();
   });
 }
 
