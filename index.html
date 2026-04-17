@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power BI Academy — De zéro à avancé</title>
+    <meta
+      name="description"
+      content="Plateforme interactive pour apprendre Power Query, Power BI, modélisation et DAX de zéro à avancé."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top">Power BI Academy</a>
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="#parcours">Parcours</a>
+          <a href="#plan-status">Avancement plan</a>
+          <a href="#lessons">Leçons</a>
+          <a href="#visual-library">Visuels</a>
+          <a href="#lab">Lab</a>
+          <a href="#cheatsheets">Fiches</a>
+          <a href="#phase3">Phase 3</a>
+          <a href="#projects">Projets</a>
+        </nav>
+        <button id="theme-toggle" class="btn btn-ghost" aria-label="Basculer le thème">🌙</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="tag">Apprentissage guidé • Débutant → Avancé</p>
+            <h1>Tu pars de zéro et tu deviens solide sur Power Query + Power BI.</h1>
+            <p>
+              Un parcours visuel et interactif pour apprendre le nettoyage de données, la
+              modélisation, DAX et la création de dashboards professionnels.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#parcours">Commencer de zéro</a>
+              <a class="btn btn-secondary" href="#lessons">Voir les leçons complètes</a>
+            </div>
+          </div>
+          <article class="card dashboard-preview" aria-label="Aperçu mini dashboard">
+            <h2>Mini dashboard (démo)</h2>
+            <div class="kpi-grid">
+              <div><span>CA total</span><strong>1,24 M€</strong></div>
+              <div><span>Marge</span><strong>34,8 %</strong></div>
+              <div><span>Clients actifs</span><strong>842</strong></div>
+            </div>
+            <p class="muted">Exemple interactif : filtre par année dans la section Lab.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="progression" class="section container">
+        <div class="section-head">
+          <h2>Ta progression</h2>
+          <div class="hero-actions">
+            <button id="resume-learning" class="btn btn-ghost">Reprendre où j'en étais</button>
+            <button id="reset-progress" class="btn btn-ghost">Réinitialiser</button>
+          </div>
+        </div>
+        <div class="progress-block" aria-live="polite">
+          <div class="progress-bar"><span id="progress-fill"></span></div>
+          <p><strong id="progress-value">0%</strong> du parcours affiché terminé.</p>
+        </div>
+        <div class="section-head top-space">
+          <h3>Progression par thème</h3>
+        </div>
+        <div id="theme-progress" class="status-grid"></div>
+      </section>
+
+      <section id="badges" class="section section-alt">
+        <div class="container">
+          <h2>Badges gagnés</h2>
+          <p class="muted">Débloque des badges selon ta progression et les projets terminés.</p>
+          <div id="badges-list" class="chips"></div>
+        </div>
+      </section>
+
+      <section id="plan-status" class="section section-alt">
+        <div class="container">
+          <h2>Où on en est dans le plan</h2>
+          <p class="muted">Mise à jour en continu à chaque itération de construction.</p>
+          <div id="plan-status-list" class="status-grid"></div>
+        </div>
+      </section>
+
+      <section id="parcours" class="section container">
+        <h2>Parcours complet (MVP+)</h2>
+        <p class="muted">Deux entrées : par blocs pédagogiques et par thème.</p>
+        <div class="section-head"><h3>Blocs pédagogiques</h3></div>
+        <div class="modules-grid" id="modules-list"></div>
+        <div class="section-head top-space"><h3>Par thème</h3></div>
+        <div class="chips" id="theme-list"></div>
+      </section>
+
+      <section id="lessons" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="lessons-title">Leçons complètes</h2>
+            <div class="filters">
+              <select id="lesson-filter" aria-label="Filtrer les leçons par thème">
+                <option value="all">Tous les thèmes</option>
+              </select>
+              <select id="level-filter" aria-label="Filtrer les leçons par niveau">
+                <option value="all">Tous les niveaux</option>
+                <option value="Débutant">Débutant</option>
+                <option value="Intermédiaire">Intermédiaire</option>
+                <option value="Avancé">Avancé</option>
+              </select>
+              <input id="lesson-search" type="search" placeholder="Rechercher une leçon..." />
+            </div>
+          </div>
+          <p class="muted">
+            Chaque leçon contient : objectif, exemple métier, démo visuelle, explication pas à pas,
+            exercice, correction, pièges, résumé, mini quiz interactif + boutons aide/solution.
+          </p>
+          <article class="card quiz-score">
+            <h3>Score Quiz</h3>
+            <p id="quiz-score-value">0 / 0 bonnes réponses</p>
+          </article>
+          <div class="hero-actions">
+            <button id="simple-mode" class="btn btn-ghost">Version simple</button>
+            <button id="tech-mode" class="btn btn-ghost">Version technique</button>
+          </div>
+          <div class="lesson-actions">
+            <button id="expand-lessons" class="btn btn-ghost">Tout ouvrir</button>
+            <button id="collapse-lessons" class="btn btn-ghost">Tout fermer</button>
+            <button id="random-lesson" class="btn btn-ghost">Mode révision rapide</button>
+          </div>
+          <div id="lessons-list" class="lesson-list"></div>
+        </div>
+      </section>
+
+      <section id="visual-library" class="section section-alt">
+        <div class="container">
+          <h2>Bibliothèque visuelle (base MVP)</h2>
+          <p class="muted">
+            Une base de visuels pédagogiques pour apprendre plus vite : avant/après, schémas et
+            cartes mentales.
+          </p>
+          <div class="modules-grid">
+            <article class="card">
+              <h3>Avant / Après transformation</h3>
+              <p>
+                Compare une table brute et une table propre pour visualiser directement l'impact de
+                Power Query.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Schéma relationnel simplifié</h3>
+              <p>
+                Vue fact/dimensions avec relations 1-* pour comprendre les bases de la modélisation.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Carte mentale DAX essentielle</h3>
+              <p>
+                Rappels visuels sur mesures, contexte de filtre, CALCULATE et fonctions de temps.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab" class="section container">
+        <h2>Zone d'entraînement (Lab)</h2>
+        <p>
+          Simulateur : filtre les ventes annuelles de l'entreprise fictive <strong>NovaRetail</strong>
+          puis compare le réalisé vs objectif.
+        </p>
+        <div class="lab-controls">
+          <label for="year-filter">Filtrer par année :</label>
+          <select id="year-filter">
+            <option value="all">Toutes</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Année</th><th>CA</th><th>Objectif</th><th>% atteinte</th></tr>
+            </thead>
+            <tbody id="lab-rows"></tbody>
+          </table>
+        </div>
+        <div class="section-head top-space">
+          <h3>Datasets et défis (Phase 2)</h3>
+        </div>
+        <div id="dataset-list" class="modules-grid"></div>
+        <div class="section-head top-space">
+          <h3>Simulateurs interactifs (Phase 2)</h3>
+        </div>
+        <div class="modules-grid">
+          <article class="card">
+            <h4>Simulateur de relations</h4>
+            <p class="muted">Choisis un modèle et observe l'impact sur la qualité de l'analyse.</p>
+            <label for="relation-mode">Type de modèle :</label>
+            <select id="relation-mode">
+              <option value="star">Schéma en étoile (recommandé)</option>
+              <option value="snowflake">Snowflake</option>
+              <option value="flat">Table unique "flat"</option>
+            </select>
+            <p id="relation-feedback" class="sim-feedback" aria-live="polite"></p>
+          </article>
+          <article class="card">
+            <h4>Simulateur contexte DAX</h4>
+            <p class="muted">Teste l'effet d'un filtre sur le KPI [CA].</p>
+            <label for="dax-filter">Filtre :</label>
+            <select id="dax-filter">
+              <option value="all">Tous pays</option>
+              <option value="fr">France</option>
+              <option value="es">Espagne</option>
+              <option value="de">Allemagne</option>
+            </select>
+            <p id="dax-feedback" class="sim-feedback" aria-live="polite"></p>
+          </article>
+        </div>
+        <div class="section-head top-space">
+          <h3>Défi chronométré (Phase 2)</h3>
+        </div>
+        <article class="card">
+          <p class="muted">
+            Objectif : répondre en moins de 60 secondes à une question KPI simple.
+          </p>
+          <div class="hero-actions">
+            <button id="challenge-start" class="btn btn-ghost">Démarrer le défi</button>
+            <button id="challenge-stop" class="btn btn-ghost">Arrêter</button>
+          </div>
+          <p><strong>Temps restant :</strong> <span id="challenge-timer">60s</span></p>
+          <p><strong>Question :</strong> Quel est le % d’atteinte 2025 (arrondi à l’entier) ?</p>
+          <input id="challenge-answer" type="number" placeholder="Ta réponse (ex: 104)" />
+          <button id="challenge-validate" class="btn btn-ghost">Valider</button>
+          <p id="challenge-feedback" class="sim-feedback" aria-live="polite"></p>
+        </article>
+      </section>
+
+      <section id="cheatsheets" class="section section-alt">
+        <div class="container">
+          <h2>Cheatsheets / fiches mémo</h2>
+          <p class="muted">
+            Anti-sèches prêtes à télécharger pour réviser rapidement les points essentiels.
+          </p>
+          <div id="cheatsheet-list" class="modules-grid"></div>
+        </div>
+      </section>
+
+      <section id="phase3" class="section container">
+        <h2>Phase 3 — Spécialisation Paie / RH / Finance</h2>
+        <p class="muted">
+          Parcours expert orienté métiers paie, ressources humaines et pilotage financier.
+        </p>
+        <div class="section-head top-space">
+          <h3>Cas métiers complets</h3>
+        </div>
+        <div id="phase3-cases" class="modules-grid"></div>
+
+        <div class="section-head top-space">
+          <h3>Évaluation experte</h3>
+        </div>
+        <article class="card">
+          <div class="hero-actions">
+            <select id="eval-track" aria-label="Choisir une spécialisation">
+              <option value="paie">Paie</option>
+              <option value="rh">RH</option>
+              <option value="finance">Finance</option>
+            </select>
+            <button id="eval-start" class="btn btn-ghost">Démarrer l'évaluation</button>
+          </div>
+          <p id="eval-question">Choisis une spécialisation puis démarre.</p>
+          <div id="eval-options" class="lesson-list"></div>
+          <p id="eval-feedback" class="sim-feedback" aria-live="polite"></p>
+        </article>
+
+        <div class="section-head top-space">
+          <h3>Révisions intelligentes</h3>
+        </div>
+        <article class="card">
+          <p class="muted">
+            Les notions où tu fais le plus d’erreurs sont priorisées ici.
+          </p>
+          <ul id="revision-list"></ul>
+        </article>
+
+        <div class="section-head top-space">
+          <h3>Suivi de performance utilisateur</h3>
+        </div>
+        <article class="card">
+          <ul id="performance-stats"></ul>
+        </article>
+
+        <div class="section-head top-space">
+          <h3>Nouveautés Power BI à surveiller</h3>
+        </div>
+        <article class="card">
+          <ul id="powerbi-news"></ul>
+        </article>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2>Projets métiers (Phase 2)</h2>
+        <p class="muted">Plusieurs cas pour assembler Power Query, modèle, DAX et storytelling.</p>
+        <div id="projects-list" class="modules-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Power BI Academy — MVP statique prêt à déployer (Vercel ou GitHub Pages).</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
