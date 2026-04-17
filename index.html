@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power BI Academy — De zéro à avancé</title>
+    <meta
+      name="description"
+      content="Plateforme interactive pour apprendre Power Query, Power BI, modélisation et DAX de zéro à avancé."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top">Power BI Academy</a>
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="#parcours">Parcours</a>
+          <a href="#lessons">Leçons</a>
+          <a href="#lab">Lab</a>
+          <a href="#cheatsheets">Fiches mémo</a>
+          <a href="#projects">Projets</a>
+        </nav>
+        <button id="theme-toggle" class="btn btn-ghost" aria-label="Basculer le thème">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="tag">Apprentissage guidé • Débutant → Avancé</p>
+            <h1>Tu pars de zéro et tu deviens solide sur Power Query + Power BI.</h1>
+            <p>
+              Un parcours visuel et interactif pour apprendre le nettoyage de données, la
+              modélisation, DAX et la création de dashboards professionnels.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#parcours">Commencer de zéro</a>
+              <a class="btn btn-secondary" href="#test-niveau">Faire le test de niveau</a>
+            </div>
+          </div>
+          <article class="card dashboard-preview" aria-label="Aperçu mini dashboard">
+            <h2>Mini dashboard (démo)</h2>
+            <div class="kpi-grid">
+              <div>
+                <span>CA total</span>
+                <strong>1,24 M€</strong>
+              </div>
+              <div>
+                <span>Marge</span>
+                <strong>34,8 %</strong>
+              </div>
+              <div>
+                <span>Clients actifs</span>
+                <strong>842</strong>
+              </div>
+            </div>
+            <p class="muted">Exemple interactif : filtre par année dans la section Lab.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="progression" class="section container">
+        <div class="section-head">
+          <h2>Ta progression</h2>
+          <button id="reset-progress" class="btn btn-ghost">Réinitialiser</button>
+        </div>
+        <div class="progress-block" aria-live="polite">
+          <div class="progress-bar"><span id="progress-fill"></span></div>
+          <p><strong id="progress-value">0%</strong> du parcours MVP terminé.</p>
+        </div>
+      </section>
+
+      <section id="parcours" class="section container">
+        <h2>Parcours complet (MVP prêt pour Vercel / GitHub Pages)</h2>
+        <p class="muted">10 leçons fondatrices + quiz + mini projet guidé.</p>
+        <div class="modules-grid" id="modules-list"></div>
+      </section>
+
+      <section id="lessons" class="section section-alt">
+        <div class="container">
+          <h2>Format type d'une leçon</h2>
+          <div class="lesson-layout">
+            <article class="card">
+              <h3>Leçon 1 — Importer un CSV proprement</h3>
+              <ol>
+                <li>Objectif : importer et typer les colonnes.</li>
+                <li>Exemple métier : export ventes e-commerce.</li>
+                <li>Démo visuelle : avant/après transformation.</li>
+                <li>Explication simple étape par étape.</li>
+                <li>Exercice : corriger 3 types de données faux.</li>
+                <li>Correction détaillée + erreurs fréquentes.</li>
+                <li>Résumé en 5 points + quiz rapide.</li>
+              </ol>
+              <label class="checkbox-line">
+                <input type="checkbox" data-lesson="lesson-1" />
+                Marquer cette leçon comme terminée
+              </label>
+            </article>
+            <article class="card" id="test-niveau">
+              <h3>Test de niveau rapide</h3>
+              <form id="quiz-form">
+                <fieldset>
+                  <legend>1) En Power BI, quelle structure est recommandée ?</legend>
+                  <label><input type="radio" name="q1" value="a" /> Modèle en étoile</label>
+                  <label><input type="radio" name="q1" value="b" /> Plusieurs tables sans relations</label>
+                </fieldset>
+                <fieldset>
+                  <legend>2) CALCULATE sert surtout à…</legend>
+                  <label><input type="radio" name="q2" value="a" /> Changer le contexte de filtre</label>
+                  <label><input type="radio" name="q2" value="b" /> Importer des données</label>
+                </fieldset>
+                <fieldset>
+                  <legend>3) Merge dans Power Query correspond à…</legend>
+                  <label><input type="radio" name="q3" value="a" /> Joindre des tables</label>
+                  <label><input type="radio" name="q3" value="b" /> Créer un graphique</label>
+                </fieldset>
+                <button class="btn" type="submit">Valider le quiz</button>
+                <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab" class="section container">
+        <h2>Zone d'entraînement (Lab)</h2>
+        <p>
+          Simulateur simple : filtre les ventes annuelles de l'entreprise fictive
+          <strong>NovaRetail</strong>.
+        </p>
+        <div class="lab-controls">
+          <label for="year-filter">Filtrer par année :</label>
+          <select id="year-filter">
+            <option value="all">Toutes</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Année</th>
+                <th>CA</th>
+                <th>Objectif</th>
+                <th>% atteinte</th>
+              </tr>
+            </thead>
+            <tbody id="lab-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="cheatsheets" class="section section-alt">
+        <div class="container">
+          <h2>Fiches mémo essentielles</h2>
+          <div class="cards-3">
+            <article class="card">
+              <h3>Power Query</h3>
+              <ul>
+                <li>Types de données</li>
+                <li>Merge / Append</li>
+                <li>Pivot / Unpivot</li>
+                <li>Colonnes conditionnelles</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Modélisation Power BI</h3>
+              <ul>
+                <li>Faits et dimensions</li>
+                <li>Relations et cardinalités</li>
+                <li>Table calendrier</li>
+                <li>Schéma en étoile</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>DAX utile</h3>
+              <ul>
+                <li>SUM, DISTINCTCOUNT, DIVIDE</li>
+                <li>CALCULATE + FILTER</li>
+                <li>Variables</li>
+                <li>Time intelligence de base</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2>Mini projet final (MVP)</h2>
+        <article class="card">
+          <h3>Projet — Dashboard ventes NovaRetail</h3>
+          <ol>
+            <li>Nettoyage Power Query (fichiers CSV + Excel).</li>
+            <li>Modélisation (star schema + calendrier).</li>
+            <li>Mesures DAX : CA, marge, N vs N-1.</li>
+            <li>Dashboard final : KPIs, tendances, segments.</li>
+            <li>Interprétation métier et recommandations.</li>
+          </ol>
+          <label class="checkbox-line">
+            <input type="checkbox" data-lesson="mini-project" />
+            Marquer le mini projet comme terminé
+          </label>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Power BI Academy — MVP statique prêt à déployer (Vercel ou GitHub Pages).</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
