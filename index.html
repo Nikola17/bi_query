@@ -130,6 +130,7 @@
           <div class="lesson-actions">
             <button id="expand-lessons" class="btn btn-ghost">Tout ouvrir</button>
             <button id="collapse-lessons" class="btn btn-ghost">Tout fermer</button>
+            <button id="random-lesson" class="btn btn-ghost">Mode révision rapide</button>
           </div>
           <div id="lessons-list" class="lesson-list"></div>
         </div>
@@ -221,6 +222,23 @@
             <p id="dax-feedback" class="sim-feedback" aria-live="polite"></p>
           </article>
         </div>
+        <div class="section-head top-space">
+          <h3>Défi chronométré (Phase 2)</h3>
+        </div>
+        <article class="card">
+          <p class="muted">
+            Objectif : répondre en moins de 60 secondes à une question KPI simple.
+          </p>
+          <div class="hero-actions">
+            <button id="challenge-start" class="btn btn-ghost">Démarrer le défi</button>
+            <button id="challenge-stop" class="btn btn-ghost">Arrêter</button>
+          </div>
+          <p><strong>Temps restant :</strong> <span id="challenge-timer">60s</span></p>
+          <p><strong>Question :</strong> Quel est le % d’atteinte 2025 (arrondi à l’entier) ?</p>
+          <input id="challenge-answer" type="number" placeholder="Ta réponse (ex: 104)" />
+          <button id="challenge-validate" class="btn btn-ghost">Valider</button>
+          <p id="challenge-feedback" class="sim-feedback" aria-live="polite"></p>
+        </article>
       </section>
 
       <section id="projects" class="section container">

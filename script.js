@@ -596,6 +596,12 @@ const projectsList = document.getElementById('projects-list');
 const badgesList = document.getElementById('badges-list');
 const themeProgress = document.getElementById('theme-progress');
 const quizScoreValue = document.getElementById('quiz-score-value');
+const challengeTimerEl = document.getElementById('challenge-timer');
+const challengeFeedbackEl = document.getElementById('challenge-feedback');
+const challengeAnswerEl = document.getElementById('challenge-answer');
+
+let challengeSeconds = 60;
+let challengeInterval = null;
 
 function getThemes() {
   return [...new Set(lessons.map((lesson) => lesson.theme))];
@@ -778,6 +784,57 @@ function renderQuizScore() {
   const total = lessons.length;
   const good = lessons.filter((lesson) => quizState[lesson.id]).length;
   quizScoreValue.textContent = `${good} / ${total} bonnes réponses`;
+}
+
+function startChallenge() {
+  challengeSeconds = 60;
+  challengeTimerEl.textContent = `${challengeSeconds}s`;
+  challengeFeedbackEl.textContent = '';
+  challengeAnswerEl.value = '';
+  clearInterval(challengeInterval);
+
+  challengeInterval = setInterval(() => {
+    challengeSeconds -= 1;
+    challengeTimerEl.textContent = `${challengeSeconds}s`;
+    if (challengeSeconds <= 0) {
+      clearInterval(challengeInterval);
+      challengeInterval = null;
+      challengeFeedbackEl.textContent = '⏱️ Temps écoulé ! Réessaie pour améliorer ta vitesse.';
+    }
+  }, 1000);
+}
+
+function stopChallenge() {
+  clearInterval(challengeInterval);
+  challengeInterval = null;
+  challengeFeedbackEl.textContent = `Défi arrêté avec ${challengeSeconds}s restantes.`;
+}
+
+function validateChallenge() {
+  const answer = Number(challengeAnswerEl.value);
+  const expected = Math.round((488000 / 470000) * 100);
+  if (challengeInterval === null && challengeSeconds === 60) {
+    challengeFeedbackEl.textContent = 'Clique d’abord sur “Démarrer le défi”.';
+    return;
+  }
+  if (!answer) {
+    challengeFeedbackEl.textContent = 'Entre une réponse numérique.';
+    return;
+  }
+
+  const isCorrect = answer === expected;
+  if (isCorrect) {
+    const usedSeconds = 60 - challengeSeconds;
+    const bestRaw = localStorage.getItem('pba-challenge-best');
+    const best = bestRaw ? Number(bestRaw) : null;
+    if (best === null || usedSeconds < best) {
+      localStorage.setItem('pba-challenge-best', String(usedSeconds));
+    }
+    const bestNow = localStorage.getItem('pba-challenge-best');
+    challengeFeedbackEl.textContent = `✅ Correct (${expected}%). Temps: ${usedSeconds}s. Meilleur temps: ${bestNow}s.`;
+  } else {
+    challengeFeedbackEl.textContent = `❌ Incorrect. La bonne réponse est ${expected}%.`;
+  }
 }
 
 function getProgress() {
@@ -1026,6 +1083,17 @@ function initLessonActions() {
     });
   });
 
+  document.getElementById('random-lesson').addEventListener('click', () => {
+    const cards = [...document.querySelectorAll('.lesson-card')];
+    if (!cards.length) return;
+    cards.forEach((card) => {
+      card.open = false;
+    });
+    const randomCard = cards[Math.floor(Math.random() * cards.length)];
+    randomCard.open = true;
+    randomCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
   lessonFilter.addEventListener('change', () => {
     renderLessons();
     updateProgressUI();
@@ -1042,6 +1110,12 @@ function initLessonActions() {
   });
 }
 
+function initChallenge() {
+  document.getElementById('challenge-start').addEventListener('click', startChallenge);
+  document.getElementById('challenge-stop').addEventListener('click', stopChallenge);
+  document.getElementById('challenge-validate').addEventListener('click', validateChallenge);
+}
+
 renderModules();
 renderThemes();
 renderPlanStatus();
@@ -1055,6 +1129,7 @@ initTheme();
 initProgressReset();
 initLessonActions();
 initSimulators();
+initChallenge();
 
 lessonsTitle.textContent = `Leçons complètes (${lessons.length})`;
 

@@ -17,8 +17,10 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Bouton **Reprendre où j'en étais** pour rouvrir la prochaine leçon à faire.
 - Zone Lab avec filtre de données + datasets CSV téléchargeables.
 - Simulateur de relations et simulateur de contexte DAX.
+- Défi chronométré (60s) avec meilleur temps sauvegardé en local.
 - Système de badges (starter, Power Query, modélisation, DAX, projets).
 - Score quiz global (bonnes réponses cumulées) avec persistance locale.
+- Mode révision rapide (ouverture aléatoire d'une leçon).
 - Suivi de progression en `localStorage`.
 - Thème clair/sombre.
 - Plusieurs projets métiers traçables.

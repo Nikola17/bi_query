@@ -80,6 +80,7 @@ h1 { font-size: clamp(1.9rem, 3.5vw, 3rem); margin: .5rem 0 1rem; }
 #relation-mode,
 #dax-filter { border: 1px solid var(--border); border-radius: .6rem; background: var(--surface); color: var(--text); padding: .5rem .6rem; margin-left: .4rem; }
 .sim-feedback { margin: .7rem 0 0; font-weight: 600; }
+#challenge-answer { border: 1px solid var(--border); border-radius: .6rem; background: var(--surface); color: var(--text); padding: .5rem .6rem; margin-right: .5rem; }
 
 .lesson-list { display: grid; gap: .8rem; }
 .lesson-card summary { display: flex; justify-content: space-between; align-items: center; gap: .5rem; cursor: pointer; }
