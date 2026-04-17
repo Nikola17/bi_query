@@ -716,7 +716,7 @@ lessons.forEach((lesson, idx) => {
 const planStatus = [
   { phase: 'Phase 1 — MVP', done: '100%', note: 'Phase 1 terminée et stabilisée.' },
   { phase: 'Phase 2 — Version solide', done: '100%', note: 'Phase 2 finalisée : 32 leçons, lab étendu, datasets, simulateurs, badges, filtres niveau/thème, fiches mémo et projets métiers.' },
-  { phase: 'Phase 3 — Avancé / premium', done: '35%', note: 'Démarrage spécialisation Paie/RH/Finance: cas métiers, évaluations et révisions intelligentes.' }
+  { phase: 'Phase 3 — Avancé / premium', done: '45%', note: 'Spécialisation Paie/RH/Finance + évaluations + révisions intelligentes + suivi performance + section nouveautés.' }
 ];
 
 const datasets = [
@@ -800,6 +800,12 @@ const evalTracks = {
   ]
 };
 
+const powerBiNews = [
+  'Suivre les nouveautés Fabric et intégrations Power BI Service.',
+  'Surveiller les évolutions DAX et fonctions d’optimisation.',
+  'Vérifier les nouveautés gouvernance/sécurité (RLS, partage, workspace).'
+];
+
 const labData = [
   { year: 2023, revenue: 345000, target: 320000 },
   { year: 2024, revenue: 412000, target: 395000 },
@@ -840,6 +846,8 @@ const evalQuestionEl = document.getElementById('eval-question');
 const evalOptionsEl = document.getElementById('eval-options');
 const evalFeedbackEl = document.getElementById('eval-feedback');
 const revisionListEl = document.getElementById('revision-list');
+const performanceStatsEl = document.getElementById('performance-stats');
+const powerBiNewsEl = document.getElementById('powerbi-news');
 
 let challengeSeconds = 60;
 let challengeInterval = null;
@@ -1030,6 +1038,7 @@ function bindLessonQuizActions() {
       localStorage.setItem('pba-quiz-errors', JSON.stringify(quizErrors));
       renderQuizScore();
       renderRevisionList();
+      renderPerformanceStats();
     });
   });
 }
@@ -1054,6 +1063,13 @@ function renderPhase3Cases() {
     .join('');
 }
 
+function trackUserVisit() {
+  const visitsRaw = localStorage.getItem('pba-visits');
+  const visits = visitsRaw ? Number(visitsRaw) + 1 : 1;
+  localStorage.setItem('pba-visits', String(visits));
+  localStorage.setItem('pba-last-visit', new Date().toISOString());
+}
+
 function renderRevisionList() {
   const errors = JSON.parse(localStorage.getItem('pba-quiz-errors') || '{}');
   const prioritized = Object.entries(errors)
@@ -1071,6 +1087,28 @@ function renderRevisionList() {
       return `<li><strong>${lesson?.title || lessonId}</strong> — ${count} erreur(s) : à réviser en priorité.</li>`;
     })
     .join('');
+}
+
+function renderPerformanceStats() {
+  const visits = Number(localStorage.getItem('pba-visits') || 0);
+  const lastVisit = localStorage.getItem('pba-last-visit');
+  const progress = getProgress();
+  const completedLessons = lessons.filter((lesson) => progress[lesson.id]).length;
+  const completedProjects = projects.filter((project) => progress[project.id]).length;
+  const errors = JSON.parse(localStorage.getItem('pba-quiz-errors') || '{}');
+  const totalErrors = Object.values(errors).reduce((acc, count) => acc + Number(count), 0);
+
+  performanceStatsEl.innerHTML = `
+    <li><strong>Sessions ouvertes :</strong> ${visits}</li>
+    <li><strong>Dernière session :</strong> ${lastVisit ? new Date(lastVisit).toLocaleString('fr-FR') : '—'}</li>
+    <li><strong>Leçons terminées :</strong> ${completedLessons}/${lessons.length}</li>
+    <li><strong>Projets terminés :</strong> ${completedProjects}/${projects.length}</li>
+    <li><strong>Erreurs quiz cumulées :</strong> ${totalErrors}</li>
+  `;
+}
+
+function renderPowerBiNews() {
+  powerBiNewsEl.innerHTML = powerBiNews.map((item) => `<li>${item}</li>`).join('');
 }
 
 function renderEvalQuestion() {
@@ -1415,6 +1453,7 @@ function initProgressReset() {
     updateProgressUI();
     renderQuizScore();
     renderRevisionList();
+    renderPerformanceStats();
   });
 
   document.getElementById('resume-learning').addEventListener('click', () => {
@@ -1493,6 +1532,7 @@ renderModules();
 renderThemes();
 renderPlanStatus();
 renderLessons();
+trackUserVisit();
 renderLab();
 renderDatasets();
 renderCheatsheets();
@@ -1501,6 +1541,8 @@ renderProjects();
 updateProgressUI();
 renderQuizScore();
 renderRevisionList();
+renderPerformanceStats();
+renderPowerBiNews();
 initTheme();
 initProgressReset();
 initLessonActions();

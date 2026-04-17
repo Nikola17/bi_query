@@ -24,6 +24,7 @@ Site statique d'apprentissage Power Query + Power BI basé sur le plan pédagogi
 - Fiches mémo téléchargeables (Power Query, DAX, modélisation).
 - Bascule **Version simple** / **Version technique** dans les leçons.
 - Phase 3 orientée métiers **Paie / RH / Finance** : cas métiers, mini-évaluation experte et liste de révisions intelligentes.
+- Suivi de performance utilisateur (sessions, progression, erreurs cumulées) et bloc "Nouveautés Power BI à surveiller".
 - Suivi de progression en `localStorage`.
 - Thème clair/sombre.
 - Plusieurs projets métiers traçables.
