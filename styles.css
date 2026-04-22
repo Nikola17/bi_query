@@ -118,6 +118,14 @@ th, td { text-align: left; padding: .7rem; border-bottom: 1px solid var(--border
 .checkbox-line { display: flex; align-items: center; gap: .5rem; margin-top: 1rem; font-weight: 600; }
 .site-footer { border-top: 1px solid var(--border); padding: 1.1rem 0 2.2rem; color: var(--muted); }
 
+/* Login */
+.login-wrap { max-width: 420px; margin: 0 auto; padding: 2rem 0; }
+.login-box { background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; box-shadow: var(--shadow); margin-top: 1rem; text-align: left; }
+.login-box label { display: block; margin-bottom: .4rem; font-size: .95rem; }
+.login-input { width: 100%; padding: .6rem .8rem; font-size: 1rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--bg); color: var(--text); }
+.login-input:focus { outline: 2px solid var(--primary); border-color: var(--primary); }
+.user-badge { background: color-mix(in oklab, var(--primary) 12%, var(--surface)); color: var(--primary); padding: .25rem .6rem; border-radius: .4rem; font-weight: 700; font-size: .85rem; }
+
 details { margin: .5rem 0; }
 details summary { cursor: pointer; font-weight: 600; }
 

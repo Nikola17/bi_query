@@ -24,9 +24,14 @@ function initRouter() {
 }
 function renderPage() {
   const hash = getRoute();
-  const matched = matchRoute(hash);
   const app = document.getElementById('app');
   if (!app) return;
+  // Login gate
+  if (!pba.getUserId() && hash !== '/login') {
+    window.location.hash = '/login';
+    return;
+  }
+  const matched = matchRoute(hash);
   if (matched) {
     app.innerHTML = '';
     matched.handler(app, ...matched.params);
@@ -37,12 +42,16 @@ function renderPage() {
 }
 
 // --- APP STATE ---
-const progressKey = 'pba-progress';
 const themeKey = 'pba-theme';
-const quizScoreKey = 'pba-quiz-score';
+const userIdKey = 'pba-user-id';
 
-function getProgress() { try { return JSON.parse(localStorage.getItem(progressKey) || '{}'); } catch(e) { return {}; } }
-function saveProgress(p) { localStorage.setItem(progressKey, JSON.stringify(p)); }
+function getUserId() { return localStorage.getItem(userIdKey) || null; }
+function setUserId(id) { if (id) localStorage.setItem(userIdKey, id); else localStorage.removeItem(userIdKey); }
+function getProgressKey() { const uid = getUserId(); return uid ? 'pba-progress-' + uid : 'pba-progress'; }
+function getQuizScoreKey() { const uid = getUserId(); return uid ? 'pba-quiz-score-' + uid : 'pba-quiz-score'; }
+
+function getProgress() { try { return JSON.parse(localStorage.getItem(getProgressKey()) || '{}'); } catch(e) { return {}; } }
+function saveProgress(p) { localStorage.setItem(getProgressKey(), JSON.stringify(p)); }
 function getTheme() { return localStorage.getItem(themeKey) || 'light'; }
 function toggleTheme() {
   const next = getTheme() === 'light' ? 'dark' : 'light';
@@ -56,12 +65,37 @@ function toggleLesson(id, checked) {
   saveProgress(p);
   renderPage();
 }
-function getQuizScore() { try { return JSON.parse(localStorage.getItem(quizScoreKey) || '{}'); } catch(e) { return {}; } }
+function getQuizScore() { try { return JSON.parse(localStorage.getItem(getQuizScoreKey()) || '{}'); } catch(e) { return {}; } }
 function saveQuizAnswer(id, correct) {
   const s = getQuizScore(); s[id] = correct;
-  localStorage.setItem(quizScoreKey, JSON.stringify(s));
+  localStorage.setItem(getQuizScoreKey(), JSON.stringify(s));
 }
-const pba = { getProgress, saveProgress, getTheme, toggleTheme, toggleLesson, getQuizScore, saveQuizAnswer };
+
+function exportProgress() {
+  const data = { progress: getProgress(), quiz: getQuizScore(), userId: getUserId(), exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'pba-progress-' + (getUserId() || 'backup') + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importProgress(file, callback) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.progress) saveProgress(data.progress);
+      if (data.quiz) localStorage.setItem(getQuizScoreKey(), JSON.stringify(data.quiz));
+      if (callback) callback(true);
+    } catch(err) { if (callback) callback(false); }
+  };
+  reader.readAsText(file);
+}
+
+const pba = { getProgress, saveProgress, getTheme, toggleTheme, toggleLesson, getQuizScore, saveQuizAnswer, getUserId, setUserId, exportProgress, importProgress };
 window.pba = pba;
 
 // --- MODULES ---
@@ -3062,6 +3096,8 @@ function renderBreadcrumb(parts) {
 function renderHeader() {
   const theme = getTheme();
   const themeIcon = theme === 'dark' ? '\u2600\ufe0f' : '\U0001f319';
+  const uid = pba.getUserId();
+  const userLabel = uid ? '<span class="user-badge">\U0001f464 ' + uid + '</span>' : '';
   return '<header class="site-header"><div class="container"><div class="nav-wrap">' +
     '<a href="#/home" class="brand">Power BI Academy</a>' +
     '<nav class="main-nav">' +
@@ -3070,6 +3106,7 @@ function renderHeader() {
     '<a href="#/lab">Lab</a>' +
     '<a href="#/cheatsheets">Fiches</a>' +
     '<a href="#/progression">Progression</a>' +
+    userLabel +
     '<button class="btn btn-ghost" onclick="pba.toggleTheme()" style="font-size:1.2rem;padding:.3rem .5rem">' + themeIcon + '</button>' +
     '</nav></div></div></header>';
 }
@@ -3143,6 +3180,35 @@ function bindCheckboxActions() {
 }
 
 // --- PAGES ---
+
+
+function renderLogin(app) {
+  app.innerHTML = renderHeader() +
+    '<div class="container login-wrap">' +
+    '<section class="hero" style="text-align:center;padding:4rem 0">' +
+    '<h1>🔐 Connexion</h1>' +
+    '<p class="muted">Entre ton ID pour retrouver ta progression sur n'importe quel appareil.</p>' +
+    '<div class="login-box">' +
+    '<label for="login-id"><strong>Mon ID</strong></label>' +
+    '<input type="text" id="login-id" class="login-input" placeholder="Ex : 292" maxlength="10" />' +
+    '<button class="btn" id="login-btn" style="width:100%;margin-top:.6rem">Se connecter</button>' +
+    '<p class="muted" style="font-size:.85rem;margin-top:.6rem">Pas d'ID ? Tape un numéro au hasard, il sera créé automatiquement.</p>' +
+    '</div>' +
+    '</section>' +
+    '</div>' + renderFooter();
+
+  var input = document.getElementById('login-id');
+  var btn = document.getElementById('login-btn');
+  function doLogin() {
+    var val = input.value.trim();
+    if (!val) { alert('Tape un ID'); return; }
+    pba.setUserId(val);
+    window.location.hash = '/home';
+    renderPage();
+  }
+  btn.addEventListener('click', doLogin);
+  input.addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
+}
 
 function renderHome(app) {
   const progress = getProgress();
@@ -3495,13 +3561,23 @@ function renderProgression(app) {
     '<p>R\u00e9ponses correctes : <strong>' + quizCorrect + '/' + quizTotal + '</strong></p></section>' +
 
     '<section class="section section-alt">' +
-    '<button class="btn btn-ghost" onclick="localStorage.removeItem(\'' + progressKey + '\');localStorage.removeItem(\'' + quizScoreKey + '\');pba.saveProgress({});location.hash=location.hash;">R\u00e9initialiser ma progression</button>' +
+    '<h2>\U0001f4be Sauvegarde</h2>' +
+    '<p class="muted" style="margin-bottom:.6rem">Exporte ta progression pour la transf\u00e9rer sur un autre appareil.</p>' +
+    '<div class="hero-actions">' +
+    '<button class="btn btn-ghost" onclick="pba.exportProgress()">\U0001f4be Exporter ma progression</button>' +
+    '<label class="btn btn-ghost" style="cursor:pointer">\U0001f4c2 Importer<input type="file" id="import-file" style="display:none" onchange="var f=this.files[0];if(f){pba.importProgress(f,function(ok){if(ok){alert(\'Progression import\u00e9e !\');location.reload();}else{alert(\'Fichier invalide\');}});}" /></label>' +
+    '</div>' +
+    '</section>' +
+    '<section class="section section-alt">' +
+    '<button class="btn btn-ghost" onclick="if(confirm(\'Supprimer toute la progression ?\')){localStorage.removeItem(pba.getProgressKey());localStorage.removeItem(pba.getQuizScoreKey());pba.saveProgress({});location.reload();}">R\u00e9initialiser ma progression</button>' +
+    '<button class="btn btn-ghost" onclick="if(confirm(\'Se d\u00e9connecter ?\')){pba.setUserId(null);location.hash=\'/login\';renderPage();}">Se d\u00e9connecter</button>' +
     '</section>' +
 
     '</div>' + renderFooter();
 }
 
 // --- ROUTES ---
+registerRoute('/login', renderLogin);
 registerRoute('/home', renderHome);
 registerRoute('/query', function(app) { renderTrack(app, 'query'); });
 registerRoute('/bi', function(app) { renderTrack(app, 'bi'); });
