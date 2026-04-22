@@ -444,7 +444,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Construire un résumé hebdo avec anomalie",
-      "instructions": "1. Importe les transactions. 2. Group by Région avec CA Total et Count. 3. Calcule CA moyen. 4. Ajoute une colonne contrôle (anomalie si > 15% de la moyenne globale).",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier CSV. 2. Dans Power Query, vérifie les types : Region en Texte, Montant en Décimal. 3. Sélectionne la colonne Region > Transformer > Grouper par. 4. Dans la boîte de dialogue, ajoute 2 agrégations : Somme de Montant (nommée CA Total) et Nombre de lignes (nommée Count). 5. Ajoute une colonne personnalisée : CA Moyen = [CA Total] / [Count]. 6. Ajoute une colonne conditionnelle : si CA Moyen > 1.15 x moyenne globale alors "Anomalie" sinon "OK". 7. Vérifie que chaque région a bien un statut.",
       "hints": [
         "Group By Région avec Somme et Nombre",
         "CA moyen = CA Total / Count",
@@ -522,7 +522,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Paramétrer le dossier source et tester",
-      "instructions": "1. Crée un paramètre SourceFolder. 2. Utilise-le dans la requête Ventes. 3. Change la valeur et vérifie le rafraîchissement.",
+      "instructions": "1. Ovre Power BI Desktop. 2. Dans Power Query, clique sur Accueil > Gérer les paramètres > Nouveau paramètre. Nomme-le SourceFolder, type Texte, valeur actuelle : le chemin du dossier datasets. 3. Importe le fichier bloc2-l14-ventes-2024.csv (Obtenir les données > Fichier texte/CSV). 4. Dans l\'étape Source de la requête, remplace le chemin en dur par SourceFolder & "\bloc2-l14-ventes-2024.csv". 5. Duplique la requête et adapte-la pour le fichier 2025. 6. Change la valeur du paramètre SourceFolder et vérifie que les 2 requêtes se mettent à jour.",
       "hints": [
         "Crée le paramètre comme type Texte",
         "Remplace le chemin en dur dans l'étape Source",
@@ -599,7 +599,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Factoriser une logique de nettoyage en fonction M",
-      "instructions": "1. Crée une requête qui nettoie les codes pays. 2. Transforme-la en fonction fnNormalizeCountry. 3. Applique-la à une table avec 5 sources.",
+      "instructions": "1. Ovre le fichier fonctions M dans Power BI. 2. Dans Power Query, crée une requête qui nettoie les codes pays : ajoute une colonne personnalisée avec Text.Upper(Text.Trim([CodePays])). 3. Clic droit sur la requête > Créer une fonction. Nomme-la fnNormalizeCountry. 4. Importe 5 fois le même fichier en simulant 5 sources différentes. 5. Sur chaque source, applique la fonction fnNormalizeCountry sur la colonne CodePays (Transformer > Appeler une fonction personnalisée). 6. Vérifie que tous les codes sont normalisés (FR, DE, ES, IT, UK).",
       "hints": [
         "Teste d'abord la logique sur un exemple",
         "Ajoute des gardes de type as text",
@@ -677,7 +677,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Optimiser un flux de 5 min vers moins de 2 min",
-      "instructions": "1. Identifie les étapes qui cassent le folding. 2. Réorganise les étapes pour maximiser le folding. 3. Mesure le gain de performance.",
+      "instructions": "1. Ovre le fichier query folding dans Power BI. 2. Dans Power Query, observe les étapes appliquées. 3. Clic droit sur chaque étape > Voir la requête native. Identifie la première étape qui retourne une erreur ou du code local (pas de SQL). 4. Déplace les étapes de filtre (Statut = "Actif") et de sélection de colonnes le plus tôt possible, avant les colonnes calculées. 5. Recharge et mesure le temps de rafraîchissement. 6. Compare avant/après.",
       "hints": [
         "Vérifie 'Voir la requête native' à chaque étape",
         "Filtres et sélections de colonnes d'abord",
@@ -1405,7 +1405,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Corriger un modèle qui double le CA",
-      "instructions": "1. Identifie la relation problématique. 2. Corrige la cardinalité ou le sens de filtre. 3. Vérifie que le total CA est correct.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier cardinalités. 2. Dans la vue Modèle, observe la relation entre la table Produits et Ventes. 3. Vérifie que ProductID a des doublons dans la table Produits (P001 apparaît 2 fois). 4. Dans Power Query, ouvre la table Produits et supprime les doublons sur ProductID. 5. Recharge le modèle et vérifie que la relation est maintenant 1-*. 6. Crée une mesure CA = SUM(Ventes[Revenue]) et vérifie que le total est correct avec et sans filtre sur Produit.",
       "hints": [
         "Vérifie chaque relation dans la vue Modèle",
         "La dimension doit être côté 1",
@@ -1483,7 +1483,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Réécrire une mesure complexe avec VAR",
-      "instructions": "1. Prends la mesure Marge % calculée en une ligne. 2. Découpe-la en variables explicites. 3. Vérifie que le résultat est identique.",
+      "instructions": "1. Ovre le fichier variables dans Power BI. 2. Crée une table _Measures. 3. Crée une mesure brute : Marge % Brute = DIVIDE(SUM(FactSales[Revenue]) - SUM(FactSales[Cost]), SUM(FactSales[Revenue]), 0). 4. Crée la même mesure avec VAR : Marge % VAR = VAR vRevenue = SUM(FactSales[Revenue]) VAR vCost = SUM(FactSales[Cost]) VAR vMarge = vRevenue - vCost RETURN DIVIDE(vMarge, vRevenue, 0). 5. Ajoute un visuel Tableau avec les 2 mesures côte à côte. 6. Vérifie que les résultats sont identiques. 7. Observe que la version VAR est plus lisible.",
       "hints": [
         "VAR pour Revenue et Cost séparément",
         "RETURN pour le calcul final",
@@ -1562,7 +1562,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Construire un indicateur part du Top 10",
-      "instructions": "1. Crée [CA]. 2. Crée [CA Top 10] avec CALCULATE et TOPN. 3. Crée [% Top 10] = DIVIDE. 4. Affiche dans un visuel.",
+      "instructions": "1. Ovre le fichier TOPN dans Power BI. 2. Crée : CA = SUM(FactSales[Revenue]). 3. Crée : CA Top 10 = CALCULATE([CA], TOPN(10, ALL(DimCustomer), [CA], DESC)). 4. Crée : % Top 10 = DIVIDE([CA Top 10], [CA], 0). 5. Ajoute un visuel Tableau avec CustomerID en lignes et [CA] en valeurs. 6. Filtre le visuel sur Top N = 10. 7. Vérifie que % Top 10 + % Reste = 100%.",
       "hints": [
         "TOPN(10, ALL(DimCustomer), [CA]) pour le top global",
         "CALCULE le CA dans le contexte du Top 10",
@@ -1639,7 +1639,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Activer le drill-through sur la région",
-      "instructions": "1. Crée une page Détail Produit. 2. Ajoute Region dans Drill-through. 3. Crée un tooltip personnalisé. 4. Teste la navigation depuis la page Résumé.",
+      "instructions": "1. Ovre le fichier tooltips dans Power BI. 2. Crée une page "Détail Produit" avec un tableau affichant ProductID, Category, CA. 3. Dans le volet Visualisations, ajoute Region dans la zone Drill-through. 4. Crée une page tooltip (petite taille) avec un graphique CA par Category. Dans les propriétés de la page, définis Type = Tooltip. 5. Dans la page Résumé, ajoute un graphique par Region. 6. Clique droit sur une barre > Drill-through > Détail Produit. 7. Vérifie que la page est filtrée sur la région cliquée.",
       "hints": [
         "Zone Drill-through dans le volet Propriétés",
         "Le bouton retour est ajouté automatiquement",
@@ -1718,7 +1718,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Corriger un M2M qui gonfle les totaux",
-      "instructions": "1. Identifie la relation M2M problématique. 2. Crée la bridge table. 3. Relie les dimensions. 4. Vérifie les totaux.",
+      "instructions": "1. Ovre le fichier many-to-many dans Power BI. 2. Dans la vue Modèle, observe que la relation entre Produits et Catégories est many-to-many. 3. Crée une table pont Bridge_ProductCategory avec ProductID et CategoryID uniques. 4. Relie DimProduct à Bridge (1-*) et DimCategory à Bridge (1-*). 5. Supprime la relation M2M directe. 6. Vérifie que la mesure CA = SUM(Revenue) retourne le même total avec et sans filtre sur Category.",
       "hints": [
         "La bridge table relie les deux dimensions",
         "Clé composite unique dans la bridge",
@@ -1798,7 +1798,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Calculer une marge pondérée avec SUMX",
-      "instructions": "1. Crée une mesure Marge Totale avec SUMX. 2. Vérifie le résultat contre une colonne calculée. 3. Affiche dans un visuel.",
+      "instructions": "1. Ovre le fichier itérateurs dans Power BI. 2. Crée une colonne calculée : Marge Ligne = FactSales[Qty] * FactSales[MarginUnit]. 3. Crée une mesure : Marge Totale Col = SUM(FactSales[Marge Ligne]). 4. Crée une mesure : Marge Totale SUMX = SUMX(FactSales, FactSales[Qty] * FactSales[MarginUnit]). 5. Ajoute un visuel Tableau avec les 2 mesures. 6. Vérifie que les résultats sont identiques. 7. Supprime la colonne calculée (elle prend de la place).",
       "hints": [
         "SUMX itère sur chaque ligne de la table",
         "L'expression est Qty * MarginUnit",
@@ -1876,7 +1876,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Créer [% Part Produit] stable avec slicers",
-      "instructions": "1. Crée [CA]. 2. Crée [CA Total] avec REMOVEFILTERS. 3. Crée [% Part Produit]. 4. Teste avec un slicer produit.",
+      "instructions": "1. Ovre le fichier ALL/REMOVEFILTERS dans Power BI. 2. Crée : CA = SUM(FactSales[Revenue]). 3. Crée : CA Total = CALCULATE([CA], REMOVEFILTERS(DimProduct)). 4. Crée : % Part Produit = DIVIDE([CA], [CA Total], 0). 5. Ajoute un visuel Tableau avec ProductID en lignes et les 3 mesures. 6. Vérifie que CA Total est identique pour tous les produits. 7. Ajoute un slicer sur ProductID, sélectionne un produit, et vérifie que CA Total ne change pas.",
       "hints": [
         "REMOVEFILTERS supprime les filtres sur la dimension",
         "Le total doit rester stable quand on filtre",
@@ -1954,7 +1954,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Ajouter un code couleur sur KPI marge",
-      "instructions": "1. Crée [Marge %] et [Objectif Marge]. 2. Crée [Variance]. 3. Applique une mise en forme conditionnelle. 4. Teste avec différentes valeurs.",
+      "instructions": "1. Ovre le fichier KPI alerts dans Power BI. 2. Crée : Marge % = DIVIDE(SUM(FactSales[Revenue]) - SUM(FactSales[Cost]), SUM(FactSales[Revenue]), 0). 3. Crée : Objectif Marge = 0.70. 4. Crée : Variance = [Marge %] - [Objectif Marge]. 5. Ajoute un visuel Carte avec [Marge %]. 6. Dans le format du visuel > Mise en forme conditionnelle > Couleur de fond, définis : vert si >= 0.70, jaune si 0.60-0.70, rouge si < 0.60. 7. Teste en filtrant différentes périodes.",
       "hints": [
         "Variance = Marge % - Objectif",
         "Règles de couleur : â‰¥ 70% vert, < 70% rouge",
@@ -2032,7 +2032,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Organiser 3 pages avec fil narratif",
-      "instructions": "1. Définis le message principal. 2. Crée Page Résumé (KPI). 3. Crée Page Causes. 4. Crée Page Actions. 5. Ajoute navigation entre les pages.",
+      "instructions": "1. Ovre le fichier storytelling dans Power BI. 2. Définis le message : "Ventes OK mais marge en baisse." 3. Crée Page 1 "Résumé" : 2 cartes (CA, Marge %), 1 courbe mensuelle. 4. Crée Page 2 "Causes" : graphique barres CA par région, tableau détail par produit. 5. Crée Page 3 "Actions" : liste de 3 recommandations textuelles. 6. Ajoute des boutons de navigation entre les pages. 7. Vérifie le fil narratif : chaque page répond à la question de la page précédente.",
       "hints": [
         "Message en une phrase",
         "Page 1 = Quoi, Page 2 = Pourquoi, Page 3 = Action",
@@ -2118,7 +2118,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Livrer 3 recommandations RH basées sur les données",
-      "instructions": "1. Importe et nettoie les données RH. 2. Construis le modèle. 3. Crée les mesures RH. 4. Construis le dashboard. 5. Rédige 3 recommandations.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier RH. 2. Dans Power Query, nettoie les dates : typer DateEntree en Date, DateSortie en Date ou null. 3. Crée une table DimDate avec CALENDARAUTO(). 4. Crée les mesures : Effectif = COUNTROWS(Effectif), Départs = CALCULATE(COUNTROWS(Effectif), NOT(ISBLANK(Effectif[DateSortie]))), Turnover = DIVIDE([Départs], [Effectif], 0). 5. Crée un dashboard avec 3 pages : Effectif, Turnover par BU, Absentéisme. 6. Rédige 3 recommandations RH actionnables.",
       "hints": [
         "Effectif = DISTINCTCOUNT(EmployeeID)",
         "Turnover = DIVIDE(Départs, Effectif moyen)",
@@ -2205,7 +2205,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Présenter top 5 écarts et actions",
-      "instructions": "1. Importe budget et réalisé. 2. Relie-les au modèle. 3. Crée les mesures d'écart. 4. Identifie les top 5 écarts. 5. Propose des actions.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier budget. 2. Crée une table DimDate et relie-la au budget via le mois. 3. Crée : Écart = SUM(Budget[Realise]) - SUM(Budget[Budget]). 4. Crée : Écart % = DIVIDE([Écart], SUM(Budget[Budget]), 0). 5. Ajoute un visuel Tableau avec Centre, Budget, Réalisé, Écart, Écart %. 6. Trie par valeur absolue d'Écart décroissante. 7. Identifie les top 5 écarts défavorables. 8. Rédige 1 action par centre concerné.",
       "hints": [
         "Unpivot le budget si nécessaire",
         "Écart = Réalisé - Budget",
@@ -2285,7 +2285,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Créer une RLS par région",
-      "instructions": "1. Crée un rôle 'Manager Région'. 2. Ajoute le filtre sur DimRegion[Region]. 3. Teste en mode rôle avec différents utilisateurs.",
+      "instructions": "1. Ovre le fichier RLS dans Power BI. 2. Dans l'onglet Modélisation > Gérer les rôles, crée un rôle "Manager Région". 3. Ajoute le filtre : DimRegion[Region] = USERNAME(). 4. Dans Modélisation > Voir en tant que, sélectionne le rôle et simule un utilisateur (ex: manager.fr@nova.com). 5. Vérifie que seules les lignes FR sont visibles. 6. Répète pour chaque région. 7. Publie sur Power BI Service et vérifie que le filtre s'applique bien.",
       "hints": [
         "Gérer les rôles dans la vue Modélisation",
         "USERPRINCIPALNAME() dans Power BI Service",
@@ -2363,7 +2363,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Afficher YTD et variation vs YTD N-1",
-      "instructions": "1. Crée [CA]. 2. Crée [CA YTD] avec TOTALYTD. 3. Crée [CA YTD N-1]. 4. Crée [% Variation YTD]. 5. Affiche dans un graphique.",
+      "instructions": "1. Ovre le fichier YTD dans Power BI. 2. Crée DimDate avec CALENDARAUTO() et marque-la comme table de dates. 3. Crée : CA = SUM(FactSales[Revenue]). 4. Crée : CA YTD = TOTALYTD([CA], DimDate[Date]). 5. Crée : CA YTD N-1 = CALCULATE([CA YTD], SAMEPERIODLASTYEAR(DimDate[Date])). 6. Crée : % Var YTD = DIVIDE([CA YTD] - [CA YTD N-1], [CA YTD N-1], 0). 7. Ajoute un visuel Graphique en courbes avec Mois en axe et [CA YTD] + [CA YTD N-1] en valeurs. 8. Vérifie que le cumul augmente chaque mois.",
       "hints": [
         "TOTALYTD nécessite une table de dates marquée",
         "SAMEPERIODLASTYEAR pour la comparaison N-1",
@@ -2441,7 +2441,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Afficher top 5 commerciaux dynamiques",
-      "instructions": "1. Crée [CA]. 2. Crée [Classement] avec RANKX. 3. Filtre top 5 dans un visuel. 4. Teste avec slicer région.",
+      "instructions": "1. Ovre le fichier ranking dans Power BI. 2. Crée : CA = SUM(FactSales[Revenue]). 3. Crée : Classement = RANKX(ALL(DimSalesperson), [CA], , DESC, Dense). 4. Ajoute un visuel Tableau avec SalespersonID, [CA], [Classement]. 5. Filtre le visuel sur Classement <= 5. 6. Ajoute un slicer sur Region. 7. Vérifie que le classement global reste stable quand tu filtres une région (car ALL ignore le filtre).",
       "hints": [
         "RANKX(ALL(DimSalesperson), [CA])",
         "Filtre visuel sur Classement <= 5",
@@ -2519,7 +2519,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Réorganiser un rapport en 3 pages max",
-      "instructions": "1. Identifie les 3 KPI prioritaires. 2. Crée 3 pages : Résumé, Diagnostic, Action. 3. Uniformise le design. 4. Teste avec un collègue.",
+      "instructions": "1. Ovre le fichier UX reporting dans Power BI. 2. Identifie les 3 KPI prioritaires : CA total, Marge %, Objectif atteint. 3. Crée 3 pages : Résumé (3 cartes + 1 courbe), Diagnostic (barres par région + tableau produits), Action (texte libre avec 3 recommandations). 4. Uniformise : police Segoe UI, taille titres 14pt, données 10pt, palette 3 couleurs max. 5. Aligne tous les visuels avec l'outil Aligner. 6. Présente à un collègue et observe son parcours en 30 secondes. 7. Ajuste selon ses retours.",
       "hints": [
         "3 KPI maximum en page Résumé",
         "Palette de 3 couleurs",
@@ -2605,7 +2605,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Proposer 3 arbitrages budgétaires justifiés",
-      "instructions": "1. Importe et nettoie les données marketing. 2. Modélise avec Star schema. 3. Calcule ROI et CAC par canal. 4. Propose 3 arbitrages.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier marketing. 2. Crée DimChannel (Channel unique) et DimDate. 3. Crée : CA = SUM(Campaigns[Revenue]), Dépenses = SUM(Campaigns[Spend]). 4. Crée : ROI = DIVIDE([CA] - [Dépenses], [Dépenses], 0). 5. Crée : CAC = DIVIDE([Dépenses], SUM(Campaigns[Conversions]), 0). 6. Crée un dashboard 3 pages : Vue globale (KPI + courbe), Analyse canal (barres ROI par canal), Recommandations (top 3 arbitrages). 7. Justifie chaque arbitrage avec un chiffre.",
       "hints": [
         "ROI = (Revenu - Dépense) / Dépense",
         "CAC = Dépense / Nouveaux Clients",
@@ -2686,7 +2686,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Construire un tableau anomalies paie mensuelles",
-      "instructions": "1. Importe les bulletins. 2. Calcule la variation mensuelle. 3. Applique les règles de contrôle. 4. Priorise les anomalies.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier bulletins. 2. Crée une colonne calculée : Variation Brut = (Brut N - Brut N-1) / Brut N-1. 3. Crée une colonne conditionnelle : Statut = si Variation > 0.30 alors "Haute", sinon si > 0.20 alors "Moyenne", sinon si > 0.15 alors "Basse", sinon "OK". 4. Crée un visuel Tableau filtré sur Statut <> "OK". 5. Trie par Variation décroissante. 6. Vérifie que les anomalies priorisées sont visibles en premier.",
       "hints": [
         "Variation = (Brut N - Brut N-1) / Brut N-1",
         "Règles validées par le métier",
@@ -2765,7 +2765,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Simuler 2 scénarios d'augmentation",
-      "instructions": "1. Importe les données d'effectif. 2. Crée un paramètre What-if. 3. Calcule la masse simulée. 4. Compare actuelle vs simulée.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier effectif. 2. Crée un paramètre What-if : TauxAugmentation de 0% à 5% par pas de 0.5%. 3. Crée : Masse Actuelle = SUM(Effectif[SalaireBrut]) * 1.45. 4. Crée : Masse Simulée = [Masse Actuelle] * (1 + TauxAugmentation). 5. Crée : Écart = [Masse Simulée] - [Masse Actuelle]. 6. Ajoute un slicer sur TauxAugmentation. 7. Ajoute 3 cartes : Masse Actuelle, Masse Simulée, Écart. 8. Teste différents taux et observe l'impact.",
       "hints": [
         "Masse = SUM(Salaire brut) Ã— 1.45 pour charges",
         "Paramètre What-if pour le taux",
@@ -2844,7 +2844,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Produire une synthèse turnover trimestrielle",
-      "instructions": "1. Calcule le taux de turnover global et par BU. 2. Identifie les BU à risque. 3. Propose 3 actions de rétention.",
+      "instructions": "1. Ovre le fichier turnover dans Power BI. 2. Crée : Effectif Total = COUNTROWS(Effectif). 3. Crée : Départs = CALCULATE(COUNTROWS(Effectif), NOT(ISBLANK(Effectif[DateSortie]))). 4. Crée : Turnover = DIVIDE([Départs], [Effectif Total], 0). 5. Ajoute un visuel Tableau avec BU, Effectif, Départs, Turnover. 6. Identifie les BU avec turnover > 15%. 7. Analyse l'ancienneté des départs dans ces BU. 8. Rédige 3 actions de rétention ciblées.",
       "hints": [
         "Turnover = Départs / Effectif moyen",
         "Segmenter par BU et ancienneté",
@@ -2923,7 +2923,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Sortir un top 10 écarts à commenter",
-      "instructions": "1. Importe budget et réalisé. 2. Calcule les écarts en valeur et %. 3. Classe par valeur absolue. 4. Affiche top 10 écarts à commenter.",
+      "instructions": "1. Ovre le fichier clôture dans Power BI. 2. Crée : Écart = SUM(Cloture[Realise]) - SUM(Cloture[Budget]). 3. Crée : Écart % = DIVIDE([Écart], SUM(Cloture[Budget]), 0). 4. Crée : Valeur Absolue = ABS([Écart]). 5. Ajoute un visuel Tableau avec Centre, Mois, Budget, Réalisé, Écart, Écart %. 6. Filtre sur Écart > 0 (dépassement) et trie par Valeur Absolue décroissante. 7. Affiche le top 10. 8. Pour chacun, rédige 1 ligne de commentaire métier.",
       "hints": [
         "Écart = Réalisé - Budget",
         "Variance défavorable = dépassement",
