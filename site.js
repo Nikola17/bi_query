@@ -365,7 +365,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Convertir un tableau budget en format long",
-      "instructions": "1. Importe le fichier budget. 2. Unpivot les colonnes mensuelles. 3. Renomme les colonnes résultats. 4. Ajoute une colonne de tri pour les mois.",
+      "instructions": "1. Ovre Power BI Desktop > Obtenir les données > Fichier texte/CSV > sélectionne le fichier budget. 2. Dans Power Query, vérifie que la première ligne est bien utilisée comme en-têtes. 3. Sélectionne les 12 colonnes de mois (Jan à Déc) en maintenant Ctrl. 4. Clique sur Transformer > Dépivoter les colonnes sélectionnées. 5. Renomme la colonne Attribut en Mois et la colonne Valeur en Montant. 6. Ajoute une colonne conditionnelle ou personnalisée N°Mois qui associe chaque mois à son numéro (Jan=1, Fév=2...). 7. Vérifie que la table a maintenant 144 lignes (12 produits × 12 mois).",
       "hints": [
         "Unpivot seulement les colonnes de période",
         "Renomme Attribut â†’ Mois et Valeur â†’ Montant",
@@ -756,7 +756,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Découper SalesFlat en 4 tables",
-      "instructions": "1. Identifie les mesures et les clés dans SalesFlat. 2. Crée DimProduct, DimCustomer, DimDate. 3. Relie-les à FactSales en 1-â˜†.",
+      "instructions": "1. Ovre Power BI Desktop et importe le fichier SalesFlat. 2. Dans Power Query, duplique la requête 3 fois pour créer DimProduct, DimCustomer et DimDate. 3. Pour DimProduct : garde uniquement ProductID, ProductName, Category > Supprimer les doublons sur ProductID. 4. Pour DimCustomer : garde CustomerID, CustomerName, Region, Segment > Supprimer les doublons sur CustomerID. 5. Pour DimDate : garde OrderDate > Supprimer les doublons > Renommer en Date. 6. Dans la requête originale (FactSales), garde uniquement OrderID, OrderDate, ProductID, CustomerID, Revenue, Quantity. 7. Dans la vue Modèle, relie DimProduct[ProductID] à FactSales[ProductID], DimCustomer[CustomerID] à FactSales[CustomerID], et DimDate[Date] à FactSales[OrderDate]. 8. Vérifie que toutes les relations sont 1-*.",
       "hints": [
         "La fact table ne garde que les clés et les montants",
         "Chaque dimension a une clé unique",
@@ -833,7 +833,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Ajouter Année, Mois, Trimestre triés correctement",
-      "instructions": "1. Crée une table DimDate avec CALENDARAUTO(). 2. Ajoute les colonnes Année, Mois (nom et numéro), Trimestre. 3. Marque comme table de dates. 4. Relie à FactSales.",
+      "instructions": "1. Ovre le fichier de ventes dans Power BI. 2. Dans l\'onglet Modélisation, clique sur Nouvelle table et tape : DimDate = CALENDARAUTO(). 3. Ajoute les colonnes calculées : Année = YEAR([Date]), MoisNom = FORMAT([Date], \"MMM\"), MoisNum = MONTH([Date]), Trimestre = \"T\" & ROUNDUP(MONTH([Date])/3,0). 4. Clique droit sur DimDate > Marquer comme table de dates > sélectionne la colonne Date. 5. Dans la vue Modèle, relie DimDate[Date] à FactSales[OrderDate] (cardinalité 1-*). 6. Vérifie que la table couvre du 1er janvier 2024 au 31 décembre 2024.",
       "hints": [
         "CALENDARAUTO() détecte les dates du modèle",
         "Trie les mois par numéro, pas par nom",
@@ -913,7 +913,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Créer 3 mesures et les afficher dans des cartes KPI",
-      "instructions": "1. Crée une table _Measures. 2. Crée CA, Clients Uniques, Panier Moyen. 3. Affiche les 3 dans des visuels carte.",
+      "instructions": "1. Ovre le fichier de ventes dans Power BI. 2. Dans l\'onglet Accueil du ruban, clique sur Saisir les données. Nomme la table _Measures et clique sur Charger. 3. Sélectionne la table _Measures dans le volet Champs. 4. Dans le ruban Outils de mesure > Nouvelle mesure, crée : CA = SUM(FactSales[Revenue]). 5. Crée : Clients Uniques = DISTINCTCOUNT(FactSales[CustomerID]). 6. Crée : Panier Moyen = DIVIDE([CA], [Clients Uniques], 0). 7. Ajoute une page au rapport et insère 3 visuels Carte. 8. Glisse CA, Clients Uniques et Panier Moyen dans chaque carte. 9. Vérifie que Panier Moyen = CA / Clients Uniques.",
       "hints": [
         "SUM pour le CA total",
         "DISTINCTCOUNT pour les clients uniques",
@@ -992,7 +992,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Créer [% France] et vérifier par segment",
-      "instructions": "1. Crée [CA]. 2. Crée [CA France] avec CALCULATE. 3. Crée [% France] = DIVIDE. 4. Vérifie avec un slicer Country.",
+      "instructions": "1. Ovre le fichier de ventes dans Power BI. Assure-toi d\'avoir une table _Measures. 2. Crée la mesure de base : CA = SUM(FactSales[Revenue]). 3. Crée : CA France = CALCULATE([CA], DimCountry[Country] = \"France\"). 4. Crée : % France = DIVIDE([CA France], [CA], 0). 5. Ajoute un visuel Tableau et mets Country dans les lignes + [CA], [CA France], [% France] dans les valeurs. 6. Vérifie que % France = 100% pour la France et moins pour les autres pays. 7. Ajoute un slicer sur Country, sélectionne Allemagne, et vérifie que [% France] reste stable (le dénominateur ne change pas).",
       "hints": [
         "CALCULATE modifie le contexte de filtre",
         "Le slicer ne doit pas affecter le dénominateur de % France",
@@ -1070,7 +1070,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Afficher un graphique annuel avec évolution",
-      "instructions": "1. Crée [CA]. 2. Crée [CA N-1] avec SAMEPERIODLASTYEAR. 3. Crée [% Evolution]. 4. Affiche dans un graphique en colonnes.",
+      "instructions": "1. Ovre le fichier de ventes (2023+2024) dans Power BI. 2. Crée une table DimDate avec CALENDARAUTO() et marque-la comme table de dates. 3. Crée : CA = SUM(FactSales[Revenue]). 4. Crée : CA N-1 = CALCULATE([CA], SAMEPERIODLASTYEAR(DimDate[Date])). 5. Crée : % Evolution = DIVIDE([CA] - [CA N-1], [CA N-1], 0). 6. Ajoute un visuel Graphique en colonnes. Mets Année en axe et [CA] + [CA N-1] en valeurs. 7. Vérifie que pour 2024, CA N-1 affiche bien le CA 2023. 8. Mets [% Evolution] dans un visuel Carte pour voir la variation globale.",
       "hints": [
         "La table DimDate doit être marquée comme table de dates",
         "SAMEPERIODLASTYEAR nécessite une relation active",
@@ -1149,7 +1149,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Refondre une page surchargée en page claire",
-      "instructions": "1. Identifie la question principale de la page. 2. Sélectionne 5 visuels maximum. 3. Organise avec une hiérarchie visuelle claire.",
+      "instructions": "1. Ovre le fichier de ventes dans Power BI. 2. Crée une nouvelle page et nomme-la \"Résumé Ventes\". 3. Pose-toi la question : \"Les ventes suivent-elles l\'objectif ?\" 4. Ajoute 1 carte KPI en haut à gauche avec le CA total. 5. Ajoute 1 graphique courbe sous le KPI avec CA par mois. 6. Ajoute 1 graphique à barres à droite avec CA par région. 7. Ajoute 1 tableau en bas avec le détail par produit. 8. Ajoute 1 slicer en haut à droite pour filtrer par catégorie. 9. Aligne tous les visuels avec l\'outil Aligner du ruban. 10. Limite-toi à 3 couleurs maximum.",
       "hints": [
         "Une question = une page",
         "5 visuels max par page",
@@ -1233,7 +1233,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Créer une navigation Résumé â†’ Détail Produit",
-      "instructions": "1. Crée une page Résumé avec KPI et slicer Région. 2. Crée une page Détail avec tableau produits. 3. Ajoute des boutons de navigation.",
+      "instructions": "1. Ovre le fichier de ventes dans Power BI. 2. Crée une page \"Résumé\" avec un KPI CA total et un slicer Région. 3. Crée une page \"Détail Produits\" avec un tableau affichant Produit, Catégorie, CA. 4. Dans la page Détail, ajoute Region dans la zone Drill-through du volet Visualisations. 5. Dans la page Résumé, ajoute un bouton (Insérer > Boutons > Naviguer) qui pointe vers la page Détail. 6. Ajoute un bouton Retour sur la page Détail. 7. Teste la navigation : clique sur une barre du graphique région et tu arrives sur la page Détail filtrée. 8. Synchronise le slicer Région entre les deux pages (Format > Modifier les interactions > Synchroniser les slicers).",
       "hints": [
         "Slicer synchronisé entre les pages",
         "Hiérarchie Région > Pays pour le drill-down",
@@ -1323,7 +1323,7 @@ const allLessons = [
     ],
     "exercise": {
       "title": "Livrer 5 insights actionnables + plan d'action",
-      "instructions": "1. Importe et nettoie les 3 sources. 2. Construis le modèle. 3. Crée les mesures. 4. Construis le dashboard en 3 pages. 5. Rédige 5 recommandations.",
+      "instructions": "1. Ovre Power BI Desktop. 2. Importe les 3 fichiers : bloc8-l12-novaretail.csv (ventes), nova_retail_produits.csv, nova_retail_clients.csv (Obtenir les données > Fichier texte/CSV). 3. Dans Power Query, nettoie chaque source : vérifier les types, supprimer les doublons sur ProductID et CustomerID. 4. Crée la table FactSales à partir du fichier ventes (garde OrderID, OrderDate, ProductID, CustomerID, Revenue, Cost, Channel). 5. Crée DimProduct à partir du fichier produits, DimCustomer à partir du fichier clients, et DimDate avec CALENDARAUTO(). 6. Dans la vue Modèle, relie les 4 tables en star schema (1-* depuis chaque dimension vers FactSales). 7. Crée les mesures : CA = SUM(Revenue), Marge = SUM(Revenue) - SUM(Cost), % Marge = DIVIDE([Marge], [CA], 0). 8. Crée le dashboard sur 3 pages : Résumé (KPI), Analyse (par région/produit), Détail (top clients). 9. Rédige 5 recommandations actionnables basées sur les données.",
       "hints": [
         "Qualité des données d'abord",
         "Modèle en étoile",

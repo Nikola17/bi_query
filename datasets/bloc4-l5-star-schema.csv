@@ -1,6 +1,501 @@
-OrderID,OrderDate,ProductID,CustomerID,Revenue,Quantity
-1001,2025-01-15,P001,C001,1200,2
-1002,2025-01-18,P002,C002,340,1
-1003,2025-02-05,P003,C003,2500,3
-1004,2025-02-22,P001,C004,600,1
-1005,2025-03-10,P002,C001,680,2
+OrderID,OrderDate,ProductID,ProductName,Category,CustomerID,CustomerName,Region,Segment,Revenue,Quantity
+ORD-00001,2024-10-18,P006,Souris,Périphériques,C015,Client C015,UK,Particulier,388.71,3
+ORD-00002,2024-05-15,P004,Écran,Électronique,C021,Client C021,UK,Particulier,283.08,4
+ORD-00003,2024-04-12,P004,Écran,Électronique,C033,Client C033,UK,Particulier,249.11,1
+ORD-00004,2024-06-11,P002,Tablette,Électronique,C039,Client C039,UK,Particulier,422.55,1
+ORD-00005,2024-09-04,P009,Câble USB,Accessoires,C009,Client C009,FR,PME,3528.24,4
+ORD-00006,2024-09-05,P012,Webcam,Périphériques,C037,Client C037,DE,Grand Compte,1461.18,3
+ORD-00007,2024-11-21,P003,Téléphone,Électronique,C040,Client C040,UK,Grand Compte,1079.96,1
+ORD-00008,2024-12-22,P008,Câble HDMI,Accessoires,C022,Client C022,FR,PME,821.65,5
+ORD-00009,2024-12-08,P008,Câble HDMI,Accessoires,C024,Client C024,DE,PME,1569.2,4
+ORD-00010,2024-04-08,P006,Souris,Périphériques,C049,Client C049,FR,PME,942.4,2
+ORD-00011,2024-05-15,P007,Imprimante,Périphériques,C033,Client C033,IT,PME,2060.94,2
+ORD-00012,2024-03-03,P002,Tablette,Électronique,C019,Client C019,UK,PME,1840.02,3
+ORD-00013,2024-01-27,P001,Ordinateur,Électronique,C025,Client C025,FR,PME,2391.65,5
+ORD-00014,2024-12-27,P010,Support,Accessoires,C049,Client C049,IT,PME,919.05,3
+ORD-00015,2024-10-19,P008,Câble HDMI,Accessoires,C037,Client C037,IT,Grand Compte,939.39,3
+ORD-00016,2024-06-21,P010,Support,Accessoires,C018,Client C018,FR,PME,235.0,1
+ORD-00017,2024-03-08,P011,Housse,Accessoires,C032,Client C032,IT,Grand Compte,2605.68,4
+ORD-00018,2024-07-08,P003,Téléphone,Électronique,C021,Client C021,FR,PME,1450.54,2
+ORD-00019,2024-05-27,P009,Câble USB,Accessoires,C039,Client C039,FR,PME,5415.4,5
+ORD-00020,2024-04-26,P012,Webcam,Périphériques,C025,Client C025,ES,Particulier,1048.47,1
+ORD-00021,2024-08-05,P007,Imprimante,Périphériques,C023,Client C023,IT,Grand Compte,736.33,1
+ORD-00022,2024-01-24,P003,Téléphone,Électronique,C013,Client C013,UK,Particulier,1917.69,3
+ORD-00023,2024-08-27,P005,Clavier,Périphériques,C032,Client C032,FR,Particulier,706.58,2
+ORD-00024,2024-10-06,P008,Câble HDMI,Accessoires,C040,Client C040,DE,Grand Compte,1747.85,5
+ORD-00025,2024-07-19,P002,Tablette,Électronique,C041,Client C041,IT,Particulier,3845.48,4
+ORD-00026,2024-08-09,P001,Ordinateur,Électronique,C037,Client C037,DE,PME,2521.6,4
+ORD-00027,2024-04-18,P003,Téléphone,Électronique,C013,Client C013,DE,Particulier,2334.86,2
+ORD-00028,2024-01-14,P002,Tablette,Électronique,C026,Client C026,ES,Grand Compte,506.42,1
+ORD-00029,2024-05-06,P001,Ordinateur,Électronique,C003,Client C003,DE,PME,3378.44,4
+ORD-00030,2024-12-09,P002,Tablette,Électronique,C019,Client C019,FR,Grand Compte,810.51,3
+ORD-00031,2024-08-26,P006,Souris,Périphériques,C010,Client C010,UK,Grand Compte,1017.72,2
+ORD-00032,2024-10-13,P007,Imprimante,Périphériques,C026,Client C026,IT,Particulier,960.6,2
+ORD-00033,2024-08-31,P005,Clavier,Périphériques,C009,Client C009,IT,PME,168.65,1
+ORD-00034,2024-01-09,P009,Câble USB,Accessoires,C040,Client C040,ES,PME,2538.52,4
+ORD-00035,2024-01-25,P004,Écran,Électronique,C025,Client C025,FR,Grand Compte,620.05,1
+ORD-00036,2024-02-12,P011,Housse,Accessoires,C021,Client C021,DE,PME,2303.78,2
+ORD-00037,2024-03-12,P003,Téléphone,Électronique,C031,Client C031,FR,PME,211.83,1
+ORD-00038,2024-03-15,P001,Ordinateur,Électronique,C007,Client C007,DE,Grand Compte,1119.96,2
+ORD-00039,2024-01-29,P007,Imprimante,Périphériques,C004,Client C004,FR,Particulier,309.96,2
+ORD-00040,2024-07-02,P011,Housse,Accessoires,C003,Client C003,DE,Particulier,4592.68,4
+ORD-00041,2024-06-23,P004,Écran,Électronique,C028,Client C028,FR,PME,251.0,2
+ORD-00042,2024-07-24,P006,Souris,Périphériques,C043,Client C043,FR,Particulier,2845.59,3
+ORD-00043,2024-02-26,P009,Câble USB,Accessoires,C005,Client C005,DE,Grand Compte,719.84,2
+ORD-00044,2024-11-24,P001,Ordinateur,Électronique,C039,Client C039,IT,Grand Compte,1653.25,5
+ORD-00045,2024-11-16,P006,Souris,Périphériques,C024,Client C024,FR,Grand Compte,2037.74,2
+ORD-00046,2024-06-09,P005,Clavier,Périphériques,C023,Client C023,UK,Particulier,964.56,1
+ORD-00047,2024-02-10,P011,Housse,Accessoires,C019,Client C019,UK,PME,3476.6,4
+ORD-00048,2024-11-01,P008,Câble HDMI,Accessoires,C007,Client C007,FR,Particulier,1272.5,5
+ORD-00049,2024-07-02,P004,Écran,Électronique,C047,Client C047,ES,Grand Compte,3752.24,4
+ORD-00050,2024-03-24,P009,Câble USB,Accessoires,C035,Client C035,FR,Grand Compte,206.08,4
+ORD-00051,2024-04-08,P011,Housse,Accessoires,C011,Client C011,DE,Grand Compte,711.36,3
+ORD-00052,2024-05-18,P010,Support,Accessoires,C007,Client C007,FR,PME,1073.46,1
+ORD-00053,2024-07-03,P001,Ordinateur,Électronique,C017,Client C017,FR,Grand Compte,634.88,2
+ORD-00054,2024-10-10,P005,Clavier,Périphériques,C034,Client C034,FR,PME,806.15,1
+ORD-00055,2024-12-02,P005,Clavier,Périphériques,C041,Client C041,DE,Particulier,1615.86,3
+ORD-00056,2024-11-13,P002,Tablette,Électronique,C008,Client C008,IT,PME,1120.11,1
+ORD-00057,2024-04-02,P006,Souris,Périphériques,C044,Client C044,IT,Particulier,954.3,2
+ORD-00058,2024-08-01,P004,Écran,Électronique,C001,Client C001,FR,Particulier,1934.94,2
+ORD-00059,2024-08-03,P009,Câble USB,Accessoires,C018,Client C018,IT,PME,1874.64,2
+ORD-00060,2024-03-03,P002,Tablette,Électronique,C002,Client C002,UK,Particulier,2422.75,5
+ORD-00061,2024-10-05,P011,Housse,Accessoires,C044,Client C044,ES,Grand Compte,2105.06,2
+ORD-00062,2024-06-22,P009,Câble USB,Accessoires,C043,Client C043,ES,PME,805.39,1
+ORD-00063,2024-04-18,P004,Écran,Électronique,C028,Client C028,FR,Particulier,292.24,4
+ORD-00064,2024-01-25,P003,Téléphone,Électronique,C043,Client C043,FR,PME,1412.0,5
+ORD-00065,2024-07-24,P010,Support,Accessoires,C013,Client C013,IT,Grand Compte,4338.2,5
+ORD-00066,2024-02-08,P009,Câble USB,Accessoires,C024,Client C024,FR,Grand Compte,251.68,2
+ORD-00067,2024-01-16,P005,Clavier,Périphériques,C045,Client C045,DE,Grand Compte,1633.48,2
+ORD-00068,2024-01-26,P009,Câble USB,Accessoires,C007,Client C007,IT,Grand Compte,3842.64,4
+ORD-00069,2024-12-04,P007,Imprimante,Périphériques,C022,Client C022,IT,PME,1557.3,2
+ORD-00070,2024-02-23,P011,Housse,Accessoires,C044,Client C044,DE,Grand Compte,71.34,1
+ORD-00071,2024-12-27,P011,Housse,Accessoires,C009,Client C009,UK,PME,1881.6,5
+ORD-00072,2024-05-25,P012,Webcam,Périphériques,C017,Client C017,UK,Grand Compte,4066.44,4
+ORD-00073,2024-02-16,P011,Housse,Accessoires,C036,Client C036,UK,Grand Compte,1070.53,1
+ORD-00074,2024-11-01,P003,Téléphone,Électronique,C034,Client C034,DE,Grand Compte,696.65,5
+ORD-00075,2024-01-16,P009,Câble USB,Accessoires,C031,Client C031,IT,PME,1108.77,3
+ORD-00076,2024-05-25,P011,Housse,Accessoires,C048,Client C048,UK,Grand Compte,4605.2,5
+ORD-00077,2024-03-27,P006,Souris,Périphériques,C013,Client C013,UK,Particulier,462.37,1
+ORD-00078,2024-08-03,P008,Câble HDMI,Accessoires,C024,Client C024,UK,Particulier,2174.1,2
+ORD-00079,2024-07-15,P004,Écran,Électronique,C037,Client C037,FR,PME,1235.3,2
+ORD-00080,2024-04-28,P009,Câble USB,Accessoires,C049,Client C049,ES,Grand Compte,3035.45,5
+ORD-00081,2024-11-28,P011,Housse,Accessoires,C027,Client C027,IT,Particulier,1255.95,3
+ORD-00082,2024-12-30,P004,Écran,Électronique,C007,Client C007,DE,PME,835.21,1
+ORD-00083,2024-03-16,P001,Ordinateur,Électronique,C009,Client C009,IT,Grand Compte,1657.7,2
+ORD-00084,2024-10-12,P003,Téléphone,Électronique,C050,Client C050,DE,PME,1240.36,2
+ORD-00085,2024-01-03,P009,Câble USB,Accessoires,C043,Client C043,ES,Grand Compte,815.2,4
+ORD-00086,2024-08-12,P009,Câble USB,Accessoires,C041,Client C041,IT,PME,197.86,2
+ORD-00087,2024-11-22,P006,Souris,Périphériques,C004,Client C004,FR,PME,4161.8,4
+ORD-00088,2024-01-08,P008,Câble HDMI,Accessoires,C030,Client C030,ES,PME,64.85,1
+ORD-00089,2024-05-02,P006,Souris,Périphériques,C050,Client C050,UK,PME,4200.15,5
+ORD-00090,2024-10-28,P012,Webcam,Périphériques,C050,Client C050,FR,Particulier,2416.14,3
+ORD-00091,2024-08-17,P003,Téléphone,Électronique,C042,Client C042,IT,PME,1965.04,2
+ORD-00092,2024-06-27,P011,Housse,Accessoires,C001,Client C001,ES,Grand Compte,675.24,2
+ORD-00093,2024-02-06,P005,Clavier,Périphériques,C044,Client C044,FR,Particulier,788.64,3
+ORD-00094,2024-09-21,P009,Câble USB,Accessoires,C009,Client C009,UK,PME,727.94,1
+ORD-00095,2024-09-12,P007,Imprimante,Périphériques,C046,Client C046,DE,PME,962.31,1
+ORD-00096,2024-12-23,P004,Écran,Électronique,C022,Client C022,FR,PME,3559.16,4
+ORD-00097,2024-09-17,P002,Tablette,Électronique,C023,Client C023,ES,Particulier,563.84,4
+ORD-00098,2024-07-07,P012,Webcam,Périphériques,C008,Client C008,FR,PME,488.46,2
+ORD-00099,2024-08-17,P011,Housse,Accessoires,C042,Client C042,FR,PME,4561.76,4
+ORD-00100,2024-06-02,P001,Ordinateur,Électronique,C007,Client C007,ES,PME,2416.2,5
+ORD-00101,2024-06-19,P006,Souris,Périphériques,C005,Client C005,FR,PME,1194.05,5
+ORD-00102,2024-06-13,P007,Imprimante,Périphériques,C033,Client C033,ES,PME,993.77,1
+ORD-00103,2024-03-18,P012,Webcam,Périphériques,C019,Client C019,ES,Particulier,2201.58,3
+ORD-00104,2024-01-18,P009,Câble USB,Accessoires,C049,Client C049,DE,Particulier,2878.35,5
+ORD-00105,2024-12-24,P006,Souris,Périphériques,C016,Client C016,ES,Particulier,2714.28,4
+ORD-00106,2024-09-03,P004,Écran,Électronique,C030,Client C030,IT,PME,1745.16,3
+ORD-00107,2024-05-30,P005,Clavier,Périphériques,C028,Client C028,IT,Particulier,788.54,1
+ORD-00108,2024-07-14,P010,Support,Accessoires,C021,Client C021,UK,Particulier,3426.45,5
+ORD-00109,2024-01-30,P004,Écran,Électronique,C050,Client C050,UK,PME,1682.94,2
+ORD-00110,2024-05-19,P011,Housse,Accessoires,C040,Client C040,ES,Particulier,1486.85,5
+ORD-00111,2024-12-23,P009,Câble USB,Accessoires,C016,Client C016,FR,Grand Compte,3893.76,4
+ORD-00112,2024-02-02,P007,Imprimante,Périphériques,C036,Client C036,DE,Particulier,1708.89,3
+ORD-00113,2024-10-28,P006,Souris,Périphériques,C045,Client C045,ES,PME,369.78,2
+ORD-00114,2024-08-20,P003,Téléphone,Électronique,C011,Client C011,UK,Particulier,2243.64,3
+ORD-00115,2024-10-28,P005,Clavier,Périphériques,C013,Client C013,ES,Particulier,390.2,5
+ORD-00116,2024-01-14,P010,Support,Accessoires,C029,Client C029,ES,Grand Compte,413.98,2
+ORD-00117,2024-06-15,P011,Housse,Accessoires,C011,Client C011,FR,PME,138.67,1
+ORD-00118,2024-03-30,P004,Écran,Électronique,C006,Client C006,FR,Grand Compte,2133.8,4
+ORD-00119,2024-11-06,P009,Câble USB,Accessoires,C004,Client C004,IT,Particulier,1584.54,2
+ORD-00120,2024-06-06,P004,Écran,Électronique,C044,Client C044,DE,Grand Compte,1103.34,2
+ORD-00121,2024-07-23,P006,Souris,Périphériques,C048,Client C048,ES,PME,746.27,1
+ORD-00122,2024-11-03,P007,Imprimante,Périphériques,C047,Client C047,DE,Particulier,2198.04,2
+ORD-00123,2024-12-10,P004,Écran,Électronique,C020,Client C020,UK,Grand Compte,2467.24,4
+ORD-00124,2024-09-28,P004,Écran,Électronique,C011,Client C011,FR,Particulier,588.44,2
+ORD-00125,2024-03-31,P005,Clavier,Périphériques,C041,Client C041,IT,Particulier,608.64,1
+ORD-00126,2024-04-28,P009,Câble USB,Accessoires,C041,Client C041,FR,PME,2647.65,5
+ORD-00127,2024-06-01,P005,Clavier,Périphériques,C036,Client C036,DE,Grand Compte,895.68,3
+ORD-00128,2024-01-05,P004,Écran,Électronique,C013,Client C013,ES,PME,503.87,1
+ORD-00129,2024-08-26,P002,Tablette,Électronique,C012,Client C012,IT,Grand Compte,1846.83,3
+ORD-00130,2024-08-18,P005,Clavier,Périphériques,C007,Client C007,ES,Particulier,186.88,1
+ORD-00131,2024-08-27,P008,Câble HDMI,Accessoires,C048,Client C048,IT,PME,471.9,3
+ORD-00132,2024-03-04,P006,Souris,Périphériques,C024,Client C024,ES,PME,2339.88,2
+ORD-00133,2024-02-17,P010,Support,Accessoires,C034,Client C034,ES,PME,30.85,1
+ORD-00134,2024-07-17,P008,Câble HDMI,Accessoires,C029,Client C029,DE,Grand Compte,460.98,2
+ORD-00135,2024-04-15,P011,Housse,Accessoires,C022,Client C022,UK,Particulier,3647.44,4
+ORD-00136,2024-07-09,P012,Webcam,Périphériques,C028,Client C028,UK,PME,839.84,4
+ORD-00137,2024-12-25,P007,Imprimante,Périphériques,C035,Client C035,FR,Grand Compte,3323.96,4
+ORD-00138,2024-04-25,P004,Écran,Électronique,C031,Client C031,UK,PME,1454.45,5
+ORD-00139,2024-11-09,P008,Câble HDMI,Accessoires,C046,Client C046,FR,Grand Compte,3492.15,3
+ORD-00140,2024-08-20,P008,Câble HDMI,Accessoires,C022,Client C022,ES,Particulier,300.17,1
+ORD-00141,2024-09-08,P005,Clavier,Périphériques,C012,Client C012,DE,Particulier,1620.54,2
+ORD-00142,2024-03-29,P009,Câble USB,Accessoires,C009,Client C009,UK,PME,2832.63,3
+ORD-00143,2024-10-15,P001,Ordinateur,Électronique,C025,Client C025,ES,Particulier,1305.52,4
+ORD-00144,2024-08-12,P002,Tablette,Électronique,C015,Client C015,ES,Particulier,3222.21,3
+ORD-00145,2024-08-22,P007,Imprimante,Périphériques,C018,Client C018,UK,Particulier,4485.0,5
+ORD-00146,2024-03-16,P001,Ordinateur,Électronique,C016,Client C016,DE,Particulier,3707.16,4
+ORD-00147,2024-01-21,P009,Câble USB,Accessoires,C032,Client C032,ES,Particulier,5045.65,5
+ORD-00148,2024-01-11,P004,Écran,Électronique,C015,Client C015,UK,Grand Compte,105.44,1
+ORD-00149,2024-11-16,P008,Câble HDMI,Accessoires,C035,Client C035,DE,PME,1453.8,4
+ORD-00150,2024-11-28,P007,Imprimante,Périphériques,C041,Client C041,DE,Particulier,1258.66,2
+ORD-00151,2024-12-12,P001,Ordinateur,Électronique,C043,Client C043,ES,PME,5302.05,5
+ORD-00152,2024-03-11,P008,Câble HDMI,Accessoires,C019,Client C019,ES,Particulier,4933.35,5
+ORD-00153,2024-02-09,P004,Écran,Électronique,C010,Client C010,ES,Particulier,2303.91,3
+ORD-00154,2024-01-29,P010,Support,Accessoires,C029,Client C029,UK,Particulier,456.53,1
+ORD-00155,2024-07-19,P011,Housse,Accessoires,C040,Client C040,DE,Grand Compte,2381.28,3
+ORD-00156,2024-06-04,P004,Écran,Électronique,C050,Client C050,UK,Grand Compte,1240.92,4
+ORD-00157,2024-10-28,P005,Clavier,Périphériques,C013,Client C013,IT,Grand Compte,1057.2,3
+ORD-00158,2024-12-12,P012,Webcam,Périphériques,C050,Client C050,IT,PME,3284.4,3
+ORD-00159,2024-07-06,P009,Câble USB,Accessoires,C038,Client C038,UK,Particulier,1119.14,2
+ORD-00160,2024-03-14,P011,Housse,Accessoires,C009,Client C009,ES,PME,3574.56,4
+ORD-00161,2024-11-25,P011,Housse,Accessoires,C032,Client C032,FR,Particulier,533.68,2
+ORD-00162,2024-03-28,P011,Housse,Accessoires,C015,Client C015,DE,PME,849.1,5
+ORD-00163,2024-09-20,P003,Téléphone,Électronique,C038,Client C038,DE,Particulier,1866.64,4
+ORD-00164,2024-11-20,P002,Tablette,Électronique,C048,Client C048,UK,Particulier,5794.6,5
+ORD-00165,2024-05-06,P011,Housse,Accessoires,C011,Client C011,ES,PME,1038.17,1
+ORD-00166,2024-07-19,P004,Écran,Électronique,C044,Client C044,FR,Grand Compte,2734.36,4
+ORD-00167,2024-07-13,P005,Clavier,Périphériques,C042,Client C042,IT,Particulier,2021.64,2
+ORD-00168,2024-07-02,P006,Souris,Périphériques,C015,Client C015,UK,Grand Compte,4373.0,5
+ORD-00169,2024-08-11,P001,Ordinateur,Électronique,C012,Client C012,FR,Particulier,2811.75,3
+ORD-00170,2024-11-15,P008,Câble HDMI,Accessoires,C002,Client C002,DE,Grand Compte,493.68,1
+ORD-00171,2024-06-20,P002,Tablette,Électronique,C009,Client C009,DE,Particulier,2117.9,2
+ORD-00172,2024-01-12,P004,Écran,Électronique,C029,Client C029,DE,PME,102.61,1
+ORD-00173,2024-03-11,P006,Souris,Périphériques,C036,Client C036,IT,Grand Compte,1775.78,2
+ORD-00174,2024-12-09,P008,Câble HDMI,Accessoires,C038,Client C038,IT,Particulier,1503.4,5
+ORD-00175,2024-12-03,P008,Câble HDMI,Accessoires,C005,Client C005,FR,Particulier,3059.64,3
+ORD-00176,2024-09-30,P008,Câble HDMI,Accessoires,C038,Client C038,DE,Particulier,1977.5,2
+ORD-00177,2024-03-25,P004,Écran,Électronique,C016,Client C016,ES,Grand Compte,1047.53,1
+ORD-00178,2024-05-03,P005,Clavier,Périphériques,C007,Client C007,ES,PME,49.8,2
+ORD-00179,2024-05-02,P006,Souris,Périphériques,C008,Client C008,FR,Particulier,5510.1,5
+ORD-00180,2024-12-28,P012,Webcam,Périphériques,C048,Client C048,UK,Grand Compte,339.18,3
+ORD-00181,2024-05-05,P009,Câble USB,Accessoires,C026,Client C026,IT,Grand Compte,3072.63,3
+ORD-00182,2024-08-11,P004,Écran,Électronique,C036,Client C036,FR,Particulier,262.76,4
+ORD-00183,2024-07-19,P002,Tablette,Électronique,C031,Client C031,UK,Grand Compte,1275.12,2
+ORD-00184,2024-10-08,P012,Webcam,Périphériques,C001,Client C001,DE,Particulier,2310.28,2
+ORD-00185,2024-03-24,P012,Webcam,Périphériques,C037,Client C037,ES,PME,5236.35,5
+ORD-00186,2024-01-10,P002,Tablette,Électronique,C029,Client C029,UK,Particulier,343.89,1
+ORD-00187,2024-12-06,P005,Clavier,Périphériques,C027,Client C027,DE,PME,1678.24,4
+ORD-00188,2024-11-14,P011,Housse,Accessoires,C009,Client C009,UK,PME,5545.2,5
+ORD-00189,2024-10-14,P009,Câble USB,Accessoires,C048,Client C048,UK,PME,3189.3,3
+ORD-00190,2024-04-24,P003,Téléphone,Électronique,C013,Client C013,FR,PME,1564.92,4
+ORD-00191,2024-07-21,P004,Écran,Électronique,C029,Client C029,ES,PME,1690.5,2
+ORD-00192,2024-09-30,P009,Câble USB,Accessoires,C049,Client C049,UK,Grand Compte,2427.78,3
+ORD-00193,2024-01-10,P009,Câble USB,Accessoires,C047,Client C047,DE,Particulier,734.45,5
+ORD-00194,2024-03-12,P008,Câble HDMI,Accessoires,C028,Client C028,FR,PME,3491.16,4
+ORD-00195,2024-02-13,P003,Téléphone,Électronique,C016,Client C016,UK,PME,742.5,1
+ORD-00196,2024-06-10,P006,Souris,Périphériques,C009,Client C009,DE,Grand Compte,1475.52,4
+ORD-00197,2024-09-25,P012,Webcam,Périphériques,C004,Client C004,FR,PME,1830.88,4
+ORD-00198,2024-08-24,P004,Écran,Électronique,C019,Client C019,FR,Particulier,1370.4,5
+ORD-00199,2024-03-27,P004,Écran,Électronique,C044,Client C044,ES,Particulier,5201.8,5
+ORD-00200,2024-05-25,P006,Souris,Périphériques,C012,Client C012,DE,PME,496.38,1
+ORD-00201,2024-03-22,P012,Webcam,Périphériques,C029,Client C029,UK,Particulier,362.15,1
+ORD-00202,2024-08-12,P012,Webcam,Périphériques,C015,Client C015,ES,PME,887.32,4
+ORD-00203,2024-01-29,P005,Clavier,Périphériques,C050,Client C050,IT,Particulier,2349.14,2
+ORD-00204,2024-07-05,P001,Ordinateur,Électronique,C003,Client C003,DE,PME,3041.13,3
+ORD-00205,2024-10-21,P012,Webcam,Périphériques,C043,Client C043,IT,Particulier,248.22,1
+ORD-00206,2024-03-16,P001,Ordinateur,Électronique,C036,Client C036,UK,Grand Compte,191.41,1
+ORD-00207,2024-01-04,P009,Câble USB,Accessoires,C034,Client C034,DE,PME,1057.49,1
+ORD-00208,2024-09-26,P008,Câble HDMI,Accessoires,C043,Client C043,IT,PME,2216.25,5
+ORD-00209,2024-12-20,P002,Tablette,Électronique,C002,Client C002,IT,Grand Compte,1620.8,5
+ORD-00210,2024-09-15,P011,Housse,Accessoires,C022,Client C022,DE,Particulier,211.75,5
+ORD-00211,2024-04-01,P004,Écran,Électronique,C019,Client C019,DE,PME,169.2,4
+ORD-00212,2024-10-02,P010,Support,Accessoires,C032,Client C032,DE,Particulier,3475.64,4
+ORD-00213,2024-08-29,P004,Écran,Électronique,C038,Client C038,DE,PME,3175.62,3
+ORD-00214,2024-01-12,P011,Housse,Accessoires,C047,Client C047,IT,Particulier,741.5,2
+ORD-00215,2024-09-01,P012,Webcam,Périphériques,C039,Client C039,IT,Particulier,1126.88,4
+ORD-00216,2024-11-04,P010,Support,Accessoires,C036,Client C036,DE,Particulier,1712.32,4
+ORD-00217,2024-09-25,P001,Ordinateur,Électronique,C015,Client C015,DE,Particulier,5556.45,5
+ORD-00218,2024-05-26,P005,Clavier,Périphériques,C027,Client C027,FR,PME,1419.54,2
+ORD-00219,2024-08-10,P009,Câble USB,Accessoires,C017,Client C017,IT,PME,36.78,1
+ORD-00220,2024-06-27,P011,Housse,Accessoires,C037,Client C037,IT,PME,1931.55,5
+ORD-00221,2024-04-02,P007,Imprimante,Périphériques,C010,Client C010,FR,PME,1102.23,1
+ORD-00222,2024-01-28,P004,Écran,Électronique,C047,Client C047,DE,Grand Compte,1090.26,1
+ORD-00223,2024-04-23,P011,Housse,Accessoires,C007,Client C007,UK,PME,2406.96,3
+ORD-00224,2024-06-06,P010,Support,Accessoires,C011,Client C011,IT,Grand Compte,1095.25,5
+ORD-00225,2024-05-27,P001,Ordinateur,Électronique,C020,Client C020,FR,Grand Compte,1437.81,3
+ORD-00226,2024-02-13,P001,Ordinateur,Électronique,C023,Client C023,UK,Particulier,3270.57,3
+ORD-00227,2024-09-17,P001,Ordinateur,Électronique,C035,Client C035,FR,Particulier,2811.95,5
+ORD-00228,2024-06-20,P005,Clavier,Périphériques,C017,Client C017,UK,Particulier,2551.0,5
+ORD-00229,2024-04-20,P009,Câble USB,Accessoires,C013,Client C013,IT,Particulier,2805.85,5
+ORD-00230,2024-05-18,P001,Ordinateur,Électronique,C011,Client C011,FR,PME,2996.12,4
+ORD-00231,2024-01-17,P005,Clavier,Périphériques,C034,Client C034,ES,Grand Compte,1174.88,2
+ORD-00232,2024-06-14,P006,Souris,Périphériques,C024,Client C024,UK,Grand Compte,5903.1,5
+ORD-00233,2024-11-23,P001,Ordinateur,Électronique,C008,Client C008,ES,PME,1151.6,5
+ORD-00234,2024-12-25,P004,Écran,Électronique,C033,Client C033,DE,PME,3293.28,3
+ORD-00235,2024-10-03,P005,Clavier,Périphériques,C046,Client C046,DE,PME,5286.0,5
+ORD-00236,2024-11-10,P011,Housse,Accessoires,C032,Client C032,IT,Grand Compte,3114.57,3
+ORD-00237,2024-09-09,P006,Souris,Périphériques,C049,Client C049,UK,Grand Compte,4111.08,4
+ORD-00238,2024-07-13,P011,Housse,Accessoires,C007,Client C007,ES,PME,926.85,5
+ORD-00239,2024-05-26,P002,Tablette,Électronique,C018,Client C018,IT,PME,166.56,1
+ORD-00240,2024-11-17,P003,Téléphone,Électronique,C044,Client C044,DE,PME,2553.78,3
+ORD-00241,2024-02-26,P002,Tablette,Électronique,C028,Client C028,IT,Grand Compte,338.12,4
+ORD-00242,2024-05-02,P003,Téléphone,Électronique,C033,Client C033,UK,Particulier,1189.43,1
+ORD-00243,2024-11-26,P003,Téléphone,Électronique,C003,Client C003,UK,Particulier,1192.21,1
+ORD-00244,2024-06-22,P002,Tablette,Électronique,C016,Client C016,DE,PME,654.06,1
+ORD-00245,2024-04-04,P007,Imprimante,Périphériques,C023,Client C023,IT,Particulier,228.69,3
+ORD-00246,2024-05-19,P009,Câble USB,Accessoires,C008,Client C008,UK,Particulier,5219.0,5
+ORD-00247,2024-11-10,P001,Ordinateur,Électronique,C036,Client C036,IT,Grand Compte,433.8,1
+ORD-00248,2024-01-28,P007,Imprimante,Périphériques,C030,Client C030,DE,Particulier,289.51,1
+ORD-00249,2024-04-06,P007,Imprimante,Périphériques,C050,Client C050,FR,PME,1261.02,2
+ORD-00250,2024-07-24,P010,Support,Accessoires,C004,Client C004,IT,PME,3759.76,4
+ORD-00251,2024-03-08,P005,Clavier,Périphériques,C006,Client C006,DE,Particulier,2373.04,4
+ORD-00252,2024-06-28,P010,Support,Accessoires,C028,Client C028,ES,PME,1296.65,5
+ORD-00253,2024-02-22,P003,Téléphone,Électronique,C023,Client C023,IT,Grand Compte,909.45,1
+ORD-00254,2024-09-22,P002,Tablette,Électronique,C030,Client C030,ES,Grand Compte,1963.74,3
+ORD-00255,2024-02-08,P008,Câble HDMI,Accessoires,C037,Client C037,FR,Particulier,2127.85,5
+ORD-00256,2024-07-11,P007,Imprimante,Périphériques,C027,Client C027,ES,PME,2549.32,4
+ORD-00257,2024-04-25,P009,Câble USB,Accessoires,C031,Client C031,IT,Particulier,2868.9,5
+ORD-00258,2024-05-01,P005,Clavier,Périphériques,C021,Client C021,DE,Grand Compte,1855.84,2
+ORD-00259,2024-10-21,P009,Câble USB,Accessoires,C022,Client C022,IT,Particulier,3497.8,4
+ORD-00260,2024-02-01,P008,Câble HDMI,Accessoires,C022,Client C022,ES,Particulier,554.53,1
+ORD-00261,2024-03-10,P007,Imprimante,Périphériques,C034,Client C034,ES,Grand Compte,711.93,3
+ORD-00262,2024-02-23,P003,Téléphone,Électronique,C043,Client C043,FR,PME,2187.98,2
+ORD-00263,2024-04-08,P006,Souris,Périphériques,C034,Client C034,IT,PME,3724.55,5
+ORD-00264,2024-02-13,P004,Écran,Électronique,C035,Client C035,DE,PME,3056.04,3
+ORD-00265,2024-12-10,P005,Clavier,Périphériques,C038,Client C038,DE,Grand Compte,133.94,1
+ORD-00266,2024-04-28,P008,Câble HDMI,Accessoires,C004,Client C004,UK,Particulier,935.48,2
+ORD-00267,2024-03-01,P006,Souris,Périphériques,C028,Client C028,UK,Particulier,251.31,3
+ORD-00268,2024-12-06,P003,Téléphone,Électronique,C022,Client C022,ES,PME,1703.85,5
+ORD-00269,2024-08-03,P010,Support,Accessoires,C022,Client C022,UK,Particulier,2848.75,5
+ORD-00270,2024-05-31,P001,Ordinateur,Électronique,C028,Client C028,ES,PME,257.06,1
+ORD-00271,2024-06-24,P003,Téléphone,Électronique,C022,Client C022,DE,Particulier,702.76,4
+ORD-00272,2024-06-07,P010,Support,Accessoires,C022,Client C022,IT,PME,2356.28,2
+ORD-00273,2024-10-11,P009,Câble USB,Accessoires,C017,Client C017,UK,PME,5071.35,5
+ORD-00274,2024-09-28,P005,Clavier,Périphériques,C024,Client C024,ES,Grand Compte,164.44,2
+ORD-00275,2024-08-21,P001,Ordinateur,Électronique,C012,Client C012,FR,Particulier,195.94,1
+ORD-00276,2024-04-24,P003,Téléphone,Électronique,C014,Client C014,DE,Grand Compte,836.76,4
+ORD-00277,2024-01-08,P009,Câble USB,Accessoires,C003,Client C003,DE,Particulier,5712.45,5
+ORD-00278,2024-07-20,P011,Housse,Accessoires,C008,Client C008,DE,PME,1409.9,5
+ORD-00279,2024-02-07,P003,Téléphone,Électronique,C003,Client C003,DE,Grand Compte,3089.08,4
+ORD-00280,2024-12-04,P012,Webcam,Périphériques,C006,Client C006,IT,PME,4553.85,5
+ORD-00281,2024-01-20,P006,Souris,Périphériques,C040,Client C040,UK,PME,848.85,1
+ORD-00282,2024-12-09,P010,Support,Accessoires,C035,Client C035,IT,Grand Compte,1340.16,4
+ORD-00283,2024-06-16,P010,Support,Accessoires,C035,Client C035,ES,PME,3535.8,4
+ORD-00284,2024-05-13,P004,Écran,Électronique,C029,Client C029,DE,Particulier,2266.7,5
+ORD-00285,2024-01-11,P007,Imprimante,Périphériques,C046,Client C046,IT,Particulier,2330.6,2
+ORD-00286,2024-11-29,P008,Câble HDMI,Accessoires,C048,Client C048,DE,PME,3072.88,4
+ORD-00287,2024-07-20,P011,Housse,Accessoires,C049,Client C049,ES,Grand Compte,5321.5,5
+ORD-00288,2024-09-30,P010,Support,Accessoires,C031,Client C031,ES,Grand Compte,2845.29,3
+ORD-00289,2024-09-27,P010,Support,Accessoires,C019,Client C019,UK,PME,1989.72,3
+ORD-00290,2024-04-10,P011,Housse,Accessoires,C025,Client C025,UK,Particulier,1037.55,5
+ORD-00291,2024-12-14,P012,Webcam,Périphériques,C012,Client C012,UK,PME,2940.84,3
+ORD-00292,2024-02-11,P012,Webcam,Périphériques,C018,Client C018,UK,Particulier,1200.75,3
+ORD-00293,2024-03-22,P005,Clavier,Périphériques,C040,Client C040,ES,Particulier,1750.1,5
+ORD-00294,2024-02-02,P008,Câble HDMI,Accessoires,C017,Client C017,ES,Particulier,4582.4,5
+ORD-00295,2024-01-29,P007,Imprimante,Périphériques,C048,Client C048,UK,PME,893.74,1
+ORD-00296,2024-09-27,P011,Housse,Accessoires,C006,Client C006,ES,Particulier,5799.5,5
+ORD-00297,2024-10-20,P011,Housse,Accessoires,C009,Client C009,IT,Particulier,2392.96,2
+ORD-00298,2024-01-09,P012,Webcam,Périphériques,C023,Client C023,ES,PME,578.16,1
+ORD-00299,2024-10-25,P011,Housse,Accessoires,C008,Client C008,ES,Particulier,2901.72,4
+ORD-00300,2024-11-23,P006,Souris,Périphériques,C005,Client C005,IT,PME,2167.35,3
+ORD-00301,2024-05-15,P012,Webcam,Périphériques,C015,Client C015,UK,PME,279.62,2
+ORD-00302,2024-12-22,P005,Clavier,Périphériques,C039,Client C039,FR,Particulier,859.95,3
+ORD-00303,2024-02-20,P008,Câble HDMI,Accessoires,C045,Client C045,FR,Grand Compte,571.62,3
+ORD-00304,2024-09-07,P007,Imprimante,Périphériques,C006,Client C006,DE,PME,779.82,1
+ORD-00305,2024-02-07,P007,Imprimante,Périphériques,C005,Client C005,ES,PME,2045.4,2
+ORD-00306,2024-10-07,P007,Imprimante,Périphériques,C005,Client C005,IT,PME,939.98,2
+ORD-00307,2024-09-09,P010,Support,Accessoires,C048,Client C048,ES,PME,1046.96,2
+ORD-00308,2024-07-20,P008,Câble HDMI,Accessoires,C005,Client C005,DE,Grand Compte,1455.0,4
+ORD-00309,2024-09-14,P008,Câble HDMI,Accessoires,C042,Client C042,ES,Particulier,2530.96,4
+ORD-00310,2024-11-06,P008,Câble HDMI,Accessoires,C034,Client C034,UK,Particulier,1797.4,5
+ORD-00311,2024-02-06,P006,Souris,Périphériques,C025,Client C025,FR,Particulier,1640.05,5
+ORD-00312,2024-02-26,P011,Housse,Accessoires,C045,Client C045,UK,Particulier,924.6,3
+ORD-00313,2024-09-15,P003,Téléphone,Électronique,C039,Client C039,DE,Grand Compte,857.61,1
+ORD-00314,2024-02-14,P008,Câble HDMI,Accessoires,C041,Client C041,FR,Particulier,1592.56,4
+ORD-00315,2024-03-29,P006,Souris,Périphériques,C029,Client C029,FR,Grand Compte,109.19,1
+ORD-00316,2024-03-28,P006,Souris,Périphériques,C048,Client C048,FR,Particulier,337.79,1
+ORD-00317,2024-05-30,P006,Souris,Périphériques,C005,Client C005,FR,Particulier,4753.16,4
+ORD-00318,2024-11-04,P004,Écran,Électronique,C043,Client C043,IT,PME,2748.3,3
+ORD-00319,2024-04-11,P010,Support,Accessoires,C028,Client C028,DE,Grand Compte,369.16,1
+ORD-00320,2024-02-08,P004,Écran,Électronique,C019,Client C019,FR,PME,1540.66,2
+ORD-00321,2024-08-05,P007,Imprimante,Périphériques,C045,Client C045,ES,PME,1066.34,2
+ORD-00322,2024-10-26,P010,Support,Accessoires,C022,Client C022,DE,PME,1860.42,2
+ORD-00323,2024-06-09,P005,Clavier,Périphériques,C025,Client C025,ES,Grand Compte,264.12,3
+ORD-00324,2024-05-12,P010,Support,Accessoires,C018,Client C018,UK,Particulier,3799.84,4
+ORD-00325,2024-07-17,P004,Écran,Électronique,C008,Client C008,DE,Particulier,183.54,1
+ORD-00326,2024-10-29,P008,Câble HDMI,Accessoires,C022,Client C022,ES,PME,1178.76,2
+ORD-00327,2024-08-17,P005,Clavier,Périphériques,C015,Client C015,UK,Grand Compte,1734.93,3
+ORD-00328,2024-11-11,P002,Tablette,Électronique,C018,Client C018,DE,Grand Compte,801.49,1
+ORD-00329,2024-01-26,P010,Support,Accessoires,C016,Client C016,DE,Particulier,4582.65,5
+ORD-00330,2024-02-08,P012,Webcam,Périphériques,C027,Client C027,UK,Grand Compte,138.92,4
+ORD-00331,2024-11-20,P008,Câble HDMI,Accessoires,C047,Client C047,ES,Grand Compte,3247.92,3
+ORD-00332,2024-06-17,P001,Ordinateur,Électronique,C046,Client C046,FR,PME,928.26,3
+ORD-00333,2024-05-21,P005,Clavier,Périphériques,C041,Client C041,FR,Grand Compte,828.96,3
+ORD-00334,2024-12-21,P005,Clavier,Périphériques,C040,Client C040,FR,Particulier,376.36,2
+ORD-00335,2024-12-25,P007,Imprimante,Périphériques,C031,Client C031,ES,Particulier,3346.3,5
+ORD-00336,2024-10-15,P011,Housse,Accessoires,C016,Client C016,IT,Grand Compte,1550.86,2
+ORD-00337,2024-10-23,P012,Webcam,Périphériques,C001,Client C001,DE,Grand Compte,1144.08,1
+ORD-00338,2024-06-26,P007,Imprimante,Périphériques,C030,Client C030,FR,Grand Compte,201.94,1
+ORD-00339,2024-10-14,P005,Clavier,Périphériques,C009,Client C009,IT,Grand Compte,4551.65,5
+ORD-00340,2024-12-14,P004,Écran,Électronique,C027,Client C027,DE,PME,2276.36,2
+ORD-00341,2024-01-05,P011,Housse,Accessoires,C007,Client C007,FR,Particulier,1938.03,3
+ORD-00342,2024-11-06,P008,Câble HDMI,Accessoires,C017,Client C017,UK,Particulier,885.01,1
+ORD-00343,2024-12-04,P011,Housse,Accessoires,C012,Client C012,IT,PME,3555.76,4
+ORD-00344,2024-09-30,P010,Support,Accessoires,C012,Client C012,UK,PME,272.46,3
+ORD-00345,2024-03-12,P001,Ordinateur,Électronique,C042,Client C042,IT,Particulier,2997.87,3
+ORD-00346,2024-02-02,P005,Clavier,Périphériques,C009,Client C009,UK,Particulier,1755.12,4
+ORD-00347,2024-11-02,P004,Écran,Électronique,C046,Client C046,IT,Grand Compte,5938.7,5
+ORD-00348,2024-10-17,P009,Câble USB,Accessoires,C003,Client C003,FR,PME,3394.68,3
+ORD-00349,2024-09-07,P002,Tablette,Électronique,C043,Client C043,IT,Grand Compte,280.87,1
+ORD-00350,2024-04-25,P011,Housse,Accessoires,C036,Client C036,IT,PME,911.9,1
+ORD-00351,2024-05-09,P003,Téléphone,Électronique,C038,Client C038,DE,Grand Compte,2316.66,3
+ORD-00352,2024-01-12,P005,Clavier,Périphériques,C015,Client C015,DE,PME,525.28,4
+ORD-00353,2024-11-19,P002,Tablette,Électronique,C002,Client C002,IT,Particulier,1918.71,3
+ORD-00354,2024-01-24,P003,Téléphone,Électronique,C036,Client C036,IT,Grand Compte,1943.22,2
+ORD-00355,2024-09-20,P003,Téléphone,Électronique,C002,Client C002,DE,Grand Compte,522.2,2
+ORD-00356,2024-05-06,P006,Souris,Périphériques,C016,Client C016,FR,Grand Compte,5364.2,5
+ORD-00357,2024-05-28,P009,Câble USB,Accessoires,C042,Client C042,IT,Grand Compte,61.12,1
+ORD-00358,2024-02-27,P012,Webcam,Périphériques,C047,Client C047,FR,Particulier,1827.35,5
+ORD-00359,2024-04-25,P005,Clavier,Périphériques,C011,Client C011,DE,Grand Compte,2068.64,4
+ORD-00360,2024-01-16,P011,Housse,Accessoires,C007,Client C007,UK,PME,3367.64,4
+ORD-00361,2024-05-09,P002,Tablette,Électronique,C003,Client C003,UK,Grand Compte,5141.6,5
+ORD-00362,2024-04-03,P001,Ordinateur,Électronique,C027,Client C027,DE,Particulier,617.0,2
+ORD-00363,2024-07-29,P009,Câble USB,Accessoires,C010,Client C010,ES,Particulier,4284.2,5
+ORD-00364,2024-06-21,P002,Tablette,Électronique,C037,Client C037,ES,PME,543.4,4
+ORD-00365,2024-10-29,P003,Téléphone,Électronique,C009,Client C009,ES,PME,957.33,1
+ORD-00366,2024-08-08,P012,Webcam,Périphériques,C014,Client C014,IT,Particulier,233.7,5
+ORD-00367,2024-10-05,P012,Webcam,Périphériques,C010,Client C010,FR,PME,2349.6,4
+ORD-00368,2024-01-31,P001,Ordinateur,Électronique,C029,Client C029,IT,Particulier,332.62,2
+ORD-00369,2024-05-15,P009,Câble USB,Accessoires,C047,Client C047,DE,Particulier,303.13,1
+ORD-00370,2024-08-30,P012,Webcam,Périphériques,C038,Client C038,UK,Grand Compte,1370.86,2
+ORD-00371,2024-04-17,P011,Housse,Accessoires,C027,Client C027,DE,PME,567.1,2
+ORD-00372,2024-06-01,P009,Câble USB,Accessoires,C050,Client C050,DE,Particulier,3474.05,5
+ORD-00373,2024-04-14,P003,Téléphone,Électronique,C007,Client C007,FR,Particulier,397.42,2
+ORD-00374,2024-03-25,P008,Câble HDMI,Accessoires,C041,Client C041,DE,Grand Compte,657.5,5
+ORD-00375,2024-10-02,P008,Câble HDMI,Accessoires,C013,Client C013,FR,Particulier,3472.88,4
+ORD-00376,2024-07-08,P001,Ordinateur,Électronique,C005,Client C005,IT,Particulier,3100.83,3
+ORD-00377,2024-04-03,P003,Téléphone,Électronique,C048,Client C048,ES,Particulier,332.24,4
+ORD-00378,2024-08-15,P009,Câble USB,Accessoires,C010,Client C010,ES,PME,4429.76,4
+ORD-00379,2024-01-07,P012,Webcam,Périphériques,C039,Client C039,UK,Grand Compte,631.23,1
+ORD-00380,2024-07-12,P009,Câble USB,Accessoires,C016,Client C016,DE,PME,2916.63,3
+ORD-00381,2024-12-20,P006,Souris,Périphériques,C004,Client C004,ES,PME,776.64,2
+ORD-00382,2024-10-07,P006,Souris,Périphériques,C042,Client C042,FR,Particulier,102.24,4
+ORD-00383,2024-01-26,P010,Support,Accessoires,C050,Client C050,UK,PME,856.6,1
+ORD-00384,2024-03-11,P002,Tablette,Électronique,C038,Client C038,ES,PME,548.2,5
+ORD-00385,2024-04-20,P001,Ordinateur,Électronique,C019,Client C019,UK,PME,3607.16,4
+ORD-00386,2024-12-10,P008,Câble HDMI,Accessoires,C001,Client C001,IT,Particulier,4686.92,4
+ORD-00387,2024-07-24,P002,Tablette,Électronique,C010,Client C010,DE,Grand Compte,753.5,1
+ORD-00388,2024-02-16,P005,Clavier,Périphériques,C023,Client C023,IT,PME,5934.15,5
+ORD-00389,2024-11-06,P007,Imprimante,Périphériques,C008,Client C008,IT,Particulier,3212.31,3
+ORD-00390,2024-08-04,P003,Téléphone,Électronique,C031,Client C031,FR,Particulier,5035.85,5
+ORD-00391,2024-07-15,P005,Clavier,Périphériques,C027,Client C027,UK,PME,1878.32,4
+ORD-00392,2024-07-25,P008,Câble HDMI,Accessoires,C021,Client C021,DE,Particulier,1257.88,2
+ORD-00393,2024-06-12,P001,Ordinateur,Électronique,C004,Client C004,IT,PME,162.06,2
+ORD-00394,2024-07-05,P006,Souris,Périphériques,C027,Client C027,UK,Grand Compte,1472.82,3
+ORD-00395,2024-11-05,P005,Clavier,Périphériques,C001,Client C001,UK,Particulier,2179.24,2
+ORD-00396,2024-08-17,P003,Téléphone,Électronique,C037,Client C037,FR,Particulier,4820.7,5
+ORD-00397,2024-10-02,P003,Téléphone,Électronique,C020,Client C020,FR,Particulier,3165.52,4
+ORD-00398,2024-10-10,P012,Webcam,Périphériques,C016,Client C016,ES,PME,3612.3,5
+ORD-00399,2024-11-08,P002,Tablette,Électronique,C035,Client C035,ES,Grand Compte,4432.28,4
+ORD-00400,2024-02-13,P011,Housse,Accessoires,C034,Client C034,ES,Grand Compte,1186.14,1
+ORD-00401,2024-01-25,P004,Écran,Électronique,C032,Client C032,FR,PME,4155.25,5
+ORD-00402,2024-03-12,P002,Tablette,Électronique,C027,Client C027,IT,PME,1117.13,1
+ORD-00403,2024-08-16,P002,Tablette,Électronique,C009,Client C009,FR,PME,2412.96,3
+ORD-00404,2024-09-10,P008,Câble HDMI,Accessoires,C020,Client C020,FR,Grand Compte,4089.45,5
+ORD-00405,2024-09-21,P012,Webcam,Périphériques,C046,Client C046,FR,Particulier,1611.62,2
+ORD-00406,2024-02-14,P004,Écran,Électronique,C024,Client C024,DE,PME,1477.5,3
+ORD-00407,2024-08-14,P002,Tablette,Électronique,C008,Client C008,DE,PME,453.93,3
+ORD-00408,2024-04-13,P011,Housse,Accessoires,C045,Client C045,DE,Particulier,2095.86,2
+ORD-00409,2024-07-14,P010,Support,Accessoires,C007,Client C007,UK,Grand Compte,934.35,1
+ORD-00410,2024-05-12,P004,Écran,Électronique,C006,Client C006,ES,Grand Compte,156.39,1
+ORD-00411,2024-06-05,P004,Écran,Électronique,C015,Client C015,ES,Particulier,1865.55,5
+ORD-00412,2024-09-20,P011,Housse,Accessoires,C011,Client C011,DE,Grand Compte,4102.6,5
+ORD-00413,2024-07-31,P004,Écran,Électronique,C018,Client C018,ES,Grand Compte,569.15,1
+ORD-00414,2024-12-14,P009,Câble USB,Accessoires,C005,Client C005,ES,PME,704.98,1
+ORD-00415,2024-01-11,P012,Webcam,Périphériques,C045,Client C045,ES,PME,158.43,1
+ORD-00416,2024-04-04,P012,Webcam,Périphériques,C006,Client C006,UK,Particulier,4781.88,4
+ORD-00417,2024-09-10,P001,Ordinateur,Électronique,C004,Client C004,FR,PME,338.48,1
+ORD-00418,2024-08-14,P001,Ordinateur,Électronique,C031,Client C031,FR,PME,3801.44,4
+ORD-00419,2024-12-28,P011,Housse,Accessoires,C013,Client C013,ES,Particulier,1008.71,1
+ORD-00420,2024-06-15,P009,Câble USB,Accessoires,C021,Client C021,ES,Particulier,806.1,2
+ORD-00421,2024-06-18,P007,Imprimante,Périphériques,C045,Client C045,FR,PME,145.34,2
+ORD-00422,2024-10-17,P012,Webcam,Périphériques,C015,Client C015,FR,PME,180.85,5
+ORD-00423,2024-03-25,P001,Ordinateur,Électronique,C027,Client C027,FR,PME,5321.9,5
+ORD-00424,2024-04-22,P002,Tablette,Électronique,C046,Client C046,IT,Particulier,1114.42,1
+ORD-00425,2024-05-15,P004,Écran,Électronique,C016,Client C016,ES,PME,3136.4,4
+ORD-00426,2024-12-24,P012,Webcam,Périphériques,C035,Client C035,IT,PME,1285.68,2
+ORD-00427,2024-12-03,P007,Imprimante,Périphériques,C030,Client C030,UK,PME,5183.05,5
+ORD-00428,2024-07-17,P001,Ordinateur,Électronique,C011,Client C011,ES,PME,1621.46,2
+ORD-00429,2024-05-11,P002,Tablette,Électronique,C038,Client C038,FR,Particulier,2157.09,3
+ORD-00430,2024-03-01,P011,Housse,Accessoires,C014,Client C014,ES,PME,1549.42,2
+ORD-00431,2024-09-05,P004,Écran,Électronique,C016,Client C016,FR,PME,3015.36,3
+ORD-00432,2024-10-16,P004,Écran,Électronique,C027,Client C027,IT,Particulier,959.79,1
+ORD-00433,2024-01-20,P004,Écran,Électronique,C012,Client C012,DE,PME,2068.22,2
+ORD-00434,2024-10-31,P010,Support,Accessoires,C027,Client C027,FR,Particulier,4039.05,5
+ORD-00435,2024-07-14,P010,Support,Accessoires,C037,Client C037,IT,Particulier,1679.3,5
+ORD-00436,2024-09-12,P006,Souris,Périphériques,C035,Client C035,IT,PME,720.28,2
+ORD-00437,2024-10-23,P003,Téléphone,Électronique,C009,Client C009,ES,PME,587.13,1
+ORD-00438,2024-08-23,P005,Clavier,Périphériques,C019,Client C019,FR,Particulier,265.88,4
+ORD-00439,2024-04-11,P009,Câble USB,Accessoires,C005,Client C005,ES,PME,3209.97,3
+ORD-00440,2024-03-18,P011,Housse,Accessoires,C019,Client C019,ES,Grand Compte,106.85,5
+ORD-00441,2024-03-13,P006,Souris,Périphériques,C047,Client C047,IT,PME,415.91,1
+ORD-00442,2024-05-22,P012,Webcam,Périphériques,C030,Client C030,FR,Particulier,4797.04,4
+ORD-00443,2024-12-11,P011,Housse,Accessoires,C018,Client C018,FR,PME,365.92,2
+ORD-00444,2024-06-24,P011,Housse,Accessoires,C018,Client C018,FR,PME,476.64,2
+ORD-00445,2024-02-15,P007,Imprimante,Périphériques,C021,Client C021,UK,Particulier,1879.44,2
+ORD-00446,2024-03-15,P006,Souris,Périphériques,C019,Client C019,UK,Particulier,2181.62,2
+ORD-00447,2024-07-15,P003,Téléphone,Électronique,C012,Client C012,IT,Grand Compte,800.74,1
+ORD-00448,2024-08-17,P003,Téléphone,Électronique,C046,Client C046,IT,PME,702.39,1
+ORD-00449,2024-11-01,P001,Ordinateur,Électronique,C045,Client C045,IT,Particulier,292.16,4
+ORD-00450,2024-05-11,P005,Clavier,Périphériques,C017,Client C017,UK,Particulier,5412.2,5
+ORD-00451,2024-02-07,P008,Câble HDMI,Accessoires,C020,Client C020,IT,Particulier,2178.12,2
+ORD-00452,2024-08-17,P010,Support,Accessoires,C043,Client C043,ES,PME,611.07,3
+ORD-00453,2024-12-09,P005,Clavier,Périphériques,C047,Client C047,ES,PME,669.54,3
+ORD-00454,2024-05-29,P002,Tablette,Électronique,C030,Client C030,ES,PME,942.54,1
+ORD-00455,2024-06-07,P002,Tablette,Électronique,C012,Client C012,DE,Grand Compte,354.78,1
+ORD-00456,2024-06-10,P010,Support,Accessoires,C038,Client C038,FR,Particulier,4271.55,5
+ORD-00457,2024-04-04,P009,Câble USB,Accessoires,C015,Client C015,IT,Grand Compte,159.56,1
+ORD-00458,2024-04-17,P010,Support,Accessoires,C042,Client C042,FR,PME,870.48,4
+ORD-00459,2024-03-29,P003,Téléphone,Électronique,C039,Client C039,FR,PME,3164.25,3
+ORD-00460,2024-07-22,P008,Câble HDMI,Accessoires,C007,Client C007,ES,Grand Compte,974.95,1
+ORD-00461,2024-05-10,P008,Câble HDMI,Accessoires,C019,Client C019,ES,Particulier,999.64,4
+ORD-00462,2024-10-01,P009,Câble USB,Accessoires,C003,Client C003,ES,Particulier,4165.95,5
+ORD-00463,2024-09-29,P001,Ordinateur,Électronique,C038,Client C038,ES,Grand Compte,1954.68,2
+ORD-00464,2024-06-27,P010,Support,Accessoires,C036,Client C036,FR,Grand Compte,3519.05,5
+ORD-00465,2024-05-18,P011,Housse,Accessoires,C038,Client C038,UK,PME,2082.04,4
+ORD-00466,2024-04-17,P012,Webcam,Périphériques,C019,Client C019,FR,Grand Compte,2720.8,5
+ORD-00467,2024-09-08,P001,Ordinateur,Électronique,C030,Client C030,UK,Particulier,272.49,3
+ORD-00468,2024-01-07,P004,Écran,Électronique,C032,Client C032,ES,PME,419.12,1
+ORD-00469,2024-05-22,P009,Câble USB,Accessoires,C045,Client C045,ES,Particulier,1743.68,2
+ORD-00470,2024-08-25,P007,Imprimante,Périphériques,C038,Client C038,DE,Grand Compte,1142.52,1
+ORD-00471,2024-07-18,P006,Souris,Périphériques,C048,Client C048,UK,PME,723.26,1
+ORD-00472,2024-03-31,P005,Clavier,Périphériques,C016,Client C016,UK,Particulier,3284.52,3
+ORD-00473,2024-07-04,P008,Câble HDMI,Accessoires,C004,Client C004,IT,Particulier,3213.75,5
+ORD-00474,2024-11-07,P012,Webcam,Périphériques,C045,Client C045,IT,PME,317.12,4
+ORD-00475,2024-05-06,P002,Tablette,Électronique,C044,Client C044,DE,PME,356.0,1
+ORD-00476,2024-02-13,P001,Ordinateur,Électronique,C004,Client C004,FR,Grand Compte,784.9,2
+ORD-00477,2024-12-09,P001,Ordinateur,Électronique,C031,Client C031,DE,PME,3944.25,5
+ORD-00478,2024-07-12,P008,Câble HDMI,Accessoires,C034,Client C034,DE,PME,1177.81,1
+ORD-00479,2024-10-15,P011,Housse,Accessoires,C044,Client C044,FR,Particulier,3087.4,5
+ORD-00480,2024-04-02,P011,Housse,Accessoires,C050,Client C050,UK,Particulier,1084.96,4
+ORD-00481,2024-06-28,P010,Support,Accessoires,C005,Client C005,DE,Particulier,693.29,1
+ORD-00482,2024-01-13,P003,Téléphone,Électronique,C019,Client C019,DE,Grand Compte,1295.48,4
+ORD-00483,2024-06-24,P001,Ordinateur,Électronique,C029,Client C029,IT,Particulier,140.46,1
+ORD-00484,2024-09-30,P011,Housse,Accessoires,C032,Client C032,FR,Particulier,2452.59,3
+ORD-00485,2024-10-03,P002,Tablette,Électronique,C022,Client C022,UK,Particulier,2646.78,3
+ORD-00486,2024-10-09,P011,Housse,Accessoires,C045,Client C045,ES,Particulier,556.2,2
+ORD-00487,2024-10-02,P002,Tablette,Électronique,C015,Client C015,IT,Grand Compte,1312.92,2
+ORD-00488,2024-11-02,P002,Tablette,Électronique,C003,Client C003,UK,Particulier,1228.0,5
+ORD-00489,2024-09-28,P003,Téléphone,Électronique,C029,Client C029,IT,Particulier,1112.86,1
+ORD-00490,2024-02-03,P008,Câble HDMI,Accessoires,C043,Client C043,IT,Grand Compte,867.55,1
+ORD-00491,2024-03-06,P009,Câble USB,Accessoires,C012,Client C012,FR,PME,1752.96,4
+ORD-00492,2024-05-14,P012,Webcam,Périphériques,C022,Client C022,UK,Particulier,743.46,1
+ORD-00493,2024-03-04,P008,Câble HDMI,Accessoires,C032,Client C032,FR,Particulier,2960.92,4
+ORD-00494,2024-07-02,P006,Souris,Périphériques,C018,Client C018,DE,Particulier,2095.04,4
+ORD-00495,2024-08-15,P006,Souris,Périphériques,C011,Client C011,DE,Particulier,222.28,1
+ORD-00496,2024-08-19,P004,Écran,Électronique,C040,Client C040,FR,PME,1034.36,2
+ORD-00497,2024-05-10,P004,Écran,Électronique,C017,Client C017,FR,Grand Compte,2660.96,4
+ORD-00498,2024-03-22,P008,Câble HDMI,Accessoires,C049,Client C049,UK,PME,2759.7,3
+ORD-00499,2024-12-25,P005,Clavier,Périphériques,C043,Client C043,IT,Grand Compte,767.56,4
+ORD-00500,2024-06-04,P007,Imprimante,Périphériques,C011,Client C011,FR,PME,2312.25,5
