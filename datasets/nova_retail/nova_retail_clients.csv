@@ -1,0 +1,201 @@
+CustomerID,Nom,Region,Pays,Segment,DateInscription
+C001,Client 1,Asie,CN,Particulier,2024-02-27
+C002,Client 2,Amériques,CA,Particulier,2020-10-12
+C003,Client 3,Asie,CN,Grand Compte,2024-02-25
+C004,Client 4,Asie,CN,Grand Compte,2022-05-14
+C005,Client 5,Europe,FR,Particulier,2021-03-23
+C006,Client 6,Europe,UK,Grand Compte,2020-02-24
+C007,Client 7,Asie,JP,Grand Compte,2023-08-23
+C008,Client 8,Asie,KR,Particulier,2022-07-08
+C009,Client 9,Asie,IN,Particulier,2024-04-03
+C010,Client 10,Europe,IT,PME,2021-07-23
+C011,Client 11,Europe,DE,PME,2020-07-28
+C012,Client 12,Europe,IT,Particulier,2022-01-05
+C013,Client 13,Amériques,BR,Particulier,2024-02-03
+C014,Client 14,Amériques,US,PME,2020-06-10
+C015,Client 15,Asie,IN,Grand Compte,2023-06-20
+C016,Client 16,Amériques,CA,Grand Compte,2020-05-22
+C017,Client 17,Europe,DE,PME,2020-06-12
+C018,Client 18,Europe,FR,PME,2021-07-23
+C019,Client 19,Amériques,BR,Particulier,2022-01-28
+C020,Client 20,Amériques,CA,Grand Compte,2021-06-30
+C021,Client 21,Asie,CN,Grand Compte,2023-07-24
+C022,Client 22,Europe,UK,Grand Compte,2021-05-16
+C023,Client 23,Europe,IT,PME,2021-07-06
+C024,Client 24,Asie,JP,Grand Compte,2021-10-26
+C025,Client 25,Europe,DE,Particulier,2024-07-06
+C026,Client 26,Amériques,MX,PME,2020-05-15
+C027,Client 27,Europe,UK,Grand Compte,2021-10-06
+C028,Client 28,Europe,IT,PME,2023-08-09
+C029,Client 29,Amériques,CA,PME,2020-10-12
+C030,Client 30,Europe,UK,Grand Compte,2021-06-22
+C031,Client 31,Asie,KR,Grand Compte,2022-03-28
+C032,Client 32,Amériques,CA,Particulier,2022-11-09
+C033,Client 33,Amériques,US,Particulier,2024-10-29
+C034,Client 34,Europe,DE,Grand Compte,2020-11-23
+C035,Client 35,Asie,KR,Grand Compte,2020-05-10
+C036,Client 36,Amériques,MX,Grand Compte,2022-08-16
+C037,Client 37,Asie,IN,Grand Compte,2024-10-28
+C038,Client 38,Europe,FR,Grand Compte,2023-01-04
+C039,Client 39,Amériques,BR,Particulier,2021-08-24
+C040,Client 40,Amériques,CA,PME,2020-01-07
+C041,Client 41,Asie,IN,Grand Compte,2024-04-09
+C042,Client 42,Europe,UK,Particulier,2024-11-17
+C043,Client 43,Asie,IN,Grand Compte,2022-11-05
+C044,Client 44,Asie,JP,Particulier,2022-02-04
+C045,Client 45,Europe,UK,Grand Compte,2020-01-02
+C046,Client 46,Asie,IN,PME,2020-02-09
+C047,Client 47,Europe,ES,PME,2021-05-05
+C048,Client 48,Europe,DE,Grand Compte,2020-06-10
+C049,Client 49,Europe,IT,Particulier,2024-04-06
+C050,Client 50,Asie,JP,Particulier,2023-09-13
+C051,Client 51,Amériques,CA,PME,2022-12-16
+C052,Client 52,Asie,KR,Particulier,2023-01-09
+C053,Client 53,Asie,JP,Grand Compte,2021-09-30
+C054,Client 54,Amériques,BR,PME,2022-11-25
+C055,Client 55,Amériques,US,Particulier,2021-04-05
+C056,Client 56,Europe,ES,Particulier,2023-04-19
+C057,Client 57,Asie,JP,Grand Compte,2021-03-27
+C058,Client 58,Europe,FR,Grand Compte,2023-07-16
+C059,Client 59,Europe,DE,Particulier,2020-03-05
+C060,Client 60,Amériques,US,Grand Compte,2021-05-02
+C061,Client 61,Amériques,MX,Particulier,2023-01-09
+C062,Client 62,Europe,UK,Grand Compte,2022-08-26
+C063,Client 63,Europe,IT,PME,2021-01-24
+C064,Client 64,Europe,FR,Grand Compte,2022-06-01
+C065,Client 65,Amériques,MX,PME,2022-08-14
+C066,Client 66,Asie,CN,Grand Compte,2023-08-31
+C067,Client 67,Asie,CN,Particulier,2022-04-04
+C068,Client 68,Asie,IN,Particulier,2021-05-24
+C069,Client 69,Europe,DE,Grand Compte,2022-07-07
+C070,Client 70,Europe,IT,Particulier,2021-07-24
+C071,Client 71,Amériques,CA,Particulier,2022-06-26
+C072,Client 72,Asie,CN,Particulier,2023-08-28
+C073,Client 73,Asie,CN,Particulier,2024-03-23
+C074,Client 74,Europe,DE,PME,2022-09-21
+C075,Client 75,Amériques,CA,PME,2020-04-30
+C076,Client 76,Europe,IT,Particulier,2022-03-10
+C077,Client 77,Amériques,MX,PME,2022-05-16
+C078,Client 78,Asie,KR,Particulier,2021-01-23
+C079,Client 79,Amériques,CA,Particulier,2023-04-01
+C080,Client 80,Asie,CN,Grand Compte,2021-10-04
+C081,Client 81,Europe,FR,Grand Compte,2022-09-03
+C082,Client 82,Asie,JP,Particulier,2022-11-06
+C083,Client 83,Europe,DE,Particulier,2023-05-03
+C084,Client 84,Europe,DE,PME,2020-09-02
+C085,Client 85,Asie,JP,Grand Compte,2023-05-02
+C086,Client 86,Europe,UK,Particulier,2022-05-08
+C087,Client 87,Asie,IN,PME,2021-02-22
+C088,Client 88,Asie,IN,Particulier,2021-06-27
+C089,Client 89,Amériques,CA,Grand Compte,2023-08-14
+C090,Client 90,Amériques,MX,PME,2024-03-19
+C091,Client 91,Europe,FR,PME,2023-06-26
+C092,Client 92,Asie,CN,Particulier,2023-01-06
+C093,Client 93,Europe,UK,PME,2020-09-28
+C094,Client 94,Amériques,US,Particulier,2022-01-26
+C095,Client 95,Amériques,CA,PME,2024-09-03
+C096,Client 96,Asie,IN,Grand Compte,2024-07-10
+C097,Client 97,Asie,CN,Grand Compte,2024-07-31
+C098,Client 98,Asie,IN,Grand Compte,2020-07-31
+C099,Client 99,Europe,ES,Particulier,2020-08-07
+C100,Client 100,Asie,JP,PME,2021-07-31
+C101,Client 101,Asie,JP,Grand Compte,2021-12-03
+C102,Client 102,Europe,ES,Grand Compte,2022-09-27
+C103,Client 103,Amériques,US,Particulier,2023-07-23
+C104,Client 104,Amériques,BR,Particulier,2020-01-08
+C105,Client 105,Amériques,CA,Grand Compte,2021-06-20
+C106,Client 106,Europe,IT,Grand Compte,2023-12-16
+C107,Client 107,Amériques,US,Particulier,2020-06-03
+C108,Client 108,Asie,JP,Grand Compte,2020-03-14
+C109,Client 109,Amériques,CA,PME,2020-09-18
+C110,Client 110,Europe,ES,PME,2024-06-18
+C111,Client 111,Europe,ES,Particulier,2023-10-28
+C112,Client 112,Europe,FR,PME,2024-05-16
+C113,Client 113,Asie,KR,Grand Compte,2024-03-14
+C114,Client 114,Europe,DE,Particulier,2024-06-26
+C115,Client 115,Europe,IT,Particulier,2021-01-02
+C116,Client 116,Asie,IN,PME,2024-06-30
+C117,Client 117,Asie,JP,PME,2020-11-22
+C118,Client 118,Asie,CN,PME,2024-11-21
+C119,Client 119,Europe,IT,Particulier,2021-02-12
+C120,Client 120,Amériques,BR,PME,2024-08-07
+C121,Client 121,Europe,DE,Particulier,2023-09-13
+C122,Client 122,Europe,IT,PME,2021-07-24
+C123,Client 123,Europe,ES,PME,2023-08-06
+C124,Client 124,Asie,KR,Grand Compte,2024-09-23
+C125,Client 125,Asie,IN,Particulier,2020-08-24
+C126,Client 126,Amériques,CA,Grand Compte,2021-06-27
+C127,Client 127,Europe,FR,Grand Compte,2022-06-08
+C128,Client 128,Amériques,BR,PME,2023-05-26
+C129,Client 129,Asie,CN,PME,2023-03-26
+C130,Client 130,Europe,ES,Particulier,2023-12-22
+C131,Client 131,Amériques,US,Grand Compte,2024-07-09
+C132,Client 132,Asie,JP,PME,2022-06-02
+C133,Client 133,Europe,ES,Grand Compte,2021-10-04
+C134,Client 134,Asie,CN,Grand Compte,2021-09-07
+C135,Client 135,Asie,IN,Grand Compte,2022-04-16
+C136,Client 136,Amériques,MX,Grand Compte,2021-08-28
+C137,Client 137,Asie,JP,Particulier,2022-05-11
+C138,Client 138,Asie,KR,Grand Compte,2024-03-12
+C139,Client 139,Europe,UK,Grand Compte,2021-09-08
+C140,Client 140,Amériques,US,PME,2021-08-10
+C141,Client 141,Europe,IT,Grand Compte,2023-05-27
+C142,Client 142,Asie,IN,PME,2022-06-23
+C143,Client 143,Amériques,CA,Grand Compte,2022-08-27
+C144,Client 144,Asie,JP,Grand Compte,2020-06-22
+C145,Client 145,Amériques,BR,Particulier,2024-08-03
+C146,Client 146,Europe,ES,Particulier,2024-07-09
+C147,Client 147,Europe,DE,Particulier,2020-04-04
+C148,Client 148,Europe,IT,Grand Compte,2024-10-06
+C149,Client 149,Europe,IT,PME,2023-07-13
+C150,Client 150,Asie,JP,Grand Compte,2023-11-27
+C151,Client 151,Amériques,MX,PME,2021-05-14
+C152,Client 152,Europe,FR,Particulier,2024-05-13
+C153,Client 153,Amériques,CA,Particulier,2024-07-04
+C154,Client 154,Asie,KR,Particulier,2023-02-15
+C155,Client 155,Europe,FR,PME,2020-09-30
+C156,Client 156,Amériques,BR,PME,2023-06-08
+C157,Client 157,Asie,KR,Grand Compte,2022-07-02
+C158,Client 158,Europe,IT,PME,2021-06-14
+C159,Client 159,Europe,ES,Grand Compte,2022-09-19
+C160,Client 160,Asie,JP,PME,2022-06-19
+C161,Client 161,Europe,ES,Particulier,2021-07-10
+C162,Client 162,Amériques,BR,Grand Compte,2020-06-14
+C163,Client 163,Europe,DE,Particulier,2022-02-23
+C164,Client 164,Asie,JP,Grand Compte,2021-03-14
+C165,Client 165,Europe,IT,PME,2021-11-08
+C166,Client 166,Asie,KR,PME,2020-05-07
+C167,Client 167,Europe,IT,PME,2024-04-25
+C168,Client 168,Asie,CN,Grand Compte,2022-02-18
+C169,Client 169,Amériques,US,PME,2021-09-03
+C170,Client 170,Amériques,MX,Grand Compte,2024-03-10
+C171,Client 171,Asie,JP,PME,2021-03-25
+C172,Client 172,Amériques,MX,PME,2020-02-29
+C173,Client 173,Amériques,BR,Grand Compte,2023-10-22
+C174,Client 174,Amériques,CA,PME,2020-09-18
+C175,Client 175,Asie,CN,PME,2023-04-27
+C176,Client 176,Asie,CN,Particulier,2023-08-09
+C177,Client 177,Amériques,CA,PME,2021-01-07
+C178,Client 178,Europe,ES,PME,2021-11-01
+C179,Client 179,Europe,IT,PME,2021-11-22
+C180,Client 180,Amériques,BR,PME,2021-05-31
+C181,Client 181,Europe,IT,Particulier,2024-03-14
+C182,Client 182,Asie,CN,PME,2021-04-04
+C183,Client 183,Asie,CN,Grand Compte,2020-03-23
+C184,Client 184,Europe,DE,Particulier,2024-09-14
+C185,Client 185,Europe,UK,Particulier,2021-05-03
+C186,Client 186,Europe,IT,Grand Compte,2020-08-22
+C187,Client 187,Asie,JP,PME,2023-12-03
+C188,Client 188,Amériques,BR,Particulier,2023-05-25
+C189,Client 189,Asie,CN,Particulier,2021-09-29
+C190,Client 190,Europe,UK,Particulier,2021-09-30
+C191,Client 191,Asie,KR,PME,2024-01-04
+C192,Client 192,Europe,FR,Grand Compte,2023-11-15
+C193,Client 193,Asie,JP,Particulier,2023-11-28
+C194,Client 194,Amériques,US,Grand Compte,2024-05-21
+C195,Client 195,Europe,ES,Grand Compte,2022-05-27
+C196,Client 196,Asie,IN,Particulier,2022-11-02
+C197,Client 197,Asie,IN,Particulier,2024-10-05
+C198,Client 198,Amériques,MX,Particulier,2022-06-06
+C199,Client 199,Amériques,MX,Grand Compte,2020-11-09
+C200,Client 200,Amériques,CA,Grand Compte,2022-12-04

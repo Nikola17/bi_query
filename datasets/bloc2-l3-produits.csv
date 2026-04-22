@@ -1,0 +1,13 @@
+ProductID,Categorie,SousCategorie
+P001,Électronique,Ordinateur
+P002,Électronique,Tablette
+P003,Électronique,Téléphone
+P004,Électronique,Écran
+P005,Périphériques,Clavier
+P006,Périphériques,Souris
+P007,Périphériques,Imprimante
+P008,Périphériques,Webcam
+P009,Accessoires,Câble HDMI
+P010,Accessoires,Câble USB
+P011,Accessoires,Support
+P012,Accessoires,Housse

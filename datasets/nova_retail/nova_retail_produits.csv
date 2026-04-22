@@ -1,0 +1,13 @@
+ProductID,Nom,Categorie,SousCategorie,PrixUnitaire,CoutUnitaire
+P001,Ordinateur,Électronique,Ordinateur,1159.09,573.2
+P002,Tablette,Électronique,Tablette,972.72,572.31
+P003,Téléphone,Électronique,Téléphone,587.94,324.81
+P004,Écran,Électronique,Écran,881.27,435.29
+P005,Clavier,Périphériques,Clavier,1024.28,707.53
+P006,Souris,Périphériques,Souris,117.7,83.4
+P007,Imprimante,Périphériques,Imprimante,303.98,171.03
+P008,Webcam,Périphériques,Webcam,738.24,393.22
+P009,Câble HDMI,Accessoires,Câble HDMI,49.01,34.2
+P010,Câble USB,Accessoires,Câble USB,230.48,109.3
+P011,Support,Accessoires,Support,960.43,498.58
+P012,Housse,Accessoires,Housse,1058.18,682.96

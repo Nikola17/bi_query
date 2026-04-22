@@ -121,6 +121,50 @@ th, td { text-align: left; padding: .7rem; border-bottom: 1px solid var(--border
 details { margin: .5rem 0; }
 details summary { cursor: pointer; font-weight: 600; }
 
+/* --- NEW VISUAL STYLES --- */
+
+.example-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .8rem; margin: 1rem 0; }
+.example-meta > div { background: color-mix(in oklab, var(--surface) 80%, var(--bg)); border: 1px solid var(--border); border-radius: .6rem; padding: .6rem .8rem; }
+.example-meta strong { display: block; font-size: .85rem; text-transform: uppercase; color: var(--muted); margin-bottom: .2rem; letter-spacing: .04em; }
+
+.before-after { display: flex; align-items: stretch; gap: .6rem; margin: 1rem 0; border: 1px solid var(--border); border-radius: .8rem; overflow: hidden; }
+.before, .after { flex: 1; padding: .8rem; position: relative; }
+.before { background: color-mix(in oklab, var(--danger) 6%, var(--surface)); }
+.after { background: color-mix(in oklab, var(--success) 6%, var(--surface)); }
+.badge-before, .badge-after { position: absolute; top: .4rem; right: .5rem; font-size: .65rem; font-weight: 800; letter-spacing: .06em; padding: .15rem .4rem; border-radius: .3rem; }
+.badge-before { background: color-mix(in oklab, var(--danger) 18%, var(--surface)); color: var(--danger); }
+.badge-after { background: color-mix(in oklab, var(--success) 18%, var(--surface)); color: var(--success); }
+.arrow { display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--muted); font-weight: 800; }
+
+.steps-timeline { display: flex; flex-direction: column; gap: 0; margin: 1rem 0; position: relative; }
+.step { display: flex; gap: .8rem; padding: .6rem 0; position: relative; }
+.step::before { content: ''; position: absolute; left: 1.15rem; top: 2.4rem; bottom: -.6rem; width: 2px; background: var(--border); }
+.step:last-child::before { display: none; }
+.step-num { width: 2.3rem; height: 2.3rem; border-radius: 999px; background: var(--primary); color: var(--primary-contrast); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .95rem; flex-shrink: 0; }
+.step-body { flex: 1; }
+.step-body h4 { margin: .1rem 0 .3rem; font-size: 1.05rem; }
+.step-body p { margin: .2rem 0; }
+.tip, .pitfall { display: flex; gap: .5rem; align-items: flex-start; margin: .5rem 0; padding: .55rem .7rem; border-radius: .4rem; }
+.tip span, .pitfall span { font-size: 1.1rem; line-height: 1; }
+.tip { background: color-mix(in oklab, var(--primary) 8%, var(--surface)); border-left: 3px solid var(--primary); }
+.pitfall { background: color-mix(in oklab, var(--danger) 8%, var(--surface)); border-left: 3px solid var(--danger); }
+
+.exercise-box { background: color-mix(in oklab, var(--surface) 70%, var(--bg)); border: 1px solid var(--border); border-radius: .8rem; padding: 1rem; margin: .8rem 0; }
+.exercise-box h4 { margin: 0 0 .4rem; font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.hints-details { background: var(--surface); border: 1px solid var(--border); border-radius: .6rem; padding: .6rem .8rem; margin: .6rem 0; }
+.hints-details summary { font-weight: 700; color: var(--primary); }
+
+.dataset-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: var(--surface); border: 1px dashed var(--primary); border-radius: .7rem; padding: .8rem 1rem; margin-top: .8rem; flex-wrap: wrap; }
+.dataset-info strong { display: block; font-size: .95rem; }
+.dataset-info p { margin: .2rem 0 0; font-size: .88rem; }
+
+.solution-details { background: color-mix(in oklab, var(--success) 6%, var(--surface)); border: 1px solid color-mix(in oklab, var(--success) 25%, var(--border)); border-radius: .7rem; padding: .6rem .9rem; margin: .6rem 0; }
+.solution-details summary { font-weight: 700; color: var(--success); }
+.solution-content { padding: .5rem 0; }
+.solution-steps { padding-left: 1.2rem; }
+.solution-steps li { margin: .35rem 0; }
+.solution-explanation { background: var(--surface); border-left: 3px solid var(--success); padding: .5rem .8rem; border-radius: .4rem; margin-top: .6rem; }
+
 @media (max-width: 900px) {
   .visual-grid { grid-template-columns: 1fr; }
   .main-nav { display: none; }
